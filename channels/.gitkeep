@@ -1,0 +1,4 @@
+# Channel pointers will be created here by CI/CD
+# - stable.yaml
+# - rc.yaml
+# - dev.yaml

@@ -1,0 +1,2 @@
+# Release manifests will be created here by CI/CD
+# One file per version tag (e.g., v1.0.0.yaml)
