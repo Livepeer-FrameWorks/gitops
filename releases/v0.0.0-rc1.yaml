@@ -1,0 +1,213 @@
+platform_version: v0.0.0-rc1
+git_commit: 7013cdd8ed6ea54afbed5ccd06b69fb3f89abda8
+release_date: 2025-11-13T15:36:18Z
+
+services:
+  - name: bridge
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-bridge:v0.0.0-rc1
+    digest: sha256:fffca8bec0799ab1386956790b1d9b5795a0d13606b88dc2de5fcff7aff84e35
+  - name: commodore
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-commodore:v0.0.0-rc1
+    digest: sha256:f5ab9af3434b42db41c68a4174bab8259e06f47389a02466f8a55648c47efe2d
+  - name: decklog
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-decklog:v0.0.0-rc1
+    digest: sha256:9ef37251319fe15cb5dd2c61591aba2da2acc212504f61436151393eb58f4560
+  - name: foghorn
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-foghorn:v0.0.0-rc1
+    digest: sha256:c6fc2bb1fd685b96194fdd3d3e8471cd867f355ab2d9178f9082a34de40823e5
+  - name: forms
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-forms:v0.0.0-rc1
+    digest: sha256:baac1d78f4be91b7196cbd10a173ac52ae96f74214227e632dbb8438040730cc
+  - name: helmsman
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-helmsman:v0.0.0-rc1
+    digest: sha256:0564b163f670b9908d94513af28a66d4aaca4a0597dad67a11513be0d27e2e0d
+  - name: periscope-ingest
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-periscope-ingest:v0.0.0-rc1
+    digest: sha256:a47a2f0fd446e13e0855a226ff94cf493bae5a225a4624f571f58760b5d1751f
+  - name: periscope-query
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-periscope-query:v0.0.0-rc1
+    digest: sha256:8c70377fafefc1c67da6a3bfdecd3aa0073884dc115c29edc15a2796548fffd2
+  - name: purser
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-purser:v0.0.0-rc1
+    digest: sha256:fca2480f593d6e456d4bd5da8ea60c31330b2eece2d2ec161c14ce7de419239b
+  - name: quartermaster
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-quartermaster:v0.0.0-rc1
+    digest: sha256:acaf960ff239447000718ff8a69852fe245f953d6b7ecb1cbe2084823541d7fd
+  - name: signalman
+    service_version: 0.0.1
+    image: docker.io/livepeerframeworks/frameworks-signalman:v0.0.0-rc1
+    digest: sha256:ce27fdbe0f6a830d90b989649175dc06c60c1e07666197b6bddf76b2711e5393
+
+native_binaries:
+  - name: bridge
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-bridge-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-bridge-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: commodore
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-commodore-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-commodore-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: decklog
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-decklog-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-decklog-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: foghorn
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-foghorn-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-foghorn-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: forms
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-forms-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-forms-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: helmsman
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-helmsman-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-helmsman-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: periscope-ingest
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-periscope-ingest-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-periscope-ingest-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: periscope-query
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-periscope-query-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-periscope-query-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: purser
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-purser-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-purser-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: quartermaster
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-quartermaster-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-quartermaster-v0.0.0-rc1-linux-arm64.tar.gz
+  - name: signalman
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-signalman-v0.0.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-signalman-v0.0.0-rc1-linux-arm64.tar.gz
+
+interfaces:
+  - name: webapp
+    image: docker.io/livepeerframeworks/frameworks-webapp:v0.0.0-rc1
+    digest: sha256:e1c389a1ec443d0cad21cbe852fc86a725fd7ca79bfc0cef900bb50eda77ef36
+    static_bundle: webapp-build.tar.gz
+  - name: website
+    image: docker.io/livepeerframeworks/frameworks-website:v0.0.0-rc1
+    digest: sha256:d73ec799fbb0c8bddba4a3be5ce03b5d51bf3141a10e92e9053c5dcb61cf9c7d
+    static_bundle: website-build.tar.gz
+
+external_dependencies:
+  - name: mistserver
+    image: docker.io/livepeerframeworks/mistserver:development-f467e345
+    digest: "sha256:fb4a03c1f144aee2a5b2457a63120ac84669dd766dd9247588ba475ee1c8456a"
+    release_url: "https://github.com/Livepeer-FrameWorks/mistserver/releases/tag/frameworks-v0.0.0-rc1"
+    release_tag: "frameworks-v0.0.0-rc1"
+    binaries:
+      - name: docker-digest.txt
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.0.0-rc1/docker-digest.txt
+        size_bytes: 72
+      - name: docker-tag.txt
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.0.0-rc1/docker-tag.txt
+        size_bytes: 21
+      - name: mistserver-linux-amd64-development-f467e345.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.0.0-rc1/mistserver-linux-amd64-development-f467e345.tar.gz
+        size_bytes: 79051818
+      - name: mistserver-linux-arm64-development-f467e345.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.0.0-rc1/mistserver-linux-arm64-development-f467e345.tar.gz
+        size_bytes: 79055992
+
+# Infrastructure Requirements for FrameWorks Platform
+# This file tracks tested infrastructure versions for each platform release
+# Update manually when bumping infrastructure components
+
+infrastructure:
+  - name: postgresql
+    tested_version: "15.14"
+    minimum_version: "14.0"
+    image: postgres:15
+    dev_version: "15.14"
+    prod_version: "15.12-YB-2025.1.0.0"
+    notes: "Dev uses PostgreSQL 15.14. Prod uses YugabyteDB (PostgreSQL 15.12 compatible)"
+
+  - name: kafka
+    tested_version: "7.4.0"
+    minimum_version: "3.4.0"
+    image: confluentinc/cp-kafka:7.4.0
+    dev_version: "7.4.0 (Confluent Platform)"
+    prod_version: "3.9.1"
+    notes: "Dev uses Confluent Platform 7.4.0. Prod uses Apache Kafka 3.9.1"
+
+  - name: zookeeper
+    tested_version: "7.4.0"
+    minimum_version: "3.4.0"
+    image: confluentinc/cp-zookeeper:7.4.0
+    notes: "Required for Kafka. Confluent Platform includes Zookeeper"
+
+  - name: clickhouse
+    tested_version: "25.9.2.1"
+    minimum_version: "18.16.1"
+    image: clickhouse/clickhouse-server:latest
+    dev_version: "25.9.2.1"
+    prod_version: "18.16.1"
+    notes: "WARNING: Dev (25.9.2.1) and Prod (18.16.1) have significant version gap. Consider upgrading prod"
+
+  - name: prometheus
+    tested_version: "3.6.0"
+    minimum_version: "2.40.0"
+    image: prom/prometheus:latest
+    dev_version: "3.6.0"
+    prod_alternative: "VictoriaMetrics v1.122.0"
+    notes: "Dev uses Prometheus 3.6.0. Prod uses VictoriaMetrics v1.122.0 (Prometheus-compatible)"
+
+  - name: victoriametrics
+    tested_version: "v1.122.0"
+    minimum_version: "v1.100.0"
+    image: victoriametrics/victoria-metrics:latest
+    prod_version: "v1.122.0"
+    notes: "Production alternative to Prometheus. Prometheus-compatible API"
+
+  - name: grafana
+    tested_version: "12.2.0"
+    minimum_version: "11.0.0"
+    image: grafana/grafana:latest
+    dev_version: "12.2.0"
+    prod_version: "11.6.1"
+    notes: "Requires grafana-clickhouse-datasource plugin for ClickHouse integration"
+
+  - name: nginx
+    tested_version: "1.29.3"
+    minimum_version: "1.24.0"
+    image: nginx:alpine
+    dev_version: "1.29.3 (alpine)"
+    prod_version: "1.29.1"
+    notes: "Alpine variant for smaller footprint in dev/docker environments"
