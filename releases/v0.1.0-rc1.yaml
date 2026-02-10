@@ -1,0 +1,255 @@
+platform_version: v0.1.0-rc1
+git_commit: eb5e5775624b8d43dbe1f7528792988241574128
+release_date: 2026-02-10T11:42:03Z
+
+services:
+  - name: bridge
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-bridge:v0.1.0-rc1
+    digest: sha256:a85cd29eb8a1ca41f4ec76c1e7f5ade233b6e7ba0ba8c9097c8ac07c3e10a681
+  - name: commodore
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-commodore:v0.1.0-rc1
+    digest: sha256:de0579db8b78835a2b25a341f6bf75cb5764d81a18d6b6e76a2518d6e809885b
+  - name: deckhand
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-deckhand:v0.1.0-rc1
+    digest: sha256:0b76f4e4fa0cf56adb1ea868f232a1a0adb311fb000f38b8f510732e9659f617
+  - name: decklog
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-decklog:v0.1.0-rc1
+    digest: sha256:3037b03fa14d729743c6070f91c067d9cc953c712b89334598ba8ade2fac08cf
+  - name: foghorn
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-foghorn:v0.1.0-rc1
+    digest: sha256:19f2e385c32191ae5e932f6a33e5781910bed559c630809b682f636691041cea
+  - name: helmsman
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-helmsman:v0.1.0-rc1
+    digest: sha256:3393b64e3e1adf3b4dec3a892fd7415aa8d9ca2773786387d743a488dc0e48f4
+  - name: navigator
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-navigator:v0.1.0-rc1
+    digest: sha256:faf50382cb2ceb9bc5c8bda69481e957169ddfc9f6b529343eb1fa90eabc0d01
+  - name: periscope-ingest
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-periscope-ingest:v0.1.0-rc1
+    digest: sha256:ed6cc890878d5b23cf113d3831098cc7d30a5e7f9e446ffccc4e8fede9cf8855
+  - name: periscope-query
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-periscope-query:v0.1.0-rc1
+    digest: sha256:f82edb75d2c09235a010af911fd3490458e2acd5494f5bff03fc603187f4cb60
+  - name: purser
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-purser:v0.1.0-rc1
+    digest: sha256:7c2dbc4f6243cad77a6faf65092da12167e093888dbef5dbcb5cf496f4336f5e
+  - name: quartermaster
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-quartermaster:v0.1.0-rc1
+    digest: sha256:21bb9a915b62a24ff6272948be69f89e3b7cc4a9d63690b6e1df5ab90db11a07
+  - name: signalman
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-signalman:v0.1.0-rc1
+    digest: sha256:926f1161f203d4d6daaaeed86e95e7bcb8e151ba72b6cdc5a7559d846bab3ebf
+  - name: skipper
+    service_version: 0.0.0
+    image: docker.io/livepeerframeworks/frameworks-skipper:v0.1.0-rc1
+    digest: sha256:6b78e81e7d156d9596af9a749c063a1257ae3fbc8bfb7aebcca7509689942b22
+  - name: steward
+    service_version: 0.1.0
+    image: docker.io/livepeerframeworks/frameworks-steward:v0.1.0-rc1
+    digest: sha256:7b6334007166503ec181937df420a3ddaad2c74e41a2f550b8a0cb9d33dabf42
+
+native_binaries:
+  - name: bridge
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-bridge-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-bridge-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: commodore
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-commodore-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-commodore-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: deckhand
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-deckhand-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-deckhand-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: decklog
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-decklog-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-decklog-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: foghorn
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-foghorn-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-foghorn-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: helmsman
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-helmsman-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-helmsman-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: navigator
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-navigator-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-navigator-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: periscope-ingest
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-periscope-ingest-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-periscope-ingest-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: periscope-query
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-periscope-query-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-periscope-query-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: purser
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-purser-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-purser-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: quartermaster
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-quartermaster-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-quartermaster-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: signalman
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-signalman-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-signalman-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: skipper
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-skipper-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-skipper-v0.1.0-rc1-linux-arm64.tar.gz
+  - name: steward
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-steward-v0.1.0-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-steward-v0.1.0-rc1-linux-arm64.tar.gz
+
+interfaces:
+  - name: chartroom
+    image: docker.io/livepeerframeworks/frameworks-chartroom:v0.1.0-rc1
+    digest: sha256:28bc1c66106d634023a8a6e1e6e9be7354584cbf7833d58387d1e54a2a60ccd3
+    static_bundle: chartroom-build.tar.gz
+  - name: foredeck
+    image: docker.io/livepeerframeworks/frameworks-foredeck:v0.1.0-rc1
+    digest: sha256:bcce5ffe2a82f14c5deaa4f802530cda8f13b0baef92f042a097f6fa4d3c735d
+    static_bundle: foredeck-build.tar.gz
+  - name: logbook
+    image: docker.io/livepeerframeworks/frameworks-logbook:v0.1.0-rc1
+    digest: sha256:9dcdb9832618869952d4137b13f212be3e558d800834df295478c122aba5a0fb
+    static_bundle: logbook-build.tar.gz
+
+external_dependencies:
+  - name: mistserver
+    image: docker.io/livepeerframeworks/mistserver:development-847b7c05
+    digest: "sha256:b5f615fe3ca1c629dc06493a99343a269e3299392f5e712a57fe1fb3bb40f305"
+    release_url: "https://github.com/Livepeer-FrameWorks/mistserver/releases/tag/frameworks-v0.1.0-rc1"
+    release_tag: "frameworks-v0.1.0-rc1"
+    binaries:
+      - name: docker-digest.txt
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.1.0-rc1/docker-digest.txt
+        size_bytes: 72
+      - name: docker-tag.txt
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.1.0-rc1/docker-tag.txt
+        size_bytes: 21
+      - name: mistserver-linux-amd64-development-847b7c05.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.1.0-rc1/mistserver-linux-amd64-development-847b7c05.tar.gz
+        size_bytes: 82232393
+      - name: mistserver-linux-arm64-development-847b7c05.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.1.0-rc1/mistserver-linux-arm64-development-847b7c05.tar.gz
+        size_bytes: 82232819
+
+# Infrastructure Requirements for FrameWorks Platform
+# This file tracks tested infrastructure versions for each platform release
+# Update manually when bumping infrastructure components
+
+infrastructure:
+  - name: postgresql
+    tested_version: "15.14"
+    minimum_version: "14.0"
+    image: postgres:15
+    dev_version: "15.14"
+    prod_version: "15.12-YB-2025.1.0.0"
+    notes: "Dev uses PostgreSQL 15.14. Prod uses YugabyteDB (PostgreSQL 15.12 compatible)"
+
+  - name: kafka
+    tested_version: "7.4.0"
+    minimum_version: "3.4.0"
+    image: confluentinc/cp-kafka:7.4.0
+    dev_version: "7.4.0 (Confluent Platform)"
+    prod_version: "3.9.1"
+    notes: "Dev uses Confluent Platform 7.4.0. Prod uses Apache Kafka 3.9.1"
+
+  - name: zookeeper
+    tested_version: "7.4.0"
+    minimum_version: "3.4.0"
+    image: confluentinc/cp-zookeeper:7.4.0
+    notes: "Required for Kafka. Confluent Platform includes Zookeeper"
+
+  - name: clickhouse
+    tested_version: "25.9.2.1"
+    minimum_version: "18.16.1"
+    image: clickhouse/clickhouse-server:latest
+    dev_version: "25.9.2.1"
+    prod_version: "18.16.1"
+    notes: "WARNING: Dev (25.9.2.1) and Prod (18.16.1) have significant version gap. Consider upgrading prod"
+
+  - name: prometheus
+    tested_version: "3.6.0"
+    minimum_version: "2.40.0"
+    image: prom/prometheus:latest
+    dev_version: "3.6.0"
+    prod_alternative: "VictoriaMetrics v1.122.0"
+    notes: "Dev uses Prometheus 3.6.0. Prod uses VictoriaMetrics v1.122.0 (Prometheus-compatible)"
+
+  - name: victoriametrics
+    tested_version: "v1.122.0"
+    minimum_version: "v1.100.0"
+    image: victoriametrics/victoria-metrics:latest
+    prod_version: "v1.122.0"
+    notes: "Production alternative to Prometheus. Prometheus-compatible API"
+
+  - name: grafana
+    tested_version: "12.2.0"
+    minimum_version: "11.0.0"
+    image: grafana/grafana:latest
+    dev_version: "12.2.0"
+    prod_version: "11.6.1"
+    notes: "Requires grafana-clickhouse-datasource plugin for ClickHouse integration"
+
+  - name: nginx
+    tested_version: "1.29.3"
+    minimum_version: "1.24.0"
+    image: nginx:alpine
+    dev_version: "1.29.3 (alpine)"
+    prod_version: "1.29.1"
+    notes: "Alpine variant for smaller footprint in dev/docker environments"
+
+  - name: listmonk
+    tested_version: "v4.0.1"
+    minimum_version: "v3.0.0"
+    image: listmonk/listmonk:v4.0.1
+    dev_version: "v4.0.1"
+    prod_version: "v4.0.1"
+    notes: "Self-hosted newsletter manager. Requires PostgreSQL."
