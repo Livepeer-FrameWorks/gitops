@@ -1,0 +1,13 @@
+# Decrypted / staging secrets — never commit
+*.dec
+*.decrypted
+*.plaintext
+secrets/*.env.tmp
+secrets/*.env.new
+
+# Age private keys — never commit
+*.age-key
+keys.txt
+
+# OS
+.DS_Store

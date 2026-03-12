@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: no-plaintext-secrets
+        name: Reject unencrypted secrets
+        entry: scripts/check-no-plaintext.sh
+        language: script
+        files: '(secrets/.*\.env|clusters/.*/hosts\.enc\.yaml)$'
+      - id: no-ip-leak
+        name: Reject IPs in plaintext manifests
+        entry: scripts/check-no-ip-leak.sh
+        language: script
+        files: 'clusters/.*\.(yaml|yml)$'
+        exclude: '\.enc\.'
+      - id: no-age-private-keys
+        name: Block age private keys
+        entry: scripts/check-no-age-keys.sh
+        language: script
+        types: [text]

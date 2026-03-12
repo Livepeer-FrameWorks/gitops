@@ -1,0 +1,5 @@
+creation_rules:
+  - path_regex: secrets/.*\.env$
+    age: age1xzc3p7hn6urdsv9u0789aqln6fjyzmczuc3ydpgfxehpr3tq4c8q6gpgt7
+  - path_regex: clusters/.*/hosts\.enc\.yaml$
+    age: age1xzc3p7hn6urdsv9u0789aqln6fjyzmczuc3ydpgfxehpr3tq4c8q6gpgt7

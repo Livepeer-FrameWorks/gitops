@@ -1,0 +1,14 @@
+version: v1
+type: edge
+root_domain: frameworks.network
+pool_domain: edge.frameworks.network
+email: ops@frameworks.network
+cluster_id: media-central-primary
+fetch_cert: true
+hosts_file: clusters/production/hosts.enc.yaml
+nodes:
+  - name: edge-eu-1
+    subdomain: edge-eu-1
+    region: eu-west
+    apply_tune: true
+    register_qm: true

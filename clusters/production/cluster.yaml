@@ -1,0 +1,223 @@
+version: v1
+type: cluster
+profile: production
+channel: rc
+root_domain: frameworks.network
+env_file: secrets/production.env
+hosts_file: clusters/production/hosts.enc.yaml
+
+hosts:
+  central-eu-1:
+    cluster: core-central-primary
+    roles: [infrastructure, services, interfaces]
+  yuga-eu-1:
+    cluster: core-central-primary
+    roles: [infrastructure]
+  yuga-eu-2:
+    cluster: core-central-primary
+    roles: [infrastructure]
+  yuga-eu-3:
+    cluster: core-central-primary
+    roles: [infrastructure]
+  regional-eu-1:
+    cluster: core-central-primary
+    roles: [services, interfaces]
+  regional-us-1:
+    cluster: core-central-primary
+    roles: [services, interfaces]
+
+clusters:
+  core-central-primary:
+    name: Core Central Primary
+    type: central
+    roles: [control, data, analytics, support, infra, mesh, interface, observability]
+  media-central-primary:
+    name: Media Central Primary
+    type: central
+    roles: [media]
+
+infrastructure:
+  postgres:
+    enabled: true
+    engine: yugabyte
+    mode: native
+    version: "2025.1.0.0"
+    port: 5433
+    nodes:
+      - host: yuga-eu-1
+        id: 1
+      - host: yuga-eu-2
+        id: 2
+      - host: yuga-eu-3
+        id: 3
+    databases:
+      - name: quartermaster
+      - name: commodore
+      - name: foghorn
+      - name: purser
+      - name: navigator
+      - name: skipper
+      - name: periscope
+      - name: listmonk
+      - name: chatwoot
+  clickhouse:
+    enabled: true
+    mode: native
+    version: "25.9.2.1"
+    host: yuga-eu-1
+    port: 9000
+    databases: [periscope]
+  kafka:
+    enabled: true
+    mode: native
+    version: "7.4.0"
+    brokers:
+      - host: central-eu-1
+        id: 1
+        port: 9092
+      - host: regional-eu-1
+        id: 2
+        port: 9092
+      - host: regional-us-1
+        id: 3
+        port: 9092
+    zookeeper_connect: central-eu-1:2181
+    topics:
+      - name: analytics_events
+        partitions: 6
+        replication_factor: 1
+      - name: service_events
+        partitions: 3
+        replication_factor: 1
+      - name: billing.usage_reports
+        partitions: 3
+        replication_factor: 1
+      - name: decklog_events_dlq
+        partitions: 3
+        replication_factor: 1
+  zookeeper:
+    enabled: true
+    mode: native
+    version: "7.4.0"
+    ensemble:
+      - host: central-eu-1
+        id: 1
+        port: 2181
+  redis:
+    enabled: true
+    mode: native
+    instances:
+      - name: foghorn
+        host: central-eu-1
+        port: 6379
+      - name: chatwoot
+        host: central-eu-1
+        port: 6380
+
+services:
+  # Central — control plane + support
+  quartermaster:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  privateer:
+    enabled: true
+    mode: native
+    # No host — planner auto-deploys to ALL hosts
+  commodore:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  purser:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  periscope-query:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  navigator:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  skipper:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  steward:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  deckhand:
+    enabled: true
+    mode: native
+    host: central-eu-1
+
+  chandler:
+    enabled: true
+    mode: native
+    host: central-eu-1
+
+  # Self-hosted support dependencies (Docker)
+  listmonk:
+    enabled: true
+    mode: docker
+    image: listmonk/listmonk:v4.0.1
+    host: central-eu-1
+  chatwoot:
+    enabled: true
+    mode: docker
+    image: chatwoot/chatwoot:v3.14.0
+    host: central-eu-1
+
+  # Observability (Docker)
+  metabase:
+    enabled: true
+    mode: docker
+    image: metabase/metabase:latest
+    host: central-eu-1
+
+  # Regional — data plane (EU + US)
+  bridge:
+    enabled: true
+    mode: native
+    hosts: [regional-eu-1, regional-us-1]
+  foghorn:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  livepeer-gateway:
+    enabled: true
+    mode: native
+    image: livepeer/go-livepeer:latest
+    host: central-eu-1
+  signalman:
+    enabled: true
+    mode: native
+    hosts: [regional-eu-1, regional-us-1]
+  decklog:
+    enabled: true
+    mode: native
+    hosts: [regional-eu-1, regional-us-1]
+  periscope-ingest:
+    enabled: true
+    mode: native
+    hosts: [regional-eu-1, regional-us-1]
+
+interfaces:
+  nginx:
+    enabled: true
+    mode: native
+    hosts: [regional-eu-1, regional-us-1]
+  chartroom:
+    enabled: true
+    mode: docker
+    hosts: [regional-eu-1, regional-us-1]
+  foredeck:
+    enabled: true
+    mode: docker
+    hosts: [regional-eu-1, regional-us-1]
+  logbook:
+    enabled: true
+    mode: docker
+    hosts: [regional-eu-1, regional-us-1]
