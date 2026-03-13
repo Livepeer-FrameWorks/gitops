@@ -1,6 +1,6 @@
 platform_version: v0.2.0-rc1
 git_commit: b82f36543a937c6f51f428cf9289dc66b6bd9efe
-release_date: 2026-03-13T10:47:13Z
+release_date: 2026-03-13T11:00:59Z
 
 services:
   - name: bridge
