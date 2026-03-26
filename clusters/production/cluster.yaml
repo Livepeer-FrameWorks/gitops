@@ -30,7 +30,7 @@ clusters:
   core-central-primary:
     name: Core Central Primary
     type: central
-    roles: [control, data, analytics, support, infra, mesh, interface, observability]
+    roles: [control, data, analytics, support, infra, mesh, interface, observability, media]
   media-central-primary:
     name: Media Central Primary
     type: central
@@ -189,8 +189,10 @@ services:
   livepeer-gateway:
     enabled: true
     mode: native
-    image: livepeer/go-livepeer:latest
     host: central-eu-1
+    config:
+      auth_webhook_url: "http://foghorn.internal:18008/webhooks/livepeer/auth"
+      gateway_host: "livepeer.frameworks.network"
   signalman:
     enabled: true
     mode: native
