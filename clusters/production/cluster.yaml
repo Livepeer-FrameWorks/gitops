@@ -3,28 +3,42 @@ type: cluster
 profile: production
 channel: rc
 root_domain: frameworks.network
-env_file: secrets/production.env
-hosts_file: clusters/production/hosts.enc.yaml
+env_files:
+  - ../../config/production.env
+  - ../../secrets/production.env
+hosts_file: hosts.enc.yaml
 
 hosts:
   central-eu-1:
     cluster: core-central-primary
     roles: [infrastructure, services, interfaces]
+    labels:
+      region: eu-west
   yuga-eu-1:
     cluster: core-central-primary
     roles: [infrastructure]
+    labels:
+      region: eu-west
   yuga-eu-2:
     cluster: core-central-primary
     roles: [infrastructure]
+    labels:
+      region: eu-west
   yuga-eu-3:
     cluster: core-central-primary
     roles: [infrastructure]
+    labels:
+      region: eu-west
   regional-eu-1:
     cluster: core-central-primary
     roles: [services, interfaces]
+    labels:
+      region: eu-west
   regional-us-1:
     cluster: core-central-primary
     roles: [services, interfaces]
+    labels:
+      region: us-east
 
 clusters:
   core-central-primary:
@@ -35,6 +49,12 @@ clusters:
     name: Media Central Primary
     type: central
     roles: [media]
+
+geoip:
+  enabled: true
+  source: file
+  remote_path: /usr/share/GeoIP/GeoLite2-City.mmdb
+  services: [foghorn, quartermaster]
 
 infrastructure:
   postgres:
@@ -123,7 +143,7 @@ services:
   privateer:
     enabled: true
     mode: native
-    # No host — planner auto-deploys to ALL hosts
+    # No host — deploys to all non-edge hosts
   commodore:
     enabled: true
     mode: native
@@ -174,7 +194,7 @@ services:
   metabase:
     enabled: true
     mode: docker
-    image: metabase/metabase:latest
+    image: metabase/metabase:v0.52.5
     host: central-eu-1
 
   # Regional — data plane (EU + US)
@@ -223,3 +243,30 @@ interfaces:
     enabled: true
     mode: docker
     hosts: [regional-eu-1, regional-us-1]
+
+observability:
+  victoriametrics:
+    enabled: true
+    mode: docker
+    host: central-eu-1
+    port: 8428
+    config:
+      VM_RETENTION_PERIOD: 90d
+      VM_HTTP_AUTH_USERNAME: telemetry
+
+  vmagent:
+    enabled: true
+    mode: docker
+    hosts: [central-eu-1, regional-eu-1, regional-us-1]
+
+  vmauth:
+    enabled: true
+    mode: docker
+    hosts: [regional-eu-1, regional-us-1]
+    port: 8427
+
+  grafana:
+    enabled: true
+    mode: docker
+    host: central-eu-1
+    port: 3000

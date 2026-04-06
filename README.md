@@ -19,6 +19,8 @@ Architecture manifests are **plaintext** — anyone can see exactly how FrameWor
 │       ├── cluster.yaml               # Architecture manifest (plaintext)
 │       ├── edge.yaml                  # Edge node topology (plaintext)
 │       └── hosts.enc.yaml             # Host IPs + SSH targets (SOPS-encrypted)
+├── config/
+│   └── production.env                 # Non-secret operator config (plaintext)
 ├── secrets/
 │   └── production.env                 # Credentials (SOPS-encrypted)
 └── .sops.yaml                         # SOPS encryption configuration
@@ -31,6 +33,7 @@ Architecture manifests are **plaintext** — anyone can see exactly how FrameWor
 What's **not** in the plaintext manifest:
 - Server IP addresses → `hosts.enc.yaml` (SOPS-encrypted)
 - SSH credentials → `hosts.enc.yaml` (SOPS-encrypted)
+- Non-secret operator config → `config/production.env` (plaintext)
 - API keys, passwords, tokens → `secrets/production.env` (SOPS-encrypted)
 
 ### Decrypting
@@ -39,11 +42,24 @@ What's **not** in the plaintext manifest:
 # View host IPs
 sops -d clusters/production/hosts.enc.yaml
 
-# View/edit secrets
-sops secrets/production.env
+# View secrets
+sops -d secrets/production.env
 ```
 
 Requires the age private key at `~/.config/sops/age/keys.txt` (or set `SOPS_AGE_KEY_FILE`).
+
+### Editing encrypted env files
+
+Do not edit `secrets/*.env` directly and do not use ad hoc decrypt/edit/encrypt commands.
+
+Use the repo script:
+
+```bash
+scripts/sops-env.sh delete secrets/production.env KEY1 KEY2
+scripts/sops-env.sh set secrets/production.env KEY value
+scripts/sops-env.sh insert-after secrets/production.env AFTER_KEY NEW_KEY value
+scripts/sops-env.sh insert-before secrets/production.env BEFORE_KEY NEW_KEY value
+```
 
 ### Provisioning
 
@@ -53,6 +69,14 @@ frameworks cluster provision --manifest clusters/production/cluster.yaml --age-k
 
 # From GitHub (fetches manifest + encrypted files, decrypts automatically)
 frameworks cluster provision --repo org/gitops --age-key ~/.config/sops/age/keys.txt
+```
+
+Shared operator config is loaded from `env_files` in `cluster.yaml`, currently:
+
+```yaml
+env_files:
+  - ../../config/production.env
+  - ../../secrets/production.env
 ```
 
 ## Release Manifests
