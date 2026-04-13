@@ -20,6 +20,8 @@ hosts:
 edge_nodes:
     edge-eu-1:
         ssh: ENC[AES256_GCM,data:Ln+UONdpgW4k73Z2JxBlTlA=,iv:HgK2JhuT6XjrTVpw+5TWHOlw/NZ5fTfDqUeCUDV8Y+k=,tag:28N78skLzT6MCCptr7FKjQ==,type:str]
+    edge-us-1:
+        ssh: ENC[AES256_GCM,data:T7Bb+xNYWMy6YvVLT0ErOndR,iv:l6DDJ9OTGHMNtXJoGKX22k575GtjwpyrV7REiHBNKD4=,tag:aM39iVpMBfj9u/Ye6QcijA==,type:str]
 sops:
     age:
         - recipient: age1xzc3p7hn6urdsv9u0789aqln6fjyzmczuc3ydpgfxehpr3tq4c8q6gpgt7
@@ -31,7 +33,7 @@ sops:
             bWQzeFBpa0hlR3YxWkZrYVg0WDV1YkEKeEKf918QbZItlmWWb3LteORY+J9bMZOQ
             EjLfabK5b1PG1uBvV6TIxHMkn94Dm261BHjSS7wrvtlYr2OewjfKRg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-03-12T10:45:45Z"
-    mac: ENC[AES256_GCM,data:G5Q3JYyuyQJxpc4DxjB4ch9zNpWlcmhvfKxVq1cO4uGeaKvriEECt7GWS7ulyfuDm2XWMfhsUN/jckecMUyWsxTWDBogVwa8MqdxQ9UagHrwSWyPNfzl6IyvVzMGMlbcrM8yasEXGqTdLsRet73Dpy4Grl3ao/EVua/YAEMspwc=,iv:sKlr/CH8V6hXwSXfyJYR+rimyLZaWM46BldUrRVmCRY=,tag:lOInMSKReZ7LFMzRh55kJA==,type:str]
+    lastmodified: "2026-04-13T09:59:12Z"
+    mac: ENC[AES256_GCM,data:YHdjI9KCigOQVs8Y0dVVSAjN9XPnW3sdPKo3mXr1kDgjjrK13JcdDgYvrUH3jK3HSHjbGgqEdHxDluLk2NvsteFt/czZluBbgebzUdAy9lpsb6sWypTKxxrk5wUi1gBjd3v9Zb4q+6T87+tbLFD40vx412Aoce8b/KAhQvD3Pik=,iv:46BhbD6R2nbRKi2C1nr5dDtaB0s6g3+6uKtA/2AN09E=,tag:zOpim90LxQo4aGKQ8gaqaw==,type:str]
     unencrypted_suffix: _unencrypted
     version: 3.12.1

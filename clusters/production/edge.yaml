@@ -13,3 +13,8 @@ nodes:
     region: eu-west
     apply_tune: true
     register_qm: true
+  - name: edge-us-1
+    subdomain: edge-us-1
+    region: us-east
+    apply_tune: true
+    register_qm: true
