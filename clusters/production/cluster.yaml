@@ -44,11 +44,19 @@ clusters:
   core-central-primary:
     name: Core Central Primary
     type: central
-    roles: [control, data, analytics, support, infra, mesh, interface, observability, media]
+    owner_tenant: frameworks
+    roles: [control, data, analytics, support, infra, mesh, interface, observability]
   media-central-primary:
     name: Media Central Primary
-    type: central
+    type: edge
+    default: true
+    platform_official: true
+    owner_tenant: frameworks
     roles: [media]
+    pricing:
+      model: tier_inherit
+      required_tier_level: 0
+      allow_free_tier: true
 
 geoip:
   enabled: true
