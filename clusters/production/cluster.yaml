@@ -99,9 +99,21 @@ infrastructure:
     enabled: true
     mode: native
     version: "4.2.0"
-    cluster_id: "iwNix2BLQny7Z9tlyna7Qw"
-    controller_port: 9093
+    cluster_id: "0MZ8hASuQlWtafZoUhBuGw"
     min_insync_replicas: 2
+    controllers:
+      - host: central-eu-1
+        id: 100
+        port: 9093
+        dir_id: "lFZPzuroSk6ARAoIIJrhrA"
+      - host: regional-eu-1
+        id: 101
+        port: 9093
+        dir_id: "3hBihAu6Q3azGAMvkat57Q"
+      - host: regional-us-1
+        id: 102
+        port: 9093
+        dir_id: "ZoZCnB6FTT26KAux5HP9og"
     brokers:
       - host: central-eu-1
         id: 1
