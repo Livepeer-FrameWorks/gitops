@@ -1,68 +1,68 @@
 platform_version: v0.2.2-rc1
-git_commit: a4f9398e64e64f7d04fedbbbf2b4d61ba8e1b239
-release_date: 2026-04-20T19:13:41Z
+git_commit: a8567042303fa7838292325a77dfc671fe9056d9
+release_date: 2026-04-20T20:30:22Z
 
 services:
   - name: bridge
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-bridge:v0.2.2-rc1
-    digest: sha256:74fe1f845a13d754098c23c5ad84386f3a7c20fe807f31ce4f93cfa237e276d9
+    digest: sha256:0194c2e7508d6f9e1c7669068b6f2141ce79bc2d7b8f929de485b1cfc94e5fcf
   - name: chandler
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-chandler:v0.2.2-rc1
-    digest: sha256:f0a9ab9f20581e49822ffbdcb59db47b68f128c29566f67d560c30a9df61a7d9
+    digest: sha256:45d82a928e0dce646c186cf6dbbcf4355a81ca917a710f1a5f2bc317a38ec9ed
   - name: commodore
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-commodore:v0.2.2-rc1
-    digest: sha256:6a9835265bd1a55dc3a5e9edb59b471464b2a4c2231a34e536c8a2125097f45d
+    digest: sha256:f33b84ab86b51c7adb0347a061f460701b9b391556167bef65ed929a12984a61
   - name: deckhand
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-deckhand:v0.2.2-rc1
-    digest: sha256:ced8e8bc0dc8fbb0df8390e0affca6e208ac33a7ab57a2e9e41bed9deb41d9f3
+    digest: sha256:fd1f0075aa8db572d611b8c2986d50a651a678eb3f8a83f9ca5b19d6fe9d608a
   - name: decklog
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-decklog:v0.2.2-rc1
-    digest: sha256:19f9145b8cd939b62c09a495c8d27b7287455ccdf18fc1dae4ba983a9dee40c5
+    digest: sha256:476514697ce7eedf33b44a6eb971229e788edcf047fa145f506c5a7bc6bcc72b
   - name: foghorn
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-foghorn:v0.2.2-rc1
-    digest: sha256:c9e7661157138edeeca0cf9f13aab968765811b83cc68964231658e6ab768845
+    digest: sha256:c3ad617b95dc7f3ab1ac3e85eda96e3386b9055add078cab434af774e6358bcc
   - name: helmsman
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-helmsman:v0.2.2-rc1
-    digest: sha256:64541cfaed4cc5fff855d90503e7fe88e91fbc85141e373c9ed1ac95448822e1
+    digest: sha256:15bdfc63530c8d1e0f625531f1e1eae555097640df25554cd43bef362ff7ca30
   - name: navigator
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-navigator:v0.2.2-rc1
-    digest: sha256:39482b021708c24577560acbba96c8901e5b920d8cf508ad7d914c6abffe592b
+    digest: sha256:454ede42fad2850e87782a07e84f65e10604a7e0153d4a3c591de9c77bdbe875
   - name: periscope-ingest
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-periscope-ingest:v0.2.2-rc1
-    digest: sha256:77a1a964a93f22ac59f49bbeac11d606e51b9954259a1538b851dc44a13d68bf
+    digest: sha256:e6d2852ee06f5c6b7e6523b0d36c7059ee91b577f8d95bbc45d144d54c52e9fe
   - name: periscope-query
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-periscope-query:v0.2.2-rc1
-    digest: sha256:03a3545c6bfb6dfb749a52774b6eceae38050e265b866d05b58ab5de370ae5f4
+    digest: sha256:dd708708d1d1d60c48962f0ae5a6f65d2551384d3c97b78dbe5f239d74934003
   - name: purser
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-purser:v0.2.2-rc1
-    digest: sha256:a90933c354976928d2d0bdb70477fe30d0a7c9c70d3f48a69740ca5d6ef518b9
+    digest: sha256:a50924ce40e88df2f5a7f07df672001319461a6dd1cfb36700914c530df05e8a
   - name: quartermaster
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-quartermaster:v0.2.2-rc1
-    digest: sha256:46262622bbbfc2a4a78e498247585c4813070899d621e59e9c091f0d6f8b0808
+    digest: sha256:3aa1fc47966376091d66b378ac8b88e5e29dd6e347cd97936d4732f711482fec
   - name: signalman
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-signalman:v0.2.2-rc1
-    digest: sha256:6650e4174e877461caa1571489b62663887a369fdb1e9cf08e8cd026e517294e
+    digest: sha256:b6f05f01aa669f38cc4f2bf559040cdda69bb8c958b923709244b725e4b1c516
   - name: skipper
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-skipper:v0.2.2-rc1
-    digest: sha256:fab204a332d31a9819e71b50ca20e8aa052b16461f8d91a49a3427630de00036
+    digest: sha256:916f092e7e3ff902c32b4bf806b75a09c59b1a931f458228816edb31696d704e
   - name: steward
     service_version: 0.2.0
     image: ghcr.io/livepeer-frameworks/frameworks-steward:v0.2.2-rc1
-    digest: sha256:aa427942934023e254f581b13a21dcb80f0d3f50ced97532ddd1f37db8968d4d
+    digest: sha256:81d46dab2dfad9be88cfdfec41c23c4707996971e18c81b4eb00699dc4f30ccf
 
 native_binaries:
   - name: bridge
@@ -239,15 +239,15 @@ native_binaries:
 interfaces:
   - name: chartroom
     image: ghcr.io/livepeer-frameworks/frameworks-chartroom:v0.2.2-rc1
-    digest: sha256:b1c30cf6fa98e2311b9691dae17fe8ffa113685baad9dff4c15eae71c03927fc
+    digest: sha256:e513e826b663df24c5bf25d242f1e69a07cae7d8c70c83b7c661e8b670131157
     static_bundle: chartroom-build.tar.gz
   - name: foredeck
     image: ghcr.io/livepeer-frameworks/frameworks-foredeck:v0.2.2-rc1
-    digest: sha256:0b5343011da69de272223b87217e3d19a65ec46504f255d6e81416eaff3fd4ad
+    digest: sha256:42450de1108b270cb86017609ea98fc722074e903e991b0b4c28dca8a1accd0a
     static_bundle: foredeck-build.tar.gz
   - name: logbook
     image: ghcr.io/livepeer-frameworks/frameworks-logbook:v0.2.2-rc1
-    digest: sha256:1359b8a23999618c6340dda7bd73e7646fdc2f5836b03dcecfb19dd67198e136
+    digest: sha256:b10379cb3a0f3d84be79dc044fbc6d299f6723c253aa8d136574aa1e57cf5002
     static_bundle: logbook-build.tar.gz
 
 external_dependencies:
