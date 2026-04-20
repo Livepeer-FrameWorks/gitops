@@ -1,0 +1,392 @@
+platform_version: v0.2.2-rc1
+git_commit: 06197fc3932bafec10160d0f93cd13f661be8c02
+release_date: 2026-04-20T12:06:51Z
+
+services:
+  - name: bridge
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-bridge:v0.2.2-rc1
+    digest: sha256:e9fbde5b9530e539586447f31fcad9ccca621a9e2031dab64260f57cc3f5708f
+  - name: chandler
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-chandler:v0.2.2-rc1
+    digest: sha256:0cd4ca996032816116b4e83b73026846b5161814a882aa3169af2df0fcf0ccb2
+  - name: commodore
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-commodore:v0.2.2-rc1
+    digest: sha256:dddf00e120b1fe6ed7bd1d6cee1e8d9c45135425ae4c48d88c96ca7372ae53cb
+  - name: deckhand
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-deckhand:v0.2.2-rc1
+    digest: sha256:980097869d869fd7c3ea1c39ccd129dbab16704d5abc8aba5a75ac0d400d1f18
+  - name: decklog
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-decklog:v0.2.2-rc1
+    digest: sha256:4fdaeeb4f12eeb8c583548c20737faf9d94f29efd4e2fee27ccd7a139e290a45
+  - name: foghorn
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-foghorn:v0.2.2-rc1
+    digest: sha256:413584dfd6bfdb0b527bb5112bbee665686ad06abb6c8e16526f132e3b657123
+  - name: helmsman
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-helmsman:v0.2.2-rc1
+    digest: sha256:8ccde445ec98eef37490976de2c37d32d6ae3454b2c8dae98c07f729cbd90d49
+  - name: navigator
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-navigator:v0.2.2-rc1
+    digest: sha256:df93e1ea47714533bb216bb2a0a04918019c51116420a41c6d226a6c304dc153
+  - name: periscope-ingest
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-periscope-ingest:v0.2.2-rc1
+    digest: sha256:b7fc5584c8a723129c90f3e442e9b8adce61b488ebacb2e3e4ccef0329aa7c22
+  - name: periscope-query
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-periscope-query:v0.2.2-rc1
+    digest: sha256:14cd25c714eb431cf06974676d9166f167a765adbb9a019d4c7d1e7c6492e19d
+  - name: purser
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-purser:v0.2.2-rc1
+    digest: sha256:046af724e92f6e8f791777473067e559ec7cb6719317d1897d0ecdcc6c929946
+  - name: quartermaster
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-quartermaster:v0.2.2-rc1
+    digest: sha256:408447fb074649af270ca9a61b6f24b2c345e3b63f88c693f27def46224530d4
+  - name: signalman
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-signalman:v0.2.2-rc1
+    digest: sha256:afa38047e67cee11a9c8bedcd098f1c4f7fc182bc394ea1f3315407fc87f21d3
+  - name: skipper
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-skipper:v0.2.2-rc1
+    digest: sha256:0fd22e9dd895589b4021c0348af2489bba4116a542922f454796800dadb9720a
+  - name: steward
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-steward:v0.2.2-rc1
+    digest: sha256:15a9bfbb59714d0d82900f82e9b3f8f14a31642db3e76f708bf83b67642eb1fa
+
+native_binaries:
+  - name: bridge
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-bridge-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-bridge-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-bridge-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-bridge-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-bridge-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-bridge-v0.2.2-rc1-darwin-arm64.zip
+  - name: chandler
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-chandler-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-chandler-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-chandler-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-chandler-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-chandler-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-chandler-v0.2.2-rc1-darwin-arm64.zip
+  - name: commodore
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-commodore-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-commodore-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-commodore-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-commodore-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-commodore-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-commodore-v0.2.2-rc1-darwin-arm64.zip
+  - name: deckhand
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-deckhand-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-deckhand-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-deckhand-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-deckhand-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-deckhand-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-deckhand-v0.2.2-rc1-darwin-arm64.zip
+  - name: decklog
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-decklog-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-decklog-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-decklog-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-decklog-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-decklog-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-decklog-v0.2.2-rc1-darwin-arm64.zip
+  - name: foghorn
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-foghorn-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-foghorn-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-foghorn-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-foghorn-v0.2.2-rc1-linux-arm64.tar.gz
+  - name: helmsman
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-helmsman-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-helmsman-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-helmsman-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-helmsman-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-helmsman-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-helmsman-v0.2.2-rc1-darwin-arm64.zip
+  - name: navigator
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-navigator-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-navigator-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-navigator-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-navigator-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-navigator-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-navigator-v0.2.2-rc1-darwin-arm64.zip
+  - name: periscope-ingest
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-periscope-ingest-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-periscope-ingest-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-periscope-ingest-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-periscope-ingest-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-periscope-ingest-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-periscope-ingest-v0.2.2-rc1-darwin-arm64.zip
+  - name: periscope-query
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-periscope-query-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-periscope-query-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-periscope-query-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-periscope-query-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-periscope-query-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-periscope-query-v0.2.2-rc1-darwin-arm64.zip
+  - name: purser
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-purser-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-purser-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-purser-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-purser-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-purser-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-purser-v0.2.2-rc1-darwin-arm64.zip
+  - name: quartermaster
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-quartermaster-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-quartermaster-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-quartermaster-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-quartermaster-v0.2.2-rc1-linux-arm64.tar.gz
+  - name: signalman
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-signalman-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-signalman-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-signalman-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-signalman-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-signalman-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-signalman-v0.2.2-rc1-darwin-arm64.zip
+  - name: skipper
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-skipper-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-skipper-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-skipper-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-skipper-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-skipper-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-skipper-v0.2.2-rc1-darwin-arm64.zip
+  - name: steward
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-steward-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-steward-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-steward-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-steward-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-steward-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-steward-v0.2.2-rc1-darwin-arm64.zip
+  - name: privateer
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-privateer-v0.2.2-rc1-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-privateer-v0.2.2-rc1-linux-amd64.tar.gz
+      - arch: linux-arm64
+        file: frameworks-privateer-v0.2.2-rc1-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-privateer-v0.2.2-rc1-linux-arm64.tar.gz
+      - arch: darwin-arm64
+        file: frameworks-privateer-v0.2.2-rc1-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.2-rc1/frameworks-privateer-v0.2.2-rc1-darwin-arm64.zip
+
+interfaces:
+  - name: chartroom
+    image: ghcr.io/livepeer-frameworks/frameworks-chartroom:v0.2.2-rc1
+    digest: sha256:4a8f20730cbf64a7a25ee6ea19a3bfac046e8b10b0e0246df3a9d21c27f46f6c
+    static_bundle: chartroom-build.tar.gz
+  - name: foredeck
+    image: ghcr.io/livepeer-frameworks/frameworks-foredeck:v0.2.2-rc1
+    digest: sha256:285dbe644e9e6af383748585b48908cb000eab9d9284cfd0713da760d873bf28
+    static_bundle: foredeck-build.tar.gz
+  - name: logbook
+    image: ghcr.io/livepeer-frameworks/frameworks-logbook:v0.2.2-rc1
+    digest: sha256:235cf97d0b8c02f5661f319c43ef9a5e720ada3aec925275311bea8a7465da5f
+    static_bundle: logbook-build.tar.gz
+
+external_dependencies:
+  - name: mistserver
+    image: ghcr.io/livepeer-frameworks/mistserver:development-c97caf1
+    digest: "sha256:60b4d1e58cb6fcc300f6d1018c8aedcd0a1113fcead98291bb7578dff3d2dde9"
+    release_url: "https://github.com/Livepeer-FrameWorks/mistserver/releases/tag/frameworks-v0.2.0-rc4"
+    release_tag: "frameworks-v0.2.0-rc4"
+    binaries:
+      - name: docker-tag.txt
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.2.0-rc4/docker-tag.txt
+        size_bytes: 20
+      - name: mistserver-darwin-arm64-development-c97caf1.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.2.0-rc4/mistserver-darwin-arm64-development-c97caf1.tar.gz
+        size_bytes: 136335267
+      - name: mistserver-linux-amd64-development-c97caf1.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.2.0-rc4/mistserver-linux-amd64-development-c97caf1.tar.gz
+        size_bytes: 122093782
+      - name: mistserver-linux-arm64-development-c97caf1.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.2.0-rc4/mistserver-linux-arm64-development-c97caf1.tar.gz
+        size_bytes: 109400839
+  - name: go-livepeer
+    image: ghcr.io/livepeer-frameworks/go-livepeer:v0.2.0-rc3
+    digest: "sha256:b765a23491ac9d02bf8a6de070ffc625f807668a3b4ddca4c0e69d382e0967f3"
+    release_url: "https://github.com/Livepeer-FrameWorks/go-livepeer/releases/tag/v0.2.0-rc3"
+    release_tag: "v0.2.0-rc3"
+    binaries:
+      - name: livepeer-darwin-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-darwin-arm64.tar.gz
+        size_bytes: 139132223
+      - name: livepeer-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-linux-amd64.tar.gz
+        size_bytes: 187773774
+      - name: livepeer-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-linux-arm64.tar.gz
+        size_bytes: 133758702
+      - name: livepeer-linux-gpu-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-linux-gpu-amd64.tar.gz
+        size_bytes: 189124658
+      - name: livepeer-linux-gpu-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-linux-gpu-arm64.tar.gz
+        size_bytes: 135005781
+
+# Infrastructure Requirements for FrameWorks Platform
+# This file tracks tested infrastructure versions for each platform release
+# Update manually when bumping infrastructure components
+
+infrastructure:
+  - name: postgresql
+    tested_version: "15.14"
+    minimum_version: "14.0"
+    image: postgres:15
+    dev_version: "15.14"
+    prod_version: "15.12-YB-2025.1.0.0"
+    notes: "Dev uses PostgreSQL 15.14. Prod uses YugabyteDB (PostgreSQL 15.12 compatible)"
+
+  - name: kafka
+    tested_version: "4.2.0"
+    minimum_version: "4.0.0"
+    image: apache/kafka:4.2.0
+    dev_version: "4.2.0"
+    prod_version: "4.2.0"
+    notes: "KRaft-only (no ZooKeeper). Supports dedicated controllers (prod) and combined mode (dev)."
+
+  - name: zookeeper
+    tested_version: "3.9.5"
+    minimum_version: "3.9.2"
+    image: n/a
+    notes: "No longer required for Kafka. Available as standalone infrastructure if needed."
+
+  - name: clickhouse
+    tested_version: "25.9.2.1"
+    minimum_version: "18.16.1"
+    image: clickhouse/clickhouse-server:25.9.2.1
+    dev_version: "25.9.2.1"
+    prod_version: "18.16.1"
+    notes: "WARNING: Dev (25.9.2.1) and Prod (18.16.1) have significant version gap. Consider upgrading prod"
+
+  - name: prometheus
+    tested_version: "3.6.0"
+    minimum_version: "2.40.0"
+    image: prom/prometheus:v3.6.0
+    dev_version: "3.6.0"
+    prod_alternative: "VictoriaMetrics v1.122.0"
+    notes: "Dev uses Prometheus 3.6.0. Prod uses VictoriaMetrics v1.122.0 (Prometheus-compatible)"
+
+  - name: victoriametrics
+    tested_version: "v1.122.0"
+    minimum_version: "v1.100.0"
+    image: victoriametrics/victoria-metrics:v1.122.0
+    prod_version: "v1.122.0"
+    notes: "Production alternative to Prometheus. Prometheus-compatible API"
+
+  - name: vmauth
+    tested_version: "v1.122.0"
+    minimum_version: "v1.100.0"
+    image: victoriametrics/vmauth:v1.122.0
+    prod_version: "v1.122.0"
+    notes: "JWT-authenticated reverse proxy in front of VictoriaMetrics for scoped edge telemetry writes"
+
+  - name: vmagent
+    tested_version: "v1.122.0"
+    minimum_version: "v1.100.0"
+    image: victoriametrics/vmagent:v1.122.0
+    prod_version: "v1.122.0"
+    notes: "Per-host metrics agent that scrapes local endpoints and remote-writes to VictoriaMetrics"
+
+  - name: grafana
+    tested_version: "12.2.0"
+    minimum_version: "11.0.0"
+    image: grafana/grafana:12.2.0
+    dev_version: "12.2.0"
+    prod_version: "11.6.1"
+    notes: "Requires grafana-clickhouse-datasource plugin for ClickHouse integration"
+
+  - name: nginx
+    tested_version: "1.29.3"
+    minimum_version: "1.24.0"
+    image: nginx:1.29.3-alpine
+    dev_version: "1.29.3 (alpine)"
+    prod_version: "1.29.1"
+    notes: "Alpine variant for smaller footprint in dev/docker environments"
+
+  - name: listmonk
+    tested_version: "v4.0.1"
+    minimum_version: "v3.0.0"
+    image: listmonk/listmonk:v4.0.1
+    dev_version: "v4.0.1"
+    prod_version: "v4.0.1"
+    notes: "Self-hosted newsletter manager. Requires PostgreSQL."
+
+  - name: metabase
+    tested_version: "v0.52.5"
+    minimum_version: "v0.46.0"
+    image: metabase/metabase:v0.52.5
+    notes: "BI analytics dashboard. Deployed via FlexibleProvisioner in Docker mode."
+
+  - name: valkey
+    tested_version: "8.1"
+    minimum_version: "7.2"
+    image: valkey/valkey:8.1-alpine
+    notes: "Redis-compatible fork. Used for Foghorn HA state sync and Chatwoot Sidekiq."
