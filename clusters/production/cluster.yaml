@@ -14,31 +14,49 @@ hosts:
     roles: [infrastructure, services, interfaces]
     labels:
       region: eu-west
+    wireguard_ip: 10.88.156.88
+    wireguard_public_key: vFYvnHNr+gmD7kYO8BE+fUTtLb1mhzNpao2AkVFcugA=
+    wireguard_port: 51820
   yuga-eu-1:
     cluster: core-central-primary
     roles: [infrastructure]
     labels:
       region: eu-west
+    wireguard_ip: 10.88.112.204
+    wireguard_public_key: QUNWNWj8AyFfNAXkHudxNiOhwU7lA2z2DEoto0dVQnI=
+    wireguard_port: 51820
   yuga-eu-2:
     cluster: core-central-primary
     roles: [infrastructure]
     labels:
       region: eu-west
+    wireguard_ip: 10.88.147.42
+    wireguard_public_key: +XXxcytn1rynRMHwok3R7As9JlI+vm3PQIlfjyCa/2Q=
+    wireguard_port: 51820
   yuga-eu-3:
     cluster: core-central-primary
     roles: [infrastructure]
     labels:
       region: eu-west
+    wireguard_ip: 10.88.89.127
+    wireguard_public_key: tW+e/IB1LOjiauoDJ2s5xCx1ZJWIRiQq6dyEXuEKpwQ=
+    wireguard_port: 51820
   regional-eu-1:
     cluster: core-central-primary
     roles: [services, interfaces]
     labels:
       region: eu-west
+    wireguard_ip: 10.88.158.227
+    wireguard_public_key: E1cM5TPD6Bv+WwSf/3MWFuD33YBHix4v2Gv5xZ4RJ1s=
+    wireguard_port: 51820
   regional-us-1:
     cluster: core-central-primary
     roles: [services, interfaces]
     labels:
       region: us-east
+    wireguard_ip: 10.88.236.29
+    wireguard_public_key: g8jOYxdVoTDaEoPBpuveaJEw7Nd+uvnbDs8Y3c/l/QI=
+    wireguard_port: 51820
 
 clusters:
   core-central-primary:
@@ -290,3 +308,8 @@ observability:
     image: grafana/grafana:12.4.2
     host: central-eu-1
     port: 3000
+
+wireguard:
+  enabled: true
+  mesh_cidr: 10.88.0.0/16
+  listen_port: 51820
