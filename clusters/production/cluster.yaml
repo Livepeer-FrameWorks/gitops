@@ -1,7 +1,7 @@
 version: v1
 type: cluster
 profile: production
-channel: rc
+channel: stable
 root_domain: frameworks.network
 env_files:
   - ../../config/production.env
