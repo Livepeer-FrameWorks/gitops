@@ -1,0 +1,460 @@
+platform_version: v0.2.8
+git_commit: 9e3f02a7289d761d72623f3bbc44195d02f1f71d
+release_date: 2026-04-27T09:26:53Z
+
+services:
+  - name: bridge
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-bridge:v0.2.8
+    digest: sha256:1ab31f085dc77d98e54e0bd3461cd969fc7e797e914b2660cf3ae03d277875f7
+  - name: chandler
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-chandler:v0.2.8
+    digest: sha256:58de9266c52bb386c939b2ed11fa9c363e2ac4afd33c269f0489f4180e78133c
+  - name: commodore
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-commodore:v0.2.8
+    digest: sha256:c3bc4fde96494eae8d73d90cf22c54f077815cc14c61f4f0467a0ca1dc93deb3
+  - name: deckhand
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-deckhand:v0.2.8
+    digest: sha256:b637dfb12f70859287c52202d782dbf1973e227e9cfae231cf168cbb5caf51f3
+  - name: decklog
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-decklog:v0.2.8
+    digest: sha256:240acfa7690664d3f2487e4b649ff9ea83b468e7d18ebe6b6528b5e14ccbae9d
+  - name: foghorn
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-foghorn:v0.2.8
+    digest: sha256:5d110d76b4198168db0559aefb054705fdad3a0ee493165ea29de9d468218bff
+  - name: helmsman
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-helmsman:v0.2.8
+    digest: sha256:a2bb5309d51b10c5cf0cf8a80adabff08e8d0dafec4a5cc23a5f79a7dd62abd5
+  - name: navigator
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-navigator:v0.2.8
+    digest: sha256:e74ba83eac9baccb58a4c8734fe90e6977917221f03af0397b6fbe2e3be33cb6
+  - name: periscope-ingest
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-periscope-ingest:v0.2.8
+    digest: sha256:2d5a720655acc5fe7f918fe96a919455ed3e63f55d830fb6b7e8df14a2dd4c41
+  - name: periscope-query
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-periscope-query:v0.2.8
+    digest: sha256:540ec47a821ee1a177bcf399cd7564766529725698a434d5e64085b81c941a21
+  - name: purser
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-purser:v0.2.8
+    digest: sha256:3c7a0fbad751abbf0e80d80501bfafc2bf2540418f1a6c067833931799161eff
+  - name: quartermaster
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-quartermaster:v0.2.8
+    digest: sha256:b8fbaf705e31b5e4fb33e247564c9984977859a931e87a13cd473c673398a914
+  - name: signalman
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-signalman:v0.2.8
+    digest: sha256:c3c58720e41843089b4ae2954b4f8335765768eeb782390e5aa25752dc214311
+  - name: skipper
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-skipper:v0.2.8
+    digest: sha256:e2305c6551ede696dbb97a1bd447b6e4721aa032e3dceb1b0cd5292e36f5d823
+  - name: steward
+    service_version: 0.2.0
+    image: ghcr.io/livepeer-frameworks/frameworks-steward:v0.2.8
+    digest: sha256:79efd7a3f12f656e6df40e951f3549b2d865b86c1767c88247ad69bac314ec10
+
+native_binaries:
+  - name: bridge
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-bridge-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-bridge-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:313874bbe06d08ac8fccf00ba5874754ad42487554970fff194982dfc8476aef
+      - arch: linux-arm64
+        file: frameworks-bridge-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-bridge-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:38656cad12ee35a777a4b17104b9133f425f30728c9667a775a9e2bab92da690
+      - arch: darwin-arm64
+        file: frameworks-bridge-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-bridge-v0.2.8-darwin-arm64.zip
+        checksum: sha256:b4312e0c1c424e6a156a566187b543efabb318f5fc71d062e96100aa88d18021
+  - name: chandler
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-chandler-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-chandler-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:56ebf79b2ab49a424da238fcad00be4654f54ed849bc9b94eb536d8070e04952
+      - arch: linux-arm64
+        file: frameworks-chandler-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-chandler-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:65a81d1cf8c3e11d82c0c1343051d83237a5b7a0d3c7efd778b6c28e30ec1219
+      - arch: darwin-arm64
+        file: frameworks-chandler-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-chandler-v0.2.8-darwin-arm64.zip
+        checksum: sha256:14141aa2ee5494668350063150a43dc37dde83e02255da3f55a98c5e6c2f3e29
+  - name: commodore
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-commodore-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-commodore-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:2031e53349753a40bf064cb906bfa54c1f104db60bae461416a4864b7d3c1eba
+      - arch: linux-arm64
+        file: frameworks-commodore-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-commodore-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:bdef33a4e9a30fcc6a78775e59c6b44a7c157b94d70652ed08b4b6933f408e9a
+      - arch: darwin-arm64
+        file: frameworks-commodore-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-commodore-v0.2.8-darwin-arm64.zip
+        checksum: sha256:fa5ab1af79187a1d3de71ac350def212cfc99621c21a13bf71d82fefe29c2c06
+  - name: deckhand
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-deckhand-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-deckhand-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:dd0ba918cf284f85dece44c9cdb469cffd81e38d550d61df38b9698ec53f6146
+      - arch: linux-arm64
+        file: frameworks-deckhand-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-deckhand-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:dae9efd144b108674be45ba6682b7ac340dcaee0eb144cd11020eb59de2768bd
+      - arch: darwin-arm64
+        file: frameworks-deckhand-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-deckhand-v0.2.8-darwin-arm64.zip
+        checksum: sha256:2c178c416eba38f51a9b1f132f64a6dcc3d156bac826c1a591a7ac25f4c98246
+  - name: decklog
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-decklog-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-decklog-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:5197c4b853d89807de9d374ff0af7d35069661390d0b12609180e0d3b19c3623
+      - arch: linux-arm64
+        file: frameworks-decklog-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-decklog-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:89b0044ec1917019b295831b0303e9199e55da22ffa073a2f16c9663b9d296a3
+      - arch: darwin-arm64
+        file: frameworks-decklog-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-decklog-v0.2.8-darwin-arm64.zip
+        checksum: sha256:288f422edd02b9d3bbe28b89ffd565d2aa5f3b1add18261aa112fe31f034edaf
+  - name: foghorn
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-foghorn-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-foghorn-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:c8393d963bbbae4142cca2b6453b8b91ea7212ef48597f0928fe24ce3d545017
+      - arch: linux-arm64
+        file: frameworks-foghorn-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-foghorn-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:d8c26f1d144e8ea959ee48a62e04e9ec29921f9401797367d995868c453d2635
+  - name: helmsman
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-helmsman-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-helmsman-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:b14622691df4e23103a62ff4101046a5176eb5136f6063b3477c99ec51d2f824
+      - arch: linux-arm64
+        file: frameworks-helmsman-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-helmsman-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:e61119b5f6c6c4d90bc0abcbcd7947d08543bb20b84db4e85df4f5481e442e5e
+      - arch: darwin-arm64
+        file: frameworks-helmsman-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-helmsman-v0.2.8-darwin-arm64.zip
+        checksum: sha256:013d5fb332c30f3b1b858da376e7f9dcc0e3eb80d1b7f5056286d350b49a234f
+  - name: navigator
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-navigator-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-navigator-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:d86ef9072774ec96d8c36bf571823fd6888152e60f64bdf4dcf7e83edc5de971
+      - arch: linux-arm64
+        file: frameworks-navigator-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-navigator-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:51149bbc4429972d9068359bf2a10c5db0575bdaad1986ccc766a3d4914a2d21
+      - arch: darwin-arm64
+        file: frameworks-navigator-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-navigator-v0.2.8-darwin-arm64.zip
+        checksum: sha256:10f46f4a9f95204cf1ba486c3ff3d4d8850942f3e9eb05af8acea7d8c767e1dc
+  - name: periscope-ingest
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-periscope-ingest-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-periscope-ingest-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:777ba069bcff8a4599ac0314e1f92177ef285a90ed77e4bc69b542013cdaed64
+      - arch: linux-arm64
+        file: frameworks-periscope-ingest-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-periscope-ingest-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:da603d56c2d34dd064119c2c8846908232c1e710ec35e3a65111b3d238d6d2c0
+      - arch: darwin-arm64
+        file: frameworks-periscope-ingest-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-periscope-ingest-v0.2.8-darwin-arm64.zip
+        checksum: sha256:dd25f3678b30d6cb63da3a93689b476e30eedb73f36189a692eb53189c864669
+  - name: periscope-query
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-periscope-query-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-periscope-query-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:f8d63b833fb8b0fc23c14cf7779e24887a7001ff0379381699b73b58fca4cc00
+      - arch: linux-arm64
+        file: frameworks-periscope-query-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-periscope-query-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:7f5b6a420593254a0f230ef9af0457b5ba91a3dd7714463571b560cce0c0fbd8
+      - arch: darwin-arm64
+        file: frameworks-periscope-query-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-periscope-query-v0.2.8-darwin-arm64.zip
+        checksum: sha256:4d83ccce51b71fabb19f8b409755239b9f3bad163ea8b17af23d8842116cd65e
+  - name: purser
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-purser-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-purser-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:10346da1114d76874412f0fea68da61086cf135cbc13f30dc641357d651cc412
+      - arch: linux-arm64
+        file: frameworks-purser-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-purser-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:8c2492ff4017c259324dc264da8a3e0097a927c36650bb7302406f3d5aaa8e81
+      - arch: darwin-arm64
+        file: frameworks-purser-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-purser-v0.2.8-darwin-arm64.zip
+        checksum: sha256:a69a928567370fa21fcb84face89915ebf04e4187d54e386268c0b6abe18ee2f
+  - name: quartermaster
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-quartermaster-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-quartermaster-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:6dba1c5c0445230a2b9647db836d791d9e5f704755906fdf0f7a7b5845f904ff
+      - arch: linux-arm64
+        file: frameworks-quartermaster-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-quartermaster-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:44647e6727b0f6436abc7e07168a64832ab2dbea37572548630261668130e8b5
+  - name: signalman
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-signalman-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-signalman-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:d4854c8559357629765bc1a5724997ac3b93ba4ffe7068c55fc07fb76a4a8952
+      - arch: linux-arm64
+        file: frameworks-signalman-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-signalman-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:e4429cf8c631772fb121d082cba3d2c0a12424ebaf3cc65372c818ef0de2393c
+      - arch: darwin-arm64
+        file: frameworks-signalman-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-signalman-v0.2.8-darwin-arm64.zip
+        checksum: sha256:be92d649cd91cad7b14e7d1f6cf8a741da41d3b65b50a5b5384b9ffff4467dbf
+  - name: skipper
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-skipper-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-skipper-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:38943e11f3faa2442348bad68133eabef3fd1a8dc286147935444bde2a53414a
+      - arch: linux-arm64
+        file: frameworks-skipper-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-skipper-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:c0603f6ef339c93398c454a986e525bd54e9c611cdef5af32b0a76eef05aa4ce
+      - arch: darwin-arm64
+        file: frameworks-skipper-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-skipper-v0.2.8-darwin-arm64.zip
+        checksum: sha256:67d73c59dee27c73e428a33be675d4c3555cdf597d00e4787e33a08549d9a30a
+  - name: steward
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-steward-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-steward-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:b400962baea382115319149824a23a8c9d7dfee68dad0eab31fb573789546299
+      - arch: linux-arm64
+        file: frameworks-steward-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-steward-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:310c9cc95f887b619367cbefea91194527233be86c3bd6a7ed998ecc22d31904
+      - arch: darwin-arm64
+        file: frameworks-steward-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-steward-v0.2.8-darwin-arm64.zip
+        checksum: sha256:7abee0beef08a5b6e2998f3c549b54f4a26727360bf5d672ac5d7791373a82f9
+  - name: privateer
+    artifacts:
+      - arch: linux-amd64
+        file: frameworks-privateer-v0.2.8-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-privateer-v0.2.8-linux-amd64.tar.gz
+        checksum: sha256:60c59fc6719f82fb627a56654583fcb5850cedd2837c3676bd6b1b4d0000957e
+      - arch: linux-arm64
+        file: frameworks-privateer-v0.2.8-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-privateer-v0.2.8-linux-arm64.tar.gz
+        checksum: sha256:0e6266e329c88fbe38b615126d425eee5c87a365f1a764e3ba3be79bcb0b6296
+      - arch: darwin-arm64
+        file: frameworks-privateer-v0.2.8-darwin-arm64.zip
+        url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.2.8/frameworks-privateer-v0.2.8-darwin-arm64.zip
+        checksum: sha256:8f8bf7ece9cc6a583d58703f2ae4e0ae62309125f4c73d2699c21fb050d955d1
+
+interfaces:
+  - name: chartroom
+    image: ghcr.io/livepeer-frameworks/frameworks-chartroom:v0.2.8
+    digest: sha256:8619f59b6f58a232d3d7b54726c3fb1e8b015ac4fe85c3c3e122d67df568b7ad
+    static_bundle: chartroom-build.tar.gz
+  - name: foredeck
+    image: ghcr.io/livepeer-frameworks/frameworks-foredeck:v0.2.8
+    digest: sha256:75af117ea9df2516a448e8df6511b760a15c935ad47421a7cc37556cdbe54561
+    static_bundle: foredeck-build.tar.gz
+  - name: logbook
+    image: ghcr.io/livepeer-frameworks/frameworks-logbook:v0.2.8
+    digest: sha256:86f0e60bd4ca644b8e363976016aed37720c48004dc2fff2fc052cb5c428cf51
+    static_bundle: logbook-build.tar.gz
+
+external_dependencies:
+  - name: mistserver
+    image: ghcr.io/livepeer-frameworks/mistserver:development-c97caf1
+    digest: "sha256:60b4d1e58cb6fcc300f6d1018c8aedcd0a1113fcead98291bb7578dff3d2dde9"
+    release_url: "https://github.com/Livepeer-FrameWorks/mistserver/releases/tag/frameworks-v0.2.0-rc4"
+    release_tag: "frameworks-v0.2.0-rc4"
+    binaries:
+      - name: docker-tag.txt
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.2.0-rc4/docker-tag.txt
+        size_bytes: 20
+      - name: mistserver-darwin-arm64-development-c97caf1.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.2.0-rc4/mistserver-darwin-arm64-development-c97caf1.tar.gz
+        size_bytes: 136335267
+      - name: mistserver-linux-amd64-development-c97caf1.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.2.0-rc4/mistserver-linux-amd64-development-c97caf1.tar.gz
+        size_bytes: 122093782
+      - name: mistserver-linux-arm64-development-c97caf1.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/mistserver/releases/download/frameworks-v0.2.0-rc4/mistserver-linux-arm64-development-c97caf1.tar.gz
+        size_bytes: 109400839
+  - name: go-livepeer
+    image: ghcr.io/livepeer-frameworks/go-livepeer:v0.2.0-rc3
+    digest: "sha256:b765a23491ac9d02bf8a6de070ffc625f807668a3b4ddca4c0e69d382e0967f3"
+    release_url: "https://github.com/Livepeer-FrameWorks/go-livepeer/releases/tag/v0.2.0-rc3"
+    release_tag: "v0.2.0-rc3"
+    binaries:
+      - name: livepeer-darwin-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-darwin-arm64.tar.gz
+        size_bytes: 139132223
+      - name: livepeer-linux-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-linux-amd64.tar.gz
+        size_bytes: 187773774
+      - name: livepeer-linux-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-linux-arm64.tar.gz
+        size_bytes: 133758702
+      - name: livepeer-linux-gpu-amd64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-linux-gpu-amd64.tar.gz
+        size_bytes: 189124658
+      - name: livepeer-linux-gpu-arm64.tar.gz
+        url: https://github.com/Livepeer-FrameWorks/go-livepeer/releases/download/v0.2.0-rc3/livepeer-linux-gpu-arm64.tar.gz
+        size_bytes: 135005781
+
+# Infrastructure manifest for FrameWorks platform releases.
+# CI appends this file verbatim to the generated release manifest; the CLI
+# reads it via the manifest fetcher. Each entry pins the version shipped by
+# this platform release. `image:` is the docker reference for docker mode;
+# `artifacts:` carries per-arch URL and optional checksum for native mode.
+
+infrastructure:
+  - name: postgresql
+    version: "15.14"
+    image: postgres:15
+    artifacts:
+      - arch: linux-amd64
+        url: https://ftp.postgresql.org/pub/source/v15.14/postgresql-15.14.tar.bz2
+        checksum: sha256:06dd75d305cd3870ee62b3932e661c624543eaf9ae2ba37cdec0a4f8edd051d2
+      - arch: linux-arm64
+        url: https://ftp.postgresql.org/pub/source/v15.14/postgresql-15.14.tar.bz2
+        checksum: sha256:06dd75d305cd3870ee62b3932e661c624543eaf9ae2ba37cdec0a4f8edd051d2
+
+  - name: yugabyte
+    version: "2025.1.3.2"
+    artifacts:
+      - arch: linux-amd64
+        url: https://downloads.yugabyte.com/releases/2025.1.3.2/yugabyte-2025.1.3.2-b1-linux-x86_64.tar.gz
+        checksum: sha256:31d8b3a65f75d96a3ffe9fe61f8398018576afe8439c0b43115075296cee3a20
+      - arch: linux-arm64
+        url: https://downloads.yugabyte.com/releases/2025.1.3.2/yugabyte-2025.1.3.2-b1-el8-aarch64.tar.gz
+        checksum: sha256:ff6f7c4170bfda693f89103c2212a538ba68e0a632386b7bd96fa5daf7579920
+
+  - name: kafka
+    version: "4.2.0"
+    image: apache/kafka:4.2.0
+    artifacts:
+      - arch: linux-amd64
+        url: https://downloads.apache.org/kafka/4.2.0/kafka_2.13-4.2.0.tgz
+        checksum: sha512:16ce46e590ba915f01b720ea514445e49c88bf129cf4ceab88878b122d54ef24f0dedb88d0eb178957f58057a6c6a9adbea8b8059307585daea13129b85ba1d8
+      - arch: linux-arm64
+        url: https://downloads.apache.org/kafka/4.2.0/kafka_2.13-4.2.0.tgz
+        checksum: sha512:16ce46e590ba915f01b720ea514445e49c88bf129cf4ceab88878b122d54ef24f0dedb88d0eb178957f58057a6c6a9adbea8b8059307585daea13129b85ba1d8
+
+  - name: zookeeper
+    version: "3.9.5"
+    artifacts:
+      - arch: linux-amd64
+        url: https://downloads.apache.org/zookeeper/zookeeper-3.9.5/apache-zookeeper-3.9.5-bin.tar.gz
+        checksum: sha512:baa1c21dda4d57238fca751e4fa2bbf1daff9a28612b125e497dccd5c188ee6449e2f79947e474c2dd4d19992789d4d36b27b1ba2feb80c2b0c45e7df0e22aa8
+      - arch: linux-arm64
+        url: https://downloads.apache.org/zookeeper/zookeeper-3.9.5/apache-zookeeper-3.9.5-bin.tar.gz
+        checksum: sha512:baa1c21dda4d57238fca751e4fa2bbf1daff9a28612b125e497dccd5c188ee6449e2f79947e474c2dd4d19992789d4d36b27b1ba2feb80c2b0c45e7df0e22aa8
+
+  - name: clickhouse
+    version: "25.9.2.1"
+    image: clickhouse/clickhouse-server:25.9.2.1
+    artifacts:
+      - arch: linux-amd64
+        url: https://packages.clickhouse.com/tgz/stable/clickhouse-common-static-25.9.2.1-amd64.tgz
+        checksum: sha512:1c8b49895f2a7b843e45358a66328a83ea5bc8a50557ce13757a6e4473b36f920416cd191fe01f6008cdeb50e7b90c23ae59a53e8c907cd0f9da487eeed12d23
+      - arch: linux-arm64
+        url: https://packages.clickhouse.com/tgz/stable/clickhouse-common-static-25.9.2.1-arm64.tgz
+        checksum: sha512:58e4074ec31fc35f8de185c834e506d9379dd78fc2d04f73fa01f49cb6a46164628d0cb57b53d912596d42df6d6fd99a02b52c8dfe9172f470ce89a64ce3aeaf
+
+  - name: prometheus
+    version: "3.6.0"
+    image: prom/prometheus:v3.6.0
+
+  - name: victoriametrics
+    version: "v1.122.0"
+    image: victoriametrics/victoria-metrics:v1.122.0
+
+  - name: vmauth
+    version: "v1.122.0"
+    image: victoriametrics/vmauth:v1.122.0
+
+  - name: vmagent
+    version: "v1.122.0"
+    image: victoriametrics/vmagent:v1.122.0
+    artifacts:
+      - arch: linux-amd64
+        url: https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.122.0/vmutils-linux-amd64-v1.122.0.tar.gz
+        checksum: sha256:c744104fb7c5a1ca533e505437c6b86bf8d88e22b84639e6d543631dc0a14d09
+      - arch: linux-arm64
+        url: https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.122.0/vmutils-linux-arm64-v1.122.0.tar.gz
+        checksum: sha256:11e6949dd0c3cfa9a302a2a297cbe8304d4133642c5a345e8ca99e7a7e2a2c7f
+      - arch: darwin-amd64
+        url: https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.122.0/vmutils-darwin-amd64-v1.122.0.tar.gz
+        checksum: sha256:c7bd15f6e49933ef6138b7a3aec8ceb068a77ef93f87f0405c090bb41a505e4d
+      - arch: darwin-arm64
+        url: https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.122.0/vmutils-darwin-arm64-v1.122.0.tar.gz
+        checksum: sha256:c4b71bc48c730f4d60f2b6da456d76ff83947524a7a27c22d2a43606ed0c6f56
+
+  - name: grafana
+    version: "12.2.0"
+    image: grafana/grafana:12.2.0
+
+  - name: nginx
+    version: "1.29.3"
+    image: nginx:1.29.3-alpine
+
+  - name: listmonk
+    version: "v4.0.1"
+    image: listmonk/listmonk:v4.0.1
+
+  - name: metabase
+    version: "v0.52.5"
+    image: metabase/metabase:v0.52.5
+
+  - name: valkey
+    version: "8.1"
+    image: valkey/valkey:8.1-alpine
+
+  - name: goss
+    version: "0.4.9"
+    artifacts:
+      - arch: linux-amd64
+        url: https://github.com/goss-org/goss/releases/download/v0.4.9/goss-linux-amd64
+        checksum: sha256:87dd36cfa1b8b50554e6e2ca29168272e26755b19ba5438341f7c66b36decc19
+      - arch: linux-arm64
+        url: https://github.com/goss-org/goss/releases/download/v0.4.9/goss-linux-arm64
+        checksum: sha256:14fd24ac08236559f4809e6a627792d1b947ed98654bba1662ef1d6122d77e18
+      - arch: darwin-arm64
+        url: https://github.com/goss-org/goss/releases/download/v0.4.9/goss-darwin-arm64
+        checksum: sha256:111d2ada89f8787838d176011de2fd0cfe8959c64c2698ce28feb587337d01fc
