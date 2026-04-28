@@ -264,7 +264,7 @@ interfaces:
   nginx:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-us-1]
+    hosts: [central-eu-1, regional-eu-1, regional-us-1]
   chartroom:
     enabled: true
     mode: docker
