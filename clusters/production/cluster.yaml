@@ -173,9 +173,11 @@ infrastructure:
       - name: foghorn
         host: central-eu-1
         port: 6379
+        password: ${REDIS_FOGHORN_PASSWORD}
       - name: chatwoot
         host: central-eu-1
         port: 6380
+        password: ${REDIS_CHATWOOT_PASSWORD}
 
 services:
   # Central — control plane + support
