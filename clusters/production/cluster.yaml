@@ -7,6 +7,7 @@ env_files:
   - ../../config/production.env
   - ../../secrets/production.env
 hosts_file: hosts.enc.yaml
+bootstrap_overlay: bootstrap.yaml
 
 hosts:
   central-eu-1:

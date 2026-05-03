@@ -1,0 +1,14 @@
+accounts:
+  - kind: system_operator
+    tenant:
+      ref: quartermaster.system_tenant
+    users:
+      - email: info@frameworks.network
+        role: owner
+        first_name: Platform
+        last_name: Admin
+        password_ref:
+          sops: ../../secrets/production.env
+          key: PLATFORM_ADMIN_PASSWORD
+    billing:
+      model: none
