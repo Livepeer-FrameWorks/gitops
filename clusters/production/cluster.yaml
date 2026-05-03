@@ -212,6 +212,7 @@ services:
     enabled: true
     mode: native
     host: central-eu-1
+    clusters: [media-central-primary]
 
   # Self-hosted support dependencies (Docker)
   listmonk:
@@ -241,13 +242,15 @@ services:
     enabled: true
     mode: native
     host: central-eu-1
+    clusters: [media-central-primary]
   livepeer-gateway:
     enabled: true
     mode: native
     host: central-eu-1
+    clusters: [media-central-primary]
     config:
+      http_addr: ":8935"
       auth_webhook_url: "http://foghorn.internal:18008/webhooks/livepeer/auth"
-      gateway_host: "livepeer.frameworks.network"
   signalman:
     enabled: true
     mode: native
