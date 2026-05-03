@@ -97,6 +97,16 @@ infrastructure:
         id: 2
       - host: yuga-eu-3
         id: 3
+    instances:
+      - name: support
+        host: central-eu-1
+        port: 5432
+        version: "16"
+        databases:
+          - name: chatwoot
+            owner: chatwoot
+          - name: listmonk
+            owner: listmonk
     databases:
       - name: quartermaster
       - name: commodore
@@ -105,8 +115,6 @@ infrastructure:
       - name: navigator
       - name: skipper
       - name: periscope
-      - name: listmonk
-      - name: chatwoot
   clickhouse:
     enabled: true
     mode: native
