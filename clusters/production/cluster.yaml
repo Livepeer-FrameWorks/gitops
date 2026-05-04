@@ -63,6 +63,7 @@ clusters:
   core-central-primary:
     name: Core Central Primary
     type: central
+    platform_official: true
     owner_tenant: frameworks
     roles: [control, data, analytics, support, infra, mesh, interface, observability]
   media-central-primary:
