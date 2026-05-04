@@ -259,7 +259,7 @@ services:
     host: central-eu-1
     clusters: [media-central-primary]
     config:
-      http_addr: ":8935"
+      http_addr: "0.0.0.0:8935"
       auth_webhook_url: "http://foghorn.internal:18008/webhooks/livepeer/auth"
   signalman:
     enabled: true
