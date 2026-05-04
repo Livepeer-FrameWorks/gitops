@@ -1,3 +1,11 @@
+purser:
+  customer_billing:
+    - tenant:
+        ref: quartermaster.system_tenant
+      model: postpaid
+      tier: free
+      cluster_access: derived
+
 accounts:
   - kind: system_operator
     tenant:
@@ -10,5 +18,3 @@ accounts:
         password_ref:
           sops: ../../secrets/production.env
           key: PLATFORM_ADMIN_PASSWORD
-    billing:
-      model: none
