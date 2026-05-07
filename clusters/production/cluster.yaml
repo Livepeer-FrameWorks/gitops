@@ -260,7 +260,7 @@ services:
   livepeer-gateway:
     enabled: true
     mode: native
-    host: central-eu-1
+    hosts: [regional-eu-1, regional-us-1]
     clusters: [media-central-primary]
     config:
       http_addr: "0.0.0.0:8935"
