@@ -13,8 +13,8 @@ accounts:
     users:
       - email: info@frameworks.network
         role: owner
-        first_name: Platform
-        last_name: Admin
+        first_name: FrameWorks
+        last_name: Operator
         password_ref:
           sops: ../../secrets/production.env
           key: PLATFORM_ADMIN_PASSWORD
