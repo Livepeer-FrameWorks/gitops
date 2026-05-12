@@ -80,6 +80,21 @@ clusters:
       model: tier_inherit
       required_tier_level: 0
       allow_free_tier: true
+  media-central-premium:
+    # Paid-tier media cluster. Edge hosts are declared under hosts as capacity
+    # comes online. Existing service pools (Foghorn / Chandler / livepeer-gateway)
+    # attach via service_cluster_assignments at provision time.
+    name: Media Central Premium
+    type: edge
+    default: false
+    platform_official: true
+    allow_private_pull_sources: false
+    owner_tenant: frameworks
+    roles: [media]
+    pricing:
+      model: tier_inherit
+      required_tier_level: 2
+      allow_free_tier: false
 
 geoip:
   enabled: true
@@ -226,7 +241,7 @@ services:
     enabled: true
     mode: native
     host: central-eu-1
-    clusters: [media-central-primary]
+    clusters: [media-central-primary, media-central-premium]
 
   # Self-hosted support dependencies (Docker)
   listmonk:
@@ -256,12 +271,12 @@ services:
     enabled: true
     mode: native
     host: central-eu-1
-    clusters: [media-central-primary]
+    clusters: [media-central-primary, media-central-premium]
   livepeer-gateway:
     enabled: true
     mode: native
     hosts: [regional-eu-1, regional-us-1]
-    clusters: [media-central-primary]
+    clusters: [media-central-primary, media-central-premium]
     config:
       http_addr: "0.0.0.0:8935"
       auth_webhook_url: "http://foghorn.internal:18008/webhooks/livepeer/auth"
