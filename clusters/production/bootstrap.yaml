@@ -30,3 +30,7 @@ commodore:
         sops: ../../secrets/production.env
         key: MARKETING_DEMO_PULL_SOURCE_URI
       enabled: true
+      # Public marketing source: no placement pin. Private / multicast pull
+      # sources must explicitly list allowed_cluster_ids; see
+      # docs/architecture for the placement contract.
+      allowed_cluster_ids: []
