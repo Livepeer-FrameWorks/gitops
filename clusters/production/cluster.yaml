@@ -47,14 +47,34 @@ hosts:
     roles: [services, interfaces]
     labels:
       region: eu-west
+      dc: hetzner-fsn1
     wireguard_ip: 10.88.158.227
     wireguard_public_key: E1cM5TPD6Bv+WwSf/3MWFuD33YBHix4v2Gv5xZ4RJ1s=
     wireguard_port: 51820
+  regional-eu-2:
+    cluster: core-central-primary
+    roles: [services, interfaces]
+    labels:
+      region: eu-west
+      dc: hetzner-nbg1
+    wireguard_port: 51820
+    wireguard_ip: 10.88.255.66
+    wireguard_public_key: M/LxsJX3dGKozN0nF3ZYPYiCt7B+u9hs+4jtFdRDS3M=
+  regional-eu-3:
+    cluster: core-central-primary
+    roles: [services, interfaces]
+    labels:
+      region: eu-west
+      dc: hetzner-hel1
+    wireguard_port: 51820
+    wireguard_ip: 10.88.132.93
+    wireguard_public_key: rSzQIjouVF+3l9jTKKJPakWeFTHR/nRGeKttBzjv7Hs=
   regional-us-1:
     cluster: core-central-primary
     roles: [services, interfaces]
     labels:
       region: us-east
+      dc: hetzner-ash1
     wireguard_ip: 10.88.236.29
     wireguard_public_key: g8jOYxdVoTDaEoPBpuveaJEw7Nd+uvnbDs8Y3c/l/QI=
     wireguard_port: 51820
@@ -65,36 +85,44 @@ clusters:
     type: central
     owner_tenant: frameworks
     roles: [control, data, analytics, support, infra, mesh, interface, observability]
-  media-central-primary:
-    name: Media Central Primary
+  media-eu-1:
+    name: Media EU 1
     type: edge
+    region: eu-west
     default: true
     platform_official: true
-    # Platform-official cluster: tenant-private pull origins (RFC1918, multicast)
-    # are explicitly disallowed. Self-host clusters override this to true when
-    # their edges legitimately pull from LAN/VPC sources.
     allow_private_pull_sources: false
     owner_tenant: frameworks
     roles: [media]
+    env_files:
+      - ../../config/cluster-media-eu-1.env
+      - ../../secrets/cluster-media-eu-1.env
+    s3_bucket: frameworks
+    s3_endpoint: https://nbg1.your-objectstorage.com
+    s3_region: nbg1
     pricing:
       model: tier_inherit
       required_tier_level: 0
       allow_free_tier: true
-  media-central-premium:
-    # Paid-tier media cluster. Edge hosts are declared under hosts as capacity
-    # comes online. Existing service pools (Foghorn / Chandler / livepeer-gateway)
-    # attach via service_cluster_assignments at provision time.
-    name: Media Central Premium
+  media-us-1:
+    name: Media US East 1
     type: edge
+    region: us-east
     default: false
     platform_official: true
     allow_private_pull_sources: false
     owner_tenant: frameworks
     roles: [media]
+    env_files:
+      - ../../config/cluster-media-us-1.env
+      - ../../secrets/cluster-media-us-1.env
+    s3_bucket: frameworks-enam
+    s3_endpoint: https://71602460cfd3e5468bd355ff1f4bb607.r2.cloudflarestorage.com
+    s3_region: auto
     pricing:
       model: tier_inherit
-      required_tier_level: 2
-      allow_free_tier: false
+      required_tier_level: 0
+      allow_free_tier: true
 
 geoip:
   enabled: true
@@ -148,27 +176,27 @@ infrastructure:
     cluster_id: "0MZ8hASuQlWtafZoUhBuGw"
     min_insync_replicas: 2
     controllers:
-      - host: central-eu-1
-        id: 100
-        port: 9093
-        dir_id: "lFZPzuroSk6ARAoIIJrhrA"
       - host: regional-eu-1
         id: 101
         port: 9093
         dir_id: "3hBihAu6Q3azGAMvkat57Q"
-      - host: regional-us-1
+      - host: regional-eu-2
         id: 102
         port: 9093
-        dir_id: "ZoZCnB6FTT26KAux5HP9og"
+        dir_id: "U0qmfoalRf6Fc0MI6vcCjA"
+      - host: regional-eu-3
+        id: 103
+        port: 9093
+        dir_id: "QaH5mP6MTJOCy9xGp5CxDQ"
     brokers:
-      - host: central-eu-1
-        id: 1
-        port: 9092
       - host: regional-eu-1
         id: 2
         port: 9092
-      - host: regional-us-1
+      - host: regional-eu-2
         id: 3
+        port: 9092
+      - host: regional-eu-3
+        id: 4
         port: 9092
     topics:
       - name: analytics_events
@@ -183,6 +211,42 @@ infrastructure:
       - name: decklog_events_dlq
         partitions: 3
         replication_factor: 3
+    regional:
+      - region_id: us-east
+        cluster_id: "H6ecrIcnQx2sb2lfpS9ZJg"
+        min_insync_replicas: 1
+        controllers:
+          - host: regional-us-1
+            id: 201
+            port: 9093
+            dir_id: "FYanxaRqQFeJpU6GzvSXUQ"
+        brokers:
+          - host: regional-us-1
+            id: 11
+            port: 9092
+        topics:
+          - name: analytics_events
+            partitions: 6
+            replication_factor: 1
+          - name: service_events
+            partitions: 3
+            replication_factor: 1
+          - name: billing.usage_reports
+            partitions: 3
+            replication_factor: 1
+          - name: decklog_events_dlq
+            partitions: 3
+            replication_factor: 1
+        mirror_topics:
+          - analytics_events
+          - service_events
+          - billing.usage_reports
+          - decklog_events_dlq
+    mirrormaker:
+      enabled: true
+      host: regional-eu-1
+      heap_opts: "-Xmx1G -Xms1G"
+      task_count: 2
   zookeeper:
     enabled: false
   redis:
@@ -190,7 +254,20 @@ infrastructure:
     mode: native
     instances:
       - name: foghorn
-        host: central-eu-1
+        cluster: media-eu-1
+        mode: sentinel
+        host: regional-eu-1
+        replica_hosts: [regional-eu-2, regional-eu-3]
+        sentinels:
+          - { host: regional-eu-1, port: 26379 }
+          - { host: regional-eu-2, port: 26379 }
+          - { host: regional-eu-3, port: 26379 }
+        master_name: foghorn
+        port: 6379
+        password: ${REDIS_FOGHORN_PASSWORD}
+      - name: foghorn
+        cluster: media-us-1
+        host: regional-us-1
         port: 6379
         password: ${REDIS_FOGHORN_PASSWORD}
       - name: chatwoot
@@ -237,11 +314,18 @@ services:
     mode: native
     host: central-eu-1
 
-  chandler:
+  chandler-eu:
     enabled: true
     mode: native
+    deploy: chandler
     host: central-eu-1
-    clusters: [media-central-primary, media-central-premium]
+    cluster: media-eu-1
+  chandler-us:
+    enabled: true
+    mode: native
+    deploy: chandler
+    host: regional-us-1
+    cluster: media-us-1
 
   # Self-hosted support dependencies (Docker)
   listmonk:
@@ -266,50 +350,65 @@ services:
   bridge:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-us-1]
-  foghorn:
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+  foghorn-eu:
     enabled: true
     mode: native
-    host: central-eu-1
-    clusters: [media-central-primary, media-central-premium]
-  livepeer-gateway:
+    deploy: foghorn
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3]
+    cluster: media-eu-1
+  foghorn-us:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-us-1]
-    clusters: [media-central-primary, media-central-premium]
+    deploy: foghorn
+    hosts: [regional-us-1]
+    cluster: media-us-1
+  livepeer-gateway-eu:
+    enabled: true
+    mode: native
+    deploy: livepeer-gateway
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3]
+    cluster: media-eu-1
     config:
       http_addr: "0.0.0.0:8935"
-      auth_webhook_url: "http://foghorn.internal:18008/webhooks/livepeer/auth"
+  livepeer-gateway-us:
+    enabled: true
+    mode: native
+    deploy: livepeer-gateway
+    hosts: [regional-us-1]
+    cluster: media-us-1
+    config:
+      http_addr: "0.0.0.0:8935"
   signalman:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
   decklog:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
   periscope-ingest:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
 
 interfaces:
   nginx:
     enabled: true
     mode: native
-    hosts: [central-eu-1, regional-eu-1, regional-us-1]
+    hosts: [central-eu-1, regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
   chartroom:
     enabled: true
     mode: docker
-    hosts: [regional-eu-1, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
   foredeck:
     enabled: true
     mode: docker
-    hosts: [regional-eu-1, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
   logbook:
     enabled: true
     mode: docker
-    hosts: [regional-eu-1, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
 
 observability:
   victoriametrics:
@@ -326,13 +425,13 @@ observability:
     enabled: true
     mode: docker
     image: victoriametrics/vmagent:v1.136.3
-    hosts: [central-eu-1, regional-eu-1, regional-us-1]
+    hosts: [central-eu-1, regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
 
   vmauth:
     enabled: true
     mode: docker
     image: victoriametrics/vmauth:v1.136.3
-    hosts: [regional-eu-1, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
     port: 8427
 
   grafana:

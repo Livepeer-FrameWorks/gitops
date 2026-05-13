@@ -3,7 +3,7 @@ type: edge
 root_domain: frameworks.network
 pool_domain: edge.frameworks.network
 email: ops@frameworks.network
-cluster_id: media-central-primary
+cluster_id: media-eu-1
 fetch_cert: true
 channel: rc
 hosts_file: hosts.enc.yaml
@@ -11,10 +11,12 @@ nodes:
   - name: edge-eu-1
     subdomain: edge-eu-1
     region: eu-west
+    cluster: media-eu-1
     apply_tune: true
     register_qm: true
   - name: edge-us-1
     subdomain: edge-us-1
     region: us-east
+    cluster: media-us-1
     apply_tune: true
     register_qm: true
