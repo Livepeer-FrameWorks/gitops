@@ -5,7 +5,8 @@ pool_domain: edge.frameworks.network
 email: ops@frameworks.network
 cluster_id: media-eu-1
 fetch_cert: true
-channel: rc
+channel: stable
+mode: native
 hosts_file: hosts.enc.yaml
 nodes:
   - name: edge-eu-1
