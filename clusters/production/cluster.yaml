@@ -78,6 +78,24 @@ hosts:
     wireguard_ip: 10.88.236.29
     wireguard_public_key: g8jOYxdVoTDaEoPBpuveaJEw7Nd+uvnbDs8Y3c/l/QI=
     wireguard_port: 51820
+  regional-us-2:
+    cluster: core-central-primary
+    roles: [services, interfaces]
+    labels:
+      region: us-east
+      dc: hetzner-ash1
+    wireguard_ip: 10.88.64.31
+    wireguard_public_key: x0aQv2AQG98L1pod93S4xVWyntIWiN+kqujrAbjtoEY=
+    wireguard_port: 51820
+  regional-us-3:
+    cluster: core-central-primary
+    roles: [services, interfaces]
+    labels:
+      region: us-east
+      dc: hetzner-ash1
+    wireguard_ip: 10.88.10.95
+    wireguard_public_key: bHJZyOijA1TFMIn6hOs/bLzExjkjcU7fGHrDhRXPdRo=
+    wireguard_port: 51820
 
 clusters:
   core-central-primary:
@@ -174,6 +192,8 @@ infrastructure:
     mode: native
     version: "4.2.0"
     cluster_id: "0MZ8hASuQlWtafZoUhBuGw"
+    region_id: eu-west
+    role: aggregator
     min_insync_replicas: 2
     controllers:
       - host: regional-eu-1
@@ -213,30 +233,45 @@ infrastructure:
         replication_factor: 3
     regional:
       - region_id: us-east
+        role: regional
         cluster_id: "H6ecrIcnQx2sb2lfpS9ZJg"
-        min_insync_replicas: 1
+        min_insync_replicas: 2
         controllers:
           - host: regional-us-1
             id: 201
             port: 9093
             dir_id: "FYanxaRqQFeJpU6GzvSXUQ"
+          - host: regional-us-2
+            id: 202
+            port: 9093
+            dir_id: "QX2OGdeARw-JlNhWeoQWeQ"
+          - host: regional-us-3
+            id: 203
+            port: 9093
+            dir_id: "YGQqBRKvRKuTVnGwUDCW7Q"
         brokers:
           - host: regional-us-1
             id: 11
             port: 9092
+          - host: regional-us-2
+            id: 12
+            port: 9092
+          - host: regional-us-3
+            id: 13
+            port: 9092
         topics:
           - name: analytics_events
             partitions: 6
-            replication_factor: 1
+            replication_factor: 3
           - name: service_events
             partitions: 3
-            replication_factor: 1
+            replication_factor: 3
           - name: billing.usage_reports
             partitions: 3
-            replication_factor: 1
+            replication_factor: 3
           - name: decklog_events_dlq
             partitions: 3
-            replication_factor: 1
+            replication_factor: 3
         mirror_topics:
           - analytics_events
           - service_events
@@ -244,7 +279,7 @@ infrastructure:
           - decklog_events_dlq
     mirrormaker:
       enabled: true
-      host: regional-eu-1
+      hosts: [regional-eu-1, regional-eu-2, regional-eu-3]
       heap_opts: "-Xmx1G -Xms1G"
       task_count: 2
   zookeeper:
@@ -267,7 +302,14 @@ infrastructure:
         password: ${REDIS_FOGHORN_PASSWORD}
       - name: foghorn
         cluster: media-us-1
+        mode: sentinel
         host: regional-us-1
+        replica_hosts: [regional-us-2, regional-us-3]
+        sentinels:
+          - { host: regional-us-1, port: 26379 }
+          - { host: regional-us-2, port: 26379 }
+          - { host: regional-us-3, port: 26379 }
+        master_name: foghorn
         port: 6379
         password: ${REDIS_FOGHORN_PASSWORD}
       - name: chatwoot
@@ -318,13 +360,13 @@ services:
     enabled: true
     mode: native
     deploy: chandler
-    host: central-eu-1
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3]
     cluster: media-eu-1
   chandler-us:
     enabled: true
     mode: native
     deploy: chandler
-    host: regional-us-1
+    hosts: [regional-us-1, regional-us-2, regional-us-3]
     cluster: media-us-1
 
   # Self-hosted support dependencies (Docker)
@@ -350,7 +392,7 @@ services:
   bridge:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
   foghorn-eu:
     enabled: true
     mode: native
@@ -361,7 +403,7 @@ services:
     enabled: true
     mode: native
     deploy: foghorn
-    hosts: [regional-us-1]
+    hosts: [regional-us-1, regional-us-2, regional-us-3]
     cluster: media-us-1
   livepeer-gateway-eu:
     enabled: true
@@ -375,40 +417,40 @@ services:
     enabled: true
     mode: native
     deploy: livepeer-gateway
-    hosts: [regional-us-1]
+    hosts: [regional-us-1, regional-us-2, regional-us-3]
     cluster: media-us-1
     config:
       http_addr: "0.0.0.0:8935"
   signalman:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
   decklog:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
   periscope-ingest:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
 
 interfaces:
   nginx:
     enabled: true
     mode: native
-    hosts: [central-eu-1, regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [central-eu-1, regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
   chartroom:
     enabled: true
     mode: docker
-    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
   foredeck:
     enabled: true
     mode: docker
-    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
   logbook:
     enabled: true
     mode: docker
-    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
 
 observability:
   victoriametrics:
@@ -425,13 +467,13 @@ observability:
     enabled: true
     mode: docker
     image: victoriametrics/vmagent:v1.136.3
-    hosts: [central-eu-1, regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [central-eu-1, regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
 
   vmauth:
     enabled: true
     mode: docker
     image: victoriametrics/vmauth:v1.136.3
-    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1]
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
     port: 8427
 
   grafana:
