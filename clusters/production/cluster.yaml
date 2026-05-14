@@ -43,7 +43,7 @@ hosts:
     wireguard_public_key: tW+e/IB1LOjiauoDJ2s5xCx1ZJWIRiQq6dyEXuEKpwQ=
     wireguard_port: 51820
   regional-eu-1:
-    cluster: core-central-primary
+    cluster: regional-eu-primary
     roles: [services, interfaces]
     labels:
       region: eu-west
@@ -52,7 +52,7 @@ hosts:
     wireguard_public_key: E1cM5TPD6Bv+WwSf/3MWFuD33YBHix4v2Gv5xZ4RJ1s=
     wireguard_port: 51820
   regional-eu-2:
-    cluster: core-central-primary
+    cluster: regional-eu-primary
     roles: [services, interfaces]
     labels:
       region: eu-west
@@ -61,7 +61,7 @@ hosts:
     wireguard_ip: 10.88.255.66
     wireguard_public_key: M/LxsJX3dGKozN0nF3ZYPYiCt7B+u9hs+4jtFdRDS3M=
   regional-eu-3:
-    cluster: core-central-primary
+    cluster: regional-eu-primary
     roles: [services, interfaces]
     labels:
       region: eu-west
@@ -70,7 +70,7 @@ hosts:
     wireguard_ip: 10.88.132.93
     wireguard_public_key: rSzQIjouVF+3l9jTKKJPakWeFTHR/nRGeKttBzjv7Hs=
   regional-us-1:
-    cluster: core-central-primary
+    cluster: regional-us-primary
     roles: [services, interfaces]
     labels:
       region: us-east
@@ -79,7 +79,7 @@ hosts:
     wireguard_public_key: g8jOYxdVoTDaEoPBpuveaJEw7Nd+uvnbDs8Y3c/l/QI=
     wireguard_port: 51820
   regional-us-2:
-    cluster: core-central-primary
+    cluster: regional-us-primary
     roles: [services, interfaces]
     labels:
       region: us-east
@@ -88,7 +88,7 @@ hosts:
     wireguard_public_key: x0aQv2AQG98L1pod93S4xVWyntIWiN+kqujrAbjtoEY=
     wireguard_port: 51820
   regional-us-3:
-    cluster: core-central-primary
+    cluster: regional-us-primary
     roles: [services, interfaces]
     labels:
       region: us-east
@@ -103,6 +103,18 @@ clusters:
     type: central
     owner_tenant: frameworks
     roles: [control, data, analytics, support, infra, mesh, interface, observability]
+  regional-eu-primary:
+    name: Regional EU Primary
+    type: central
+    region: eu-west
+    owner_tenant: frameworks
+    roles: [services, interface, mesh]
+  regional-us-primary:
+    name: Regional US Primary
+    type: central
+    region: us-east
+    owner_tenant: frameworks
+    roles: [services, interface, mesh]
   media-eu-1:
     name: Media EU 1
     type: edge
