@@ -146,7 +146,7 @@ geoip:
   enabled: true
   source: maxmind
   remote_path: /usr/share/GeoIP/GeoLite2-City.mmdb
-  services: [foghorn, quartermaster, livepeer-gateway]
+  services: [foghorn-eu, foghorn-us, quartermaster, livepeer-gateway-eu, livepeer-gateway-us]
 
 infrastructure:
   postgres:
