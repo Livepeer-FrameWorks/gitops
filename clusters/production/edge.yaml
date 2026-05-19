@@ -4,7 +4,9 @@ root_domain: frameworks.network
 pool_domain: edge.frameworks.network
 email: ops@frameworks.network
 cluster_id: media-eu-1
-fetch_cert: true
+capabilities: [ingest, edge, storage, processing]
+bandwidth_mbps: 2000
+storage_capacity_bytes: 400000000000
 channel: stable
 mode: native
 hosts_file: hosts.enc.yaml
