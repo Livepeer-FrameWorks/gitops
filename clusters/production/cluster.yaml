@@ -184,6 +184,8 @@ infrastructure:
             owner: chatwoot
           - name: listmonk
             owner: listmonk
+          - name: metabase
+            owner: metabase
     databases:
       - name: quartermaster
       - name: commodore
