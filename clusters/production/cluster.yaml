@@ -165,7 +165,6 @@ infrastructure:
     enabled: true
     engine: yugabyte
     mode: native
-    version: "2025.1.3.2"
     port: 5433
     nodes:
       - host: yuga-eu-1
@@ -178,7 +177,6 @@ infrastructure:
       - name: support
         host: central-eu-1
         port: 5432
-        version: "16"
         databases:
           - name: chatwoot
             owner: chatwoot
@@ -197,14 +195,12 @@ infrastructure:
   clickhouse:
     enabled: true
     mode: native
-    version: "25.9.2.1"
     host: yuga-eu-1
     port: 9000
     databases: [periscope]
   kafka:
     enabled: true
     mode: native
-    version: "4.2.0"
     cluster_id: "0MZ8hASuQlWtafZoUhBuGw"
     region_id: eu-west
     role: aggregator
