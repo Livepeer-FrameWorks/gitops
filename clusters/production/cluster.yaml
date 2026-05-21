@@ -296,8 +296,6 @@ infrastructure:
       hosts: [regional-eu-1, regional-eu-2, regional-eu-3]
       heap_opts: "-Xmx1G -Xms1G"
       task_count: 2
-  zookeeper:
-    enabled: false
   redis:
     enabled: true
     mode: native
