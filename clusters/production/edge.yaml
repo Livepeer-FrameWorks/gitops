@@ -5,7 +5,7 @@ pool_domain: edge.frameworks.network
 email: ops@frameworks.network
 cluster_id: media-eu-1
 capabilities: [ingest, edge, storage, processing]
-bandwidth_mbps: 2000
+bandwidth_mbps: 0
 storage_capacity_bytes: 400000000000
 channel: stable
 mode: native
