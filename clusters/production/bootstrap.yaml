@@ -20,17 +20,31 @@ accounts:
           key: PLATFORM_ADMIN_PASSWORD
 
 commodore:
-  pull_streams:
+  # frameworks-demo is a Mist-native always-on loop. The source clip lives
+  # on the elected EU media edge (placed by the demo_assets Ansible role);
+  # ts-exec inside MistServer reads it locally and loops indefinitely.
+  mist_native_streams:
     - playback_id: frameworks-demo
       owner_tenant:
         ref: quartermaster.system_tenant
       title: FrameWorks marketing demo
-      description: Operator-owned pull stream for the marketing landing-page player.
-      source_uri_ref:
-        sops: ../../secrets/production.env
-        key: MARKETING_DEMO_PULL_SOURCE_URI
-      enabled: true
-      # Public marketing source: no placement pin. Private / multicast pull
-      # sources must explicitly list allowed_cluster_ids; see
-      # docs/architecture for the placement contract.
-      allowed_cluster_ids: []
+      description: Mist-native always-on loop driving the marketing landing-page player.
+      source: "ts-exec:ffmpeg -re -stream_loop -1 -i /var/lib/frameworks/demo/frameworks-demo-source.mp4 -c copy -f mpegts -"
+      source_kind: exec
+      always_on: true
+      is_recording_enabled: false
+      # Mist process config array — same shape MistServer's STREAM_PROCESS
+      # trigger consumes. Thumbnail sprites only; no transcode.
+      process_policy:
+        - process: Thumbs
+          track_select: "video=maxbps"
+          track_inhibit: "subtitle=all"
+          inconsequential: true
+          exit_unmask: true
+          x-LSP-name: Thumbnail Sprites
+      placement_count: 1
+      allowed_cluster_ids: [media-eu-1]
+      local_assets:
+        - path: /var/lib/frameworks/demo/frameworks-demo-source.mp4
+          sha256: 7f4e5858a25f9aa26c3fcd9c1766d183a4eaa8d3ec5ab0c24025aa1dfa6acfbc
+          note: CC0 source clip; provisioned via gitops/clusters/production/demo_assets.yml + frameworks.infra.demo_assets role

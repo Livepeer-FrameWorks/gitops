@@ -1,0 +1,23 @@
+---
+# Operator-distributed demo assets for the production cluster.
+# Consumed by ansible/playbooks/demo_assets.yml via frameworks.infra.demo_assets.
+#
+# Source of truth: the sha256 below. The S3 object can be re-uploaded as
+# long as the bytes hash to this value. Object upload (one-time, operator):
+#
+#   aws s3 cp <local-clip>.mp4 \
+#     s3://frameworks/marketing/frameworks-demo-source.mp4 \
+#     --endpoint-url https://nbg1.your-objectstorage.com
+#
+# See ansible/playbooks/demo_assets.yml for the play invocation.
+
+demo_assets_s3_endpoint_url: https://nbg1.your-objectstorage.com
+demo_assets_s3_region: nbg1
+
+demo_assets:
+  - name: frameworks-demo-source
+    bucket: frameworks
+    s3_key: marketing/frameworks-demo-source.mp4
+    dest: /var/lib/frameworks/demo/frameworks-demo-source.mp4
+    sha256: 7f4e5858a25f9aa26c3fcd9c1766d183a4eaa8d3ec5ab0c24025aa1dfa6acfbc
+    mode: "0644"
