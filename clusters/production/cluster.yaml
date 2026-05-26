@@ -235,6 +235,9 @@ infrastructure:
       - name: service_events
         partitions: 3
         replication_factor: 3
+      - name: analytics.raw_mist_triggers
+        partitions: 6
+        replication_factor: 3
       - name: billing.usage_reports
         partitions: 3
         replication_factor: 3
@@ -276,6 +279,9 @@ infrastructure:
           - name: service_events
             partitions: 3
             replication_factor: 3
+          - name: analytics.raw_mist_triggers
+            partitions: 6
+            replication_factor: 3
           - name: billing.usage_reports
             partitions: 3
             replication_factor: 3
@@ -285,6 +291,7 @@ infrastructure:
         mirror_topics:
           - analytics_events
           - service_events
+          - analytics.raw_mist_triggers
           - billing.usage_reports
           - decklog_events_dlq
     mirrormaker:
