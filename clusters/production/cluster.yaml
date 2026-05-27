@@ -101,18 +101,21 @@ clusters:
   core-central-primary:
     name: Core Central Primary
     type: central
+    public_topology: true
     owner_tenant: frameworks
     roles: [control, data, analytics, support, infra, mesh, interface, observability]
   regional-eu-primary:
     name: Regional EU Primary
     type: central
     region: eu-west
+    public_topology: true
     owner_tenant: frameworks
     roles: [services, interface, mesh]
   regional-us-primary:
     name: Regional US Primary
     type: central
     region: us-east
+    public_topology: true
     owner_tenant: frameworks
     roles: [services, interface, mesh]
   media-eu-1:
@@ -121,6 +124,7 @@ clusters:
     region: eu-west
     default: true
     platform_official: true
+    public_topology: true
     allow_private_pull_sources: false
     owner_tenant: frameworks
     roles: [media]
@@ -140,6 +144,7 @@ clusters:
     region: us-east
     default: false
     platform_official: true
+    public_topology: true
     allow_private_pull_sources: false
     owner_tenant: frameworks
     roles: [media]
