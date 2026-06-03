@@ -29,7 +29,7 @@ commodore:
         ref: quartermaster.system_tenant
       title: FrameWorks marketing demo
       description: Mist-native always-on loop driving the marketing landing-page player.
-      source: "ts-exec:ffmpeg -re -stream_loop -1 -i /var/lib/frameworks/demo/frameworks-demo-source.mp4 -c copy -f mpegts -"
+      source: "ts-exec:ffmpeg -re -stream_loop -1 -i /var/lib/frameworks/demo/frameworks-demo-source.mp4 -map 0:v:0 -an -c:v copy -f mpegts -"
       source_kind: exec
       always_on: true
       is_recording_enabled: false
