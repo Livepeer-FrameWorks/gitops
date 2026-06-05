@@ -4,6 +4,9 @@ purser:
         ref: quartermaster.system_tenant
       model: postpaid
       tier: free
+      entitlement_overrides:
+        max_concurrent_streams: 0
+        max_concurrent_viewers: 0
       cluster_access: derived
 
 accounts:
