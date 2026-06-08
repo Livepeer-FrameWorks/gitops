@@ -49,5 +49,5 @@ commodore:
       allowed_cluster_ids: [media-eu-1]
       local_assets:
         - path: /var/lib/frameworks/demo/frameworks-demo-source.mp4
-          sha256: 7f4e5858a25f9aa26c3fcd9c1766d183a4eaa8d3ec5ab0c24025aa1dfa6acfbc
+          sha256: d223026c5de919045a4a1c307810d5161dbfe25b4e975c15cf027204ada78b28
           note: CC0 source clip; provisioned via gitops/clusters/production/demo_assets.yml + frameworks.infra.demo_assets role
