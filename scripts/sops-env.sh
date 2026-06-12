@@ -4,6 +4,7 @@ set -euo pipefail
 usage() {
   cat >&2 <<'EOF'
 usage:
+  sops-env.sh get <encrypted-env-file> <KEY>
   sops-env.sh delete <encrypted-env-file> <KEY> [KEY...]
   sops-env.sh set <encrypted-env-file> <KEY> <VALUE>
   sops-env.sh insert-after <encrypted-env-file> <AFTER_KEY> <KEY> <VALUE>
@@ -24,6 +25,33 @@ target="$2"
 shift 2
 
 cd "${repo_root}"
+
+if [[ "${op}" == "get" ]]; then
+  if [[ $# -ne 1 ]]; then
+    usage
+  fi
+  key="$1"
+  status=0
+  sops -d "${target}" | awk -v key="${key}" '
+    BEGIN {
+      prefix = key "="
+      found = 0
+    }
+    !found && index($0, prefix) == 1 {
+      print substr($0, length(prefix) + 1)
+      found = 1
+    }
+    END {
+      if (!found) {
+        exit 17
+      }
+    }
+  ' || status=$?
+  if [[ ${status} -eq 17 ]]; then
+    echo "key not found: ${key}" >&2
+  fi
+  exit "${status}"
+fi
 
 target_dir="$(dirname "${target}")"
 target_base="$(basename "${target}")"

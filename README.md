@@ -55,6 +55,7 @@ Do not edit `secrets/*.env` directly and do not use ad hoc decrypt/edit/encrypt 
 Use the repo script:
 
 ```bash
+scripts/sops-env.sh get secrets/production.env KEY
 scripts/sops-env.sh delete secrets/production.env KEY1 KEY2
 scripts/sops-env.sh set secrets/production.env KEY value
 scripts/sops-env.sh insert-after secrets/production.env AFTER_KEY NEW_KEY value
