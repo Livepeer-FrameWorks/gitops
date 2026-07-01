@@ -42,6 +42,16 @@ hosts:
     wireguard_ip: 10.88.89.127
     wireguard_public_key: tW+e/IB1LOjiauoDJ2s5xCx1ZJWIRiQq6dyEXuEKpwQ=
     wireguard_port: 51820
+  # Dedicated ClickHouse node (split off the colocated yuga boxes). wireguard_ip /
+  # wireguard_public_key / wireguard_port are populated by `frameworks mesh wg generate`.
+  clickhouse-eu-1:
+    cluster: core-central-primary
+    roles: [infrastructure]
+    labels:
+      region: eu-west
+    wireguard_ip: 10.88.111.139
+    wireguard_public_key: 9+8g6VlXOcPOZy88NbFgmmOZFUVJazvbt/aFiMQOWmk=
+    wireguard_port: 51820
   regional-eu-1:
     cluster: regional-eu-primary
     roles: [services, interfaces]
@@ -200,7 +210,16 @@ infrastructure:
   clickhouse:
     enabled: true
     mode: native
-    host: yuga-eu-1
+    # Dedicated Replicated single-node cluster for Periscope ClickHouse.
+    nodes:
+      - host: clickhouse-eu-1
+        id: 1
+    # Migration cutover pins: nodes declares the provision target; endpoint
+    # overrides keep Periscope on the live old node while data is copied. Cutover
+    # moves write_endpoint first after ingest is stopped and final sync completes;
+    # read_endpoint moves after Kafka lag drains to zero.
+    read_endpoint: yuga-eu-1
+    write_endpoint: yuga-eu-1
     port: 9000
     databases: [periscope]
   kafka:

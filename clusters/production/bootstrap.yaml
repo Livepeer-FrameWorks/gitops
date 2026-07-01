@@ -18,6 +18,7 @@ accounts:
         role: owner
         first_name: FrameWorks
         last_name: Operator
+        platform_operator: true
         password_ref:
           sops: ../../secrets/production.env
           key: PLATFORM_ADMIN_PASSWORD
@@ -36,6 +37,8 @@ commodore:
       source_kind: exec
       always_on: true
       is_recording_enabled: false
+      # Keep the always-on marketing demo running without Skipper AI health monitoring.
+      monitoring: "off"
       # Mist process config array — same shape MistServer's STREAM_PROCESS
       # trigger consumes. Thumbnail sprites only; no transcode.
       process_policy:
