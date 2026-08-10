@@ -216,10 +216,12 @@ infrastructure:
     nodes:
       - host: clickhouse-eu-1
         id: 1
-    # Migration cutover pins: nodes declares the provision target; endpoint
-    # overrides keep Periscope on the live old node while data is copied. Cutover
-    # moves write_endpoint first after ingest is stopped and final sync completes;
-    # read_endpoint moves after Kafka lag drains to zero.
+    # Migration cutover pins: nodes declares the provision target (the new
+    # dedicated node); endpoint overrides keep Periscope on the live old node
+    # while data is copied. Cutover is a downtime flip, not a staged online move:
+    # ingest is stopped, refreshable views are driven to quiescence and proven
+    # Disabled on BOTH nodes, a final sync + verify runs, then read_endpoint and
+    # write_endpoint move together to clickhouse-eu-1.
     read_endpoint: yuga-eu-1
     write_endpoint: yuga-eu-1
     port: 9000
