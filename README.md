@@ -2,7 +2,9 @@
 
 Release manifests, cluster configuration, and infrastructure secrets for the FrameWorks platform. Consumed by the FrameWorks CLI for deployments.
 
-Architecture manifests are **plaintext** — anyone can see exactly how FrameWorks is deployed. Server IPs and credentials are **SOPS-encrypted** with [age](https://github.com/FiloSottile/age).
+Architecture manifests are **plaintext** — anyone can see exactly how FrameWorks is deployed. Secrets are **SOPS-encrypted** with [age](https://github.com/FiloSottile/age).
+
+Public WireGuard overlay addresses, CIDRs, and public keys are part of the plaintext architecture manifest. Host-reachability addresses, SSH data, WireGuard private keys, and credentials remain SOPS-encrypted.
 
 ## Structure
 
@@ -31,8 +33,9 @@ Architecture manifests are **plaintext** — anyone can see exactly how FrameWor
 `clusters/production/cluster.yaml` is the full deployment topology: every service, database, message broker, and cache — how they're connected, what hosts they run on, and how they're configured. This is published in plaintext for full transparency.
 
 What's **not** in the plaintext manifest:
-- Server IP addresses → `hosts.enc.yaml` (SOPS-encrypted)
+- Host-reachability IP addresses → `hosts.enc.yaml` (SOPS-encrypted)
 - SSH credentials → `hosts.enc.yaml` (SOPS-encrypted)
+- WireGuard private keys → `hosts.enc.yaml` (SOPS-encrypted)
 - Non-secret operator config → `config/production.env` (plaintext)
 - API keys, passwords, tokens → `secrets/production.env` (SOPS-encrypted)
 

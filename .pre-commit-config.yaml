@@ -8,7 +8,7 @@ repos:
         files: '(secrets/.*\.env|clusters/.*/hosts\.enc\.yaml)$'
       - id: no-ip-leak
         name: Reject IPs in plaintext manifests
-        entry: scripts/check-no-ip-leak.sh
+        entry: scripts/check-no-ip-leak.py
         language: script
         files: 'clusters/.*\.(yaml|yml)$'
         exclude: '\.enc\.'
