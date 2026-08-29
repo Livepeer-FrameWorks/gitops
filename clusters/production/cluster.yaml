@@ -216,10 +216,11 @@ infrastructure:
     nodes:
       - host: clickhouse-eu-1
         id: 1
-    # Endpoints track nodes: periscope-query follows read_endpoint and
-    # periscope-ingest follows write_endpoint, while DDL and migrations follow
-    # nodes via the coordinator. They are separate keys so the two can diverge
-    # during a node migration; in steady state they name the same host.
+    # Endpoints track nodes: periscope-query follows read_endpoint, while
+    # periscope-ingest and periscope-metering follow write_endpoint. DDL and
+    # migrations follow nodes via the coordinator. They are separate keys so
+    # reads and writes can diverge during a node migration; in steady state
+    # they name the same host.
     read_endpoint: clickhouse-eu-1
     write_endpoint: clickhouse-eu-1
     port: 9000
@@ -380,6 +381,13 @@ services:
     enabled: true
     mode: native
     host: central-eu-1
+  periscope-metering:
+    enabled: true
+    mode: native
+    host: central-eu-1
+    config:
+      METERING_SOURCE_ID: periscope-default
+      METERING_SOURCE_REGION: eu-west
   navigator:
     enabled: true
     mode: native
