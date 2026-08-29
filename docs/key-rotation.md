@@ -48,8 +48,16 @@ If the age private key was compromised, all encrypted values are potentially exp
    - **Database passwords:** Change in `production.env`, then run `frameworks cluster provision --only infrastructure` to apply
    - **API keys (Stripe, Cloudflare, etc.):** Regenerate in each provider's dashboard, update in `production.env`
    - **Auto-generated secrets (JWT_SECRET, SERVICE_TOKEN, etc.):** Generate new values with `openssl rand -hex 32`, update in `production.env`
-   - **Ethereum private key (X402_GAS_WALLET_PRIVKEY):** Generate new wallet, transfer funds, update key
+   - **x402 gas wallet (`X402_GAS_WALLET_PRIVKEY`):** Reconcile pending settlements, replace the key and `X402_GAS_WALLET_ADDRESS` together, fund the replacement with native gas on Base and Arbitrum, then remove residual funds from the retired wallet
+   - **Sweep relayers (`CRYPTO_SWEEP_RELAYER_PRIVATE_KEY_<NETWORK>`):** Pause sweep broadcasts for that network, reconcile pending transactions, replace the encrypted key, fund the replacement with native gas, then resume; never use a treasury owner or HD deposit key
+   - **HD deposit key (`HD_WALLET_XPUB`):** Rotate through `frameworks crypto wallet rotate --xpub-file <file> --network mainnet`; retain every retired xprv offline because previously issued addresses can receive late transfers
 3. Re-provision all services: `frameworks cluster provision`
+
+Readiness derives every configured relayer address from its encrypted private
+key at runtime and checks live one-transaction gas runway. Treasury rotation is
+independent: update `CRYPTO_TREASURY_<NETWORK>` for future sweep manifests, let
+old unbroadcast manifests expire/release, and move assets already held by the
+old treasury through the treasury's own approved transaction.
 
 ### Rotate host IPs
 
