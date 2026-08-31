@@ -61,9 +61,14 @@ Use the repo script:
 scripts/sops-env.sh get secrets/production.env KEY
 scripts/sops-env.sh delete secrets/production.env KEY1 KEY2
 scripts/sops-env.sh set secrets/production.env KEY value
+scripts/sops-env.sh set secrets/production.env KEY # hidden prompt
 scripts/sops-env.sh insert-after secrets/production.env AFTER_KEY NEW_KEY value
 scripts/sops-env.sh insert-before secrets/production.env BEFORE_KEY NEW_KEY value
 ```
+
+`set` also creates a missing encrypted env file using the same safe flow. Omit
+the value for an interactive hidden prompt that keeps it out of shell history
+and process arguments.
 
 ### Provisioning
 

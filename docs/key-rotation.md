@@ -32,6 +32,20 @@ sops updatekeys clusters/production/hosts.enc.yaml
 
 ## Secret Rotation
 
+### Rotate a CARTO basemap browser key
+
+Chartroom uses `secrets/chartroom.env`; Foredeck uses
+`secrets/foredeck.env`. Update each browser app through a hidden prompt:
+
+```bash
+scripts/sops-env.sh set secrets/chartroom.env CARTO_BASEMAP_BROWSER_KEY
+scripts/sops-env.sh set secrets/foredeck.env CARTO_BASEMAP_BROWSER_KEY
+```
+
+Then run `frameworks cluster provision --only interfaces`. The value is
+intentionally visible in the browser, but must not appear in plaintext Git,
+build arguments, or logs.
+
 ### Edit a single secret
 
 ```bash

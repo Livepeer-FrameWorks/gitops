@@ -489,10 +489,18 @@ interfaces:
     enabled: true
     mode: docker
     hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
+    env_file: ../../secrets/chartroom.env
+    config:
+      BASEMAP_PROVIDER: carto
+      BASEMAP_STYLE: dark-matter
   foredeck:
     enabled: true
     mode: docker
     hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
+    env_file: ../../secrets/foredeck.env
+    config:
+      BASEMAP_PROVIDER: carto
+      BASEMAP_STYLE: dark-matter
   logbook:
     enabled: true
     mode: docker

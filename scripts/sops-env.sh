@@ -6,7 +6,7 @@ usage() {
 usage:
   sops-env.sh get <encrypted-env-file> <KEY>
   sops-env.sh delete <encrypted-env-file> <KEY> [KEY...]
-  sops-env.sh set <encrypted-env-file> <KEY> <VALUE>
+  sops-env.sh set <encrypted-env-file> <KEY> [VALUE]
   sops-env.sh insert-after <encrypted-env-file> <AFTER_KEY> <KEY> <VALUE>
   sops-env.sh insert-before <encrypted-env-file> <BEFORE_KEY> <KEY> <VALUE>
 EOF
@@ -63,7 +63,17 @@ cleanup() {
 }
 trap cleanup EXIT
 
-sops -d "${target}" > "${plain}"
+if [[ -f "${target}" ]]; then
+  sops -d "${target}" > "${plain}"
+elif [[ "${op}" == "set" ]]; then
+  # `set` is also the safe creation path for a new encrypted env file. The
+  # temporary plaintext still lives beside the target and is removed by the
+  # existing trap after SOPS encrypts it.
+  : > "${plain}"
+else
+  echo "encrypted env file not found: ${target}" >&2
+  exit 1
+fi
 
 case "${op}" in
   delete)
@@ -82,11 +92,19 @@ case "${op}" in
     mv "${tmp}" "${plain}"
     ;;
   set)
-    if [[ $# -ne 2 ]]; then
+    if [[ $# -lt 1 || $# -gt 2 ]]; then
       usage
     fi
     key="$1"
-    value="$2"
+    if [[ $# -eq 2 ]]; then
+      value="$2"
+    elif [[ -t 0 && -r /dev/tty ]]; then
+      read -r -s -p "Value for ${key}: " value </dev/tty
+      echo >&2
+    else
+      echo "VALUE is required when stdin is not a terminal" >&2
+      exit 1
+    fi
     awk -v key="${key}" -v value="${value}" '
       BEGIN { prefix = key "="; replaced = 0 }
       index($0, prefix) == 1 {
