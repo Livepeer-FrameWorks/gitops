@@ -458,7 +458,10 @@ services:
     hosts: [regional-eu-1, regional-eu-2, regional-eu-3]
     cluster: media-eu-1
     config:
-      http_addr: "0.0.0.0:8935"
+      http_addr: "127.0.0.1:8935"
+      cli_addr: "127.0.0.1:7935"
+      enable_cli_tx_routes: "false"
+      trusted_proxy_cidrs: "127.0.0.1/32,::1/128"
   livepeer-gateway-us:
     enabled: true
     mode: native
@@ -466,7 +469,10 @@ services:
     hosts: [regional-us-1, regional-us-2, regional-us-3]
     cluster: media-us-1
     config:
-      http_addr: "0.0.0.0:8935"
+      http_addr: "127.0.0.1:8935"
+      cli_addr: "127.0.0.1:7935"
+      enable_cli_tx_routes: "false"
+      trusted_proxy_cidrs: "127.0.0.1/32,::1/128"
   signalman:
     enabled: true
     mode: native
