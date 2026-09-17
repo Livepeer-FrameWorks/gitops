@@ -208,6 +208,7 @@ infrastructure:
       - name: purser
       - name: navigator
       - name: skipper
+      - name: lookout
       - name: periscope
   clickhouse:
     enabled: true
@@ -232,6 +233,9 @@ infrastructure:
     region_id: eu-west
     role: aggregator
     min_insync_replicas: 2
+    offsets_topic_replication_factor: 3
+    transaction_state_log_replication_factor: 3
+    transaction_state_log_min_isr: 2
     controllers:
       - host: regional-eu-1
         id: 101
@@ -271,11 +275,17 @@ infrastructure:
       - name: decklog_events_dlq
         partitions: 3
         replication_factor: 3
+      - name: lookout.incidents
+        partitions: 3
+        replication_factor: 3
     regional:
       - region_id: us-east
         role: regional
         cluster_id: "H6ecrIcnQx2sb2lfpS9ZJg"
         min_insync_replicas: 2
+        offsets_topic_replication_factor: 3
+        transaction_state_log_replication_factor: 3
+        transaction_state_log_min_isr: 2
         controllers:
           - host: regional-us-1
             id: 201
@@ -315,17 +325,21 @@ infrastructure:
           - name: decklog_events_dlq
             partitions: 3
             replication_factor: 3
-        mirror_topics:
-          - analytics_events
-          - service_events
-          - analytics.raw_mist_triggers
-          - billing.usage_reports
-          - decklog_events_dlq
     mirrormaker:
       enabled: true
-      hosts: [regional-eu-1, regional-eu-2, regional-eu-3]
       heap_opts: "-Xmx1G -Xms1G"
+      replicas: 3
       task_count: 2
+      # Workers run in each link's target region. Links into the aggregator
+      # carry the durable analytics/billing topics; links out of it carry the
+      # realtime topics regional Signalman consumes.
+      links:
+        - source: us-east
+          target: eu-west
+          hosts: [regional-eu-1, regional-eu-2, regional-eu-3]
+        - source: eu-west
+          target: us-east
+          hosts: [regional-us-1, regional-us-2, regional-us-3]
   redis:
     enabled: true
     mode: native
@@ -393,6 +407,10 @@ services:
     mode: native
     host: central-eu-1
   skipper:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  lookout:
     enabled: true
     mode: native
     host: central-eu-1
@@ -484,7 +502,9 @@ services:
   periscope-ingest:
     enabled: true
     mode: native
-    hosts: [regional-eu-1, regional-eu-2, regional-eu-3, regional-us-1, regional-us-2, regional-us-3]
+    # Aggregate ingest reads EU Kafka and writes EU ClickHouse, so its consumer
+    # group stays in the aggregator region.
+    hosts: [regional-eu-1, regional-eu-2, regional-eu-3]
 
 interfaces:
   nginx:
@@ -539,6 +559,20 @@ observability:
     mode: docker
     host: central-eu-1
     port: 3000
+
+  # Alert rules ship embedded in the CLI; vmalert queries VictoriaMetrics and
+  # notifies Alertmanager, which routes by severity and region.
+  vmalert:
+    enabled: true
+    mode: native
+    host: central-eu-1
+    port: 8880
+
+  alertmanager:
+    enabled: true
+    mode: native
+    host: central-eu-1
+    port: 9093
 
 wireguard:
   enabled: true

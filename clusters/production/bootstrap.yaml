@@ -49,7 +49,8 @@ commodore:
           exit_unmask: true
           x-LSP-name: Thumbnail Sprites
       placement_count: 1
-      allowed_cluster_ids: [media-eu-1]
+      source_location:
+        clusters: [media-eu-1]
       local_assets:
         - path: /var/lib/frameworks/demo/frameworks-demo-source.mp4
           sha256: d223026c5de919045a4a1c307810d5161dbfe25b4e975c15cf027204ada78b28
