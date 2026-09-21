@@ -3,3 +3,7 @@ creation_rules:
     age: age1xzc3p7hn6urdsv9u0789aqln6fjyzmczuc3ydpgfxehpr3tq4c8q6gpgt7
   - path_regex: clusters/.*/hosts\.enc\.yaml$
     age: age1xzc3p7hn6urdsv9u0789aqln6fjyzmczuc3ydpgfxehpr3tq4c8q6gpgt7
+  - path_regex: clusters/.*/network\.enc\.yaml$
+    age: age1xzc3p7hn6urdsv9u0789aqln6fjyzmczuc3ydpgfxehpr3tq4c8q6gpgt7
+  - path_regex: development/hosts\.enc\.yaml$
+    age: age1xzc3p7hn6urdsv9u0789aqln6fjyzmczuc3ydpgfxehpr3tq4c8q6gpgt7

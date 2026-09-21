@@ -1,0 +1,690 @@
+---
+version: v1
+type: cluster
+profile: staging
+channel: candidate
+root_domain: staging.frameworks.network
+env_files:
+- "../../config/staging.env"
+- "../../secrets/staging.env"
+hosts_file: hosts.enc.yaml
+bootstrap_overlay: bootstrap.yaml
+hosts:
+  fw-stg-core:
+    cluster: staging-core
+    roles:
+    - infrastructure
+    - services
+    - interfaces
+    labels:
+      region: eu-west
+      environment: staging
+    wireguard_ip: 10.89.236.242
+    wireguard_public_key: 6r7eQZFT+9ZIUTi2mAkJQuO49Xu8z5msVFMXpH8ij08=
+    wireguard_port: 51820
+  fw-stg-eu-1:
+    cluster: staging-regional-eu
+    roles:
+    - infrastructure
+    - services
+    - interfaces
+    labels:
+      region: eu-west
+      environment: staging
+      failure_domain: eu-1
+    wireguard_ip: 10.89.6.127
+    wireguard_public_key: a/BV63CCt5460gpEdvFHeFcgiDNyWzFynVCHYgPL/RE=
+    wireguard_port: 51820
+  fw-stg-eu-2:
+    cluster: staging-regional-eu
+    roles:
+    - infrastructure
+    - services
+    - interfaces
+    labels:
+      region: eu-west
+      environment: staging
+      failure_domain: eu-2
+    wireguard_ip: 10.89.151.113
+    wireguard_public_key: +0m2j79Ts7deBdwgi8jnq9vElAeGC98JO5PPERXe9h4=
+    wireguard_port: 51820
+  fw-stg-eu-3:
+    cluster: staging-regional-eu
+    roles:
+    - infrastructure
+    - services
+    - interfaces
+    labels:
+      region: eu-west
+      environment: staging
+      failure_domain: eu-3
+    wireguard_ip: 10.89.133.84
+    wireguard_public_key: oDl+FDu+kj2mGXK3dXQtd7azCgS/fiLSeuNwZQdqv2Y=
+    wireguard_port: 51820
+  fw-stg-us-1:
+    cluster: staging-regional-us
+    roles:
+    - services
+    - interfaces
+    labels:
+      region: us-east
+      environment: staging
+      failure_domain: us-1
+    wireguard_ip: 10.89.236.150
+    wireguard_public_key: RRqWjUNGZwePxziJPgMgzH/bKXEhoUCJzVVqQ1PK3yM=
+    wireguard_port: 51820
+  fw-stg-us-2:
+    cluster: staging-regional-us
+    roles:
+    - services
+    - interfaces
+    labels:
+      region: us-east
+      environment: staging
+      failure_domain: us-2
+    wireguard_ip: 10.89.119.47
+    wireguard_public_key: dIlxaQAz1ppfm2YBuasM78fHNi+fMd4H4NZHmHIeen0=
+    wireguard_port: 51820
+  fw-stg-us-3:
+    cluster: staging-regional-us
+    roles:
+    - services
+    - interfaces
+    labels:
+      region: us-east
+      environment: staging
+      failure_domain: us-3
+    wireguard_ip: 10.89.161.105
+    wireguard_public_key: nMV7p+dU61B7XLfwsvdwiI4e0iHuROXqLIid+Eu4QF8=
+    wireguard_port: 51820
+clusters:
+  staging-core:
+    name: Core Central Primary
+    type: central
+    public_topology: false
+    owner_tenant: frameworks
+    roles:
+    - control
+    - data
+    - analytics
+    - support
+    - infra
+    - mesh
+    - interface
+    - observability
+  staging-regional-eu:
+    name: Regional EU Primary
+    type: central
+    region: eu-west
+    public_topology: false
+    owner_tenant: frameworks
+    roles:
+    - services
+    - interface
+    - mesh
+  staging-regional-us:
+    name: Regional US Primary
+    type: central
+    region: us-east
+    public_topology: false
+    owner_tenant: frameworks
+    roles:
+    - services
+    - interface
+    - mesh
+  staging-media-eu:
+    name: Staging Media EU
+    type: edge
+    region: eu-west
+    default: true
+    platform_official: true
+    public_topology: false
+    allow_private_pull_sources: false
+    owner_tenant: frameworks
+    roles:
+    - media
+    env_files:
+    - "../../config/staging-media-eu.env"
+    - "../../secrets/staging-media-eu.env"
+    s3_bucket: frameworks-staging
+    s3_endpoint: https://hel1.your-objectstorage.com
+    s3_region: hel1
+    s3_prefix: staging/eu
+    pricing:
+      model: tier_inherit
+      required_tier_level: 0
+      allow_free_tier: true
+  staging-media-us:
+    name: Staging Media US
+    type: edge
+    region: us-east
+    default: false
+    platform_official: true
+    public_topology: false
+    allow_private_pull_sources: false
+    owner_tenant: frameworks
+    roles:
+    - media
+    env_files:
+    - "../../config/staging-media-us.env"
+    - "../../secrets/staging-media-us.env"
+    s3_bucket: frameworks-staging
+    s3_endpoint: https://hel1.your-objectstorage.com
+    s3_region: hel1
+    s3_prefix: staging/us
+    pricing:
+      model: tier_inherit
+      required_tier_level: 0
+      allow_free_tier: true
+geoip:
+  enabled: true
+  source: maxmind
+  remote_path: "/usr/share/GeoIP/GeoLite2-City.mmdb"
+  services:
+  - foghorn-eu
+  - foghorn-us
+  - quartermaster
+  - livepeer-gateway-eu
+  - livepeer-gateway-us
+infrastructure:
+  postgres:
+    enabled: true
+    engine: yugabyte
+    mode: native
+    port: 5433
+    nodes:
+    - host: fw-stg-eu-1
+      id: 1
+    - host: fw-stg-eu-2
+      id: 2
+    - host: fw-stg-eu-3
+      id: 3
+    instances:
+    - name: support
+      host: fw-stg-core
+      port: 5432
+      databases:
+      - name: chatwoot
+        owner: chatwoot
+      - name: listmonk
+        owner: listmonk
+      - name: metabase
+        owner: metabase
+    databases:
+    - name: quartermaster
+    - name: commodore
+    - name: foghorn
+    - name: purser
+    - name: navigator
+    - name: skipper
+    - name: lookout
+    - name: periscope
+  clickhouse:
+    enabled: true
+    mode: native
+    nodes:
+    - host: fw-stg-core
+      id: 1
+    read_endpoint: fw-stg-core
+    write_endpoint: fw-stg-core
+    port: 9000
+    databases:
+    - periscope
+  kafka:
+    enabled: true
+    mode: native
+    cluster_id: lciWT94OO89HVKM1wym4BQ
+    region_id: eu-west
+    role: aggregator
+    min_insync_replicas: 2
+    offsets_topic_replication_factor: 3
+    transaction_state_log_replication_factor: 3
+    transaction_state_log_min_isr: 2
+    controllers:
+    - host: fw-stg-eu-1
+      id: 101
+      port: 9093
+      dir_id: vGyJQMnmUxo40iLI0ljSUQ
+    - host: fw-stg-eu-2
+      id: 102
+      port: 9093
+      dir_id: VsUdAl_JYeHuP46ZRWXcnQ
+    - host: fw-stg-eu-3
+      id: 103
+      port: 9093
+      dir_id: sX6PsrhKY6OufJFnIBrTtA
+    brokers:
+    - host: fw-stg-eu-1
+      id: 2
+      port: 9092
+    - host: fw-stg-eu-2
+      id: 3
+      port: 9092
+    - host: fw-stg-eu-3
+      id: 4
+      port: 9092
+    topics:
+    - name: analytics_events
+      partitions: 6
+      replication_factor: 3
+      config:
+        retention.ms: '604800000'
+    - name: service_events
+      partitions: 3
+      replication_factor: 3
+      config:
+        retention.ms: '15552000000'
+    - name: analytics.raw_mist_triggers
+      partitions: 6
+      replication_factor: 3
+      config:
+        retention.ms: '2592000000'
+    - name: billing.usage_reports
+      partitions: 3
+      replication_factor: 3
+      config:
+        retention.ms: '31536000000'
+    - name: decklog_events_dlq
+      partitions: 3
+      replication_factor: 3
+      config:
+        retention.ms: '7776000000'
+    - name: lookout.incidents
+      partitions: 3
+      replication_factor: 3
+      config:
+        retention.ms: '604800000'
+    - name: domain.events
+      partitions: 12
+      replication_factor: 3
+      config:
+        retention.ms: '15552000000'
+        cleanup.policy: delete
+    regional:
+    - region_id: us-east
+      role: regional
+      cluster_id: "-vjF412CxMj6rVO-JarqHQ"
+      min_insync_replicas: 2
+      offsets_topic_replication_factor: 3
+      transaction_state_log_replication_factor: 3
+      transaction_state_log_min_isr: 2
+      controllers:
+      - host: fw-stg-us-1
+        id: 201
+        port: 9093
+        dir_id: t75XFpvrYKOkh3-hQhUJzA
+      - host: fw-stg-us-2
+        id: 202
+        port: 9093
+        dir_id: b-jbqMCRnFZGBWcX_D7fuQ
+      - host: fw-stg-us-3
+        id: 203
+        port: 9093
+        dir_id: dKHF_7KaIEcFwWufeVAaUQ
+      brokers:
+      - host: fw-stg-us-1
+        id: 11
+        port: 9092
+      - host: fw-stg-us-2
+        id: 12
+        port: 9092
+      - host: fw-stg-us-3
+        id: 13
+        port: 9092
+      topics:
+      - name: analytics_events
+        partitions: 6
+        replication_factor: 3
+        config:
+          retention.ms: '604800000'
+      - name: service_events
+        partitions: 3
+        replication_factor: 3
+        config:
+          retention.ms: '15552000000'
+      - name: analytics.raw_mist_triggers
+        partitions: 6
+        replication_factor: 3
+        config:
+          retention.ms: '2592000000'
+      - name: billing.usage_reports
+        partitions: 3
+        replication_factor: 3
+        config:
+          retention.ms: '31536000000'
+      - name: decklog_events_dlq
+        partitions: 3
+        replication_factor: 3
+        config:
+          retention.ms: '7776000000'
+      - name: domain.events
+        partitions: 12
+        replication_factor: 3
+        config:
+          retention.ms: '15552000000'
+          cleanup.policy: delete
+    mirrormaker:
+      enabled: true
+      heap_opts: "-Xmx1G -Xms1G"
+      replicas: 3
+      task_count: 2
+      links:
+      - source: us-east
+        target: eu-west
+        hosts:
+        - fw-stg-eu-1
+        - fw-stg-eu-2
+        - fw-stg-eu-3
+      - source: eu-west
+        target: us-east
+        hosts:
+        - fw-stg-us-1
+        - fw-stg-us-2
+        - fw-stg-us-3
+  redis:
+    enabled: true
+    mode: native
+    instances:
+    - name: foghorn
+      cluster: staging-media-eu
+      mode: sentinel
+      host: fw-stg-eu-1
+      replica_hosts:
+      - fw-stg-eu-2
+      - fw-stg-eu-3
+      sentinels:
+      - host: fw-stg-eu-1
+        port: 26379
+      - host: fw-stg-eu-2
+        port: 26379
+      - host: fw-stg-eu-3
+        port: 26379
+      master_name: foghorn
+      port: 6379
+      password: "${REDIS_FOGHORN_PASSWORD}"
+    - name: foghorn
+      cluster: staging-media-us
+      mode: sentinel
+      host: fw-stg-us-1
+      replica_hosts:
+      - fw-stg-us-2
+      - fw-stg-us-3
+      sentinels:
+      - host: fw-stg-us-1
+        port: 26379
+      - host: fw-stg-us-2
+        port: 26379
+      - host: fw-stg-us-3
+        port: 26379
+      master_name: foghorn
+      port: 6379
+      password: "${REDIS_FOGHORN_PASSWORD}"
+    - name: chatwoot
+      host: fw-stg-core
+      port: 6380
+      password: "${REDIS_CHATWOOT_PASSWORD}"
+services:
+  quartermaster:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+  privateer:
+    enabled: true
+    mode: native
+  commodore:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+  purser:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+  periscope-query:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+  periscope-metering:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+    config:
+      METERING_SOURCE_ID: periscope-default
+      METERING_SOURCE_REGION: eu-west
+  navigator:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+  skipper:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+  lookout:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+  steward:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+  deckhand:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+  chandler-eu:
+    enabled: true
+    mode: native
+    deploy: chandler
+    env_file: ../../config/staging-s3-go.env
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    cluster: staging-media-eu
+  chandler-us:
+    enabled: true
+    mode: native
+    deploy: chandler
+    env_file: ../../config/staging-s3-go.env
+    hosts:
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+    cluster: staging-media-us
+  listmonk:
+    enabled: true
+    mode: docker
+    host: fw-stg-core
+  chatwoot:
+    enabled: true
+    mode: docker
+    host: fw-stg-core
+  metabase:
+    enabled: true
+    mode: docker
+    host: fw-stg-core
+  bridge:
+    enabled: true
+    mode: native
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+  foghorn-eu:
+    enabled: true
+    mode: native
+    deploy: foghorn
+    env_file: ../../config/staging-s3-go.env
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    cluster: staging-media-eu
+  foghorn-us:
+    enabled: true
+    mode: native
+    deploy: foghorn
+    env_file: ../../config/staging-s3-go.env
+    hosts:
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+    cluster: staging-media-us
+  livepeer-gateway-eu:
+    enabled: true
+    mode: native
+    deploy: livepeer-gateway
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    cluster: staging-media-eu
+    config:
+      http_addr: 127.0.0.1:8935
+      cli_addr: 127.0.0.1:7935
+      enable_cli_tx_routes: 'false'
+      trusted_proxy_cidrs: 127.0.0.1/32,::1/128
+  livepeer-gateway-us:
+    enabled: true
+    mode: native
+    deploy: livepeer-gateway
+    hosts:
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+    cluster: staging-media-us
+    config:
+      http_addr: 127.0.0.1:8935
+      cli_addr: 127.0.0.1:7935
+      enable_cli_tx_routes: 'false'
+      trusted_proxy_cidrs: 127.0.0.1/32,::1/128
+  signalman:
+    enabled: true
+    mode: native
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+  decklog:
+    enabled: true
+    mode: native
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+  periscope-ingest:
+    enabled: true
+    mode: native
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+interfaces:
+  nginx:
+    enabled: true
+    mode: native
+    hosts:
+    - fw-stg-core
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+  chartroom:
+    enabled: true
+    mode: docker
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+    config:
+      BASEMAP_PROVIDER: carto
+      BASEMAP_STYLE: dark-matter
+  foredeck:
+    enabled: true
+    mode: docker
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+    config:
+      BASEMAP_PROVIDER: carto
+      BASEMAP_STYLE: dark-matter
+  logbook:
+    enabled: true
+    mode: docker
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+observability:
+  victoriametrics:
+    enabled: true
+    mode: docker
+    host: fw-stg-core
+    port: 8428
+    config:
+      VM_RETENTION_PERIOD: 14d
+      VM_HTTP_AUTH_USERNAME: telemetry
+  vmagent:
+    enabled: true
+    mode: docker
+    hosts:
+    - fw-stg-core
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+  vmauth:
+    enabled: true
+    mode: docker
+    hosts:
+    - fw-stg-eu-1
+    - fw-stg-eu-2
+    - fw-stg-eu-3
+    - fw-stg-us-1
+    - fw-stg-us-2
+    - fw-stg-us-3
+    clusters:
+    - staging-media-eu
+    - staging-media-us
+    port: 8427
+  grafana:
+    enabled: true
+    mode: docker
+    host: fw-stg-core
+    port: 3000
+  vmalert:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+    port: 8880
+  alertmanager:
+    enabled: true
+    mode: native
+    host: fw-stg-core
+    port: 9093
+wireguard:
+  enabled: true
+  mesh_cidr: 10.89.0.0/16
+  listen_port: 51820

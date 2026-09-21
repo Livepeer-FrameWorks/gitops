@@ -1,0 +1,24 @@
+accounts:
+  - kind: system_operator
+    tenant:
+      ref: quartermaster.system_tenant
+    users:
+      - email: staging@frameworks.network
+        role: owner
+        first_name: FrameWorks
+        last_name: Staging
+        platform_operator: true
+        password_ref:
+          sops: ../../secrets/staging.env
+          key: PLATFORM_ADMIN_PASSWORD
+
+purser:
+  customer_billing:
+    - tenant:
+        ref: quartermaster.system_tenant
+      model: postpaid
+      tier: free
+      entitlement_overrides:
+        max_concurrent_streams: 0
+        max_concurrent_viewers: 0
+      cluster_access: derived

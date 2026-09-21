@@ -209,6 +209,7 @@ infrastructure:
       - name: navigator
       - name: skipper
       - name: lookout
+      - name: bosun
       - name: periscope
   clickhouse:
     enabled: true
@@ -263,21 +264,39 @@ infrastructure:
       - name: analytics_events
         partitions: 6
         replication_factor: 3
+        config:
+          retention.ms: "604800000"
       - name: service_events
         partitions: 3
         replication_factor: 3
+        config:
+          retention.ms: "15552000000"
       - name: analytics.raw_mist_triggers
         partitions: 6
         replication_factor: 3
+        config:
+          retention.ms: "2592000000"
       - name: billing.usage_reports
         partitions: 3
         replication_factor: 3
+        config:
+          retention.ms: "31536000000"
       - name: decklog_events_dlq
         partitions: 3
         replication_factor: 3
+        config:
+          retention.ms: "7776000000"
       - name: lookout.incidents
         partitions: 3
         replication_factor: 3
+        config:
+          retention.ms: "604800000"
+      - name: domain.events
+        partitions: 12
+        replication_factor: 3
+        config:
+          retention.ms: "15552000000"
+          cleanup.policy: delete
     regional:
       - region_id: us-east
         role: regional
@@ -313,18 +332,34 @@ infrastructure:
           - name: analytics_events
             partitions: 6
             replication_factor: 3
+            config:
+              retention.ms: "604800000"
           - name: service_events
             partitions: 3
             replication_factor: 3
+            config:
+              retention.ms: "15552000000"
           - name: analytics.raw_mist_triggers
             partitions: 6
             replication_factor: 3
+            config:
+              retention.ms: "2592000000"
           - name: billing.usage_reports
             partitions: 3
             replication_factor: 3
+            config:
+              retention.ms: "31536000000"
           - name: decklog_events_dlq
             partitions: 3
             replication_factor: 3
+            config:
+              retention.ms: "7776000000"
+          - name: domain.events
+            partitions: 12
+            replication_factor: 3
+            config:
+              retention.ms: "15552000000"
+              cleanup.policy: delete
     mirrormaker:
       enabled: true
       heap_opts: "-Xmx1G -Xms1G"
@@ -411,6 +446,10 @@ services:
     mode: native
     host: central-eu-1
   lookout:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  bosun:
     enabled: true
     mode: native
     host: central-eu-1

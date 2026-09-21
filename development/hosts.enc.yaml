@@ -1,0 +1,19 @@
+hosts:
+    remotedev:
+        address: ENC[AES256_GCM,data:vIcdlb9tpRZiyABbQg==,iv:wygYU+vSqX8EvS+xTWpHN5WWAwmE4XeCoeiE8mhfjkg=,tag:syA2yUscLLUWDjTPuQdBww==,type:str]
+        port: ENC[AES256_GCM,data:6ts=,iv:sMQnlHzSZbXCGkclsnyqpzeTdYSihA1JrcVrBkrRhi8=,tag:OZI2xSRj/2Fxt6cUzbf4tQ==,type:int]
+sops:
+    age:
+        - enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBsT2svN2Z5RXMwRkJLZVRP
+            V2p2NHhrYjNsaUorZ2Q1NXpxNkNYS0RlU3hzCmlZbk1ialB5NUVGbnZ1KzNMeWMv
+            ZWFTMjdpOTdLdlhrRWJFZG96T2FpNU0KLS0tIHB3bnF1MC9GMXhQa0M5UXJ0bFFu
+            UDFjNlpJUTEwelRQOFF1TEhpWTFML2cKx65GJbL0GrDQQ7DxII6Rkq7brroypaNS
+            cghA2DeTuwVc5MZA+HZtzfAL1hrKLHBWdQ9wdnYBIwaIIHrshJatqw==
+            -----END AGE ENCRYPTED FILE-----
+          recipient: age1xzc3p7hn6urdsv9u0789aqln6fjyzmczuc3ydpgfxehpr3tq4c8q6gpgt7
+    lastmodified: "2026-09-20T11:47:57Z"
+    mac: ENC[AES256_GCM,data:+tUw9bS3d4Ec0CEZ5BFgirMbXwcHt75frwz5AlDuvXNiK80j6D3sQ82bHg6hOEufxE6Cv6Rbk/VvyhJhkEPyNxa0Hk3/utjo1vt48mPpm5LoV3lZVX7yqMZ3DG/REEAGjxGkA+9rWwCfLID+lllzMjD5veODBusYS9H9gI2N+Sk=,iv:T3476YfuzTFbiGaflthS1Nn7FxHuvwxiSo6aPoPEMbM=,tag:lYXF9Vq7+346MDVLzuebYQ==,type:str]
+    unencrypted_suffix: _unencrypted
+    version: 3.13.3

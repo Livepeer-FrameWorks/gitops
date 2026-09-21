@@ -1,0 +1,31 @@
+version: v1
+type: edge
+root_domain: staging.frameworks.network
+pool_domain: edge.staging.frameworks.network
+email: ops@frameworks.network
+cluster_id: staging-media-eu
+channel: candidate
+mode: native
+capabilities: [ingest, edge, storage, processing]
+bandwidth_mbps: 1000
+storage_capacity_bytes: 20000000000
+hosts_file: hosts.enc.yaml
+nodes:
+  - name: fw-stg-edge-eu
+    subdomain: edge-eu
+    region: eu-west
+    cluster: staging-media-eu
+    foghorn_addr: 192.168.10.17:18029
+    foghorn_tls_server_name: foghorn.staging-media-eu.staging.frameworks.network
+    telemetry_address: 192.168.10.17
+    apply_tune: true
+    register_qm: true
+  - name: fw-stg-edge-us
+    subdomain: edge-us
+    region: us-east
+    cluster: staging-media-us
+    foghorn_addr: 192.168.10.20:18029
+    foghorn_tls_server_name: foghorn.staging-media-us.staging.frameworks.network
+    telemetry_address: 192.168.10.20
+    apply_tune: true
+    register_qm: true
