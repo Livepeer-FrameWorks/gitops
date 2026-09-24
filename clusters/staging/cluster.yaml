@@ -186,6 +186,8 @@ geoip:
   - quartermaster
   - livepeer-gateway-eu
   - livepeer-gateway-us
+webhooks:
+  allow_private_destinations: true
 infrastructure:
   postgres:
     enabled: true
@@ -467,8 +469,6 @@ services:
     enabled: true
     mode: native
     host: fw-stg-core
-    config:
-      BOSUN_ALLOW_PRIVATE_DESTINATIONS: "true"
   steward:
     enabled: true
     mode: native
