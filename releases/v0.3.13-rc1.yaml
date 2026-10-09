@@ -1,7 +1,7 @@
 platform_version: v0.3.13-rc1
 git_commit: 6ed490d0d95b1d617e4d83cda2f66036ce703d99
 release_date: 2026-10-09T08:59:49Z
-min_cli_version: v0.3.13
+min_cli_version: v0.3.13-rc1
 
 services:
   - name: bosun
