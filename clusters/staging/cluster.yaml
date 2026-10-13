@@ -222,6 +222,9 @@ infrastructure:
     - name: lookout
     - name: bosun
     - name: periscope
+    - name: network_observer
+      owner: network_observer
+      runtime_role: network_observer_runtime
   clickhouse:
     enabled: true
     mode: native
@@ -519,6 +522,10 @@ services:
     - fw-stg-us-1
     - fw-stg-us-2
     - fw-stg-us-3
+  network-observer:
+    enabled: true
+    mode: native
+    host: fw-stg-core
   foghorn-eu:
     enabled: true
     mode: native
