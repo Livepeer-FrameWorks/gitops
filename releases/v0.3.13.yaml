@@ -1,574 +1,574 @@
 platform_version: v0.3.13
-git_commit: b5cfbbcebc58a38fba064cb1dccf9bdf7cd5c822
-release_date: 2026-10-22T18:10:38Z
+git_commit: 73c98355769958de053749ae76058ff7b970abc5
+release_date: 2026-10-23T09:44:22Z
 min_cli_version: v0.3.13-rc1
 
 services:
   - name: bosun
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-bosun:v0.3.13
-    digest: sha256:0850f5be6f160ec81ccc771e2e3eeb12945e1d65c568fb7bf18921eeeafcb44b
-    source_hash: sha256:c713dd03cfa0a8fab9204f142675b297e489efc91acbe196fdbd33327349e14b
+    digest: sha256:0ce925a092d7048a509f5b666cab079e973daf1594552e514f616646c9dbdb91
+    source_hash: sha256:739c1f398856a4b3075ea4f6adf4cfd08d9f786a79a4804790aecd1017b3e4ce
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-bosun:v0.3.13
-        digest: sha256:0850f5be6f160ec81ccc771e2e3eeb12945e1d65c568fb7bf18921eeeafcb44b
+        digest: sha256:0ce925a092d7048a509f5b666cab079e973daf1594552e514f616646c9dbdb91
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-bosun:v0.3.13
-        digest: sha256:0850f5be6f160ec81ccc771e2e3eeb12945e1d65c568fb7bf18921eeeafcb44b
+        digest: sha256:0ce925a092d7048a509f5b666cab079e973daf1594552e514f616646c9dbdb91
   - name: bridge
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-bridge:v0.3.13
-    digest: sha256:6a1c3c7f65b52bc805c81cc75792e7a6cde4ea78bbb73e91dc8ed9472f4bb835
+    digest: sha256:9833aefd70b56d148f4bf3a253df7110a08368a351db8d8af1a51065fd6b20e2
     source_hash: sha256:ca5372017cd39522d5151d538d564bc4133502acd2d055bd9dab71e204ff0242
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-bridge:v0.3.13
-        digest: sha256:6a1c3c7f65b52bc805c81cc75792e7a6cde4ea78bbb73e91dc8ed9472f4bb835
+        digest: sha256:9833aefd70b56d148f4bf3a253df7110a08368a351db8d8af1a51065fd6b20e2
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-bridge:v0.3.13
-        digest: sha256:6a1c3c7f65b52bc805c81cc75792e7a6cde4ea78bbb73e91dc8ed9472f4bb835
+        digest: sha256:9833aefd70b56d148f4bf3a253df7110a08368a351db8d8af1a51065fd6b20e2
   - name: chandler
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-chandler:v0.3.13
-    digest: sha256:47aef5aa1b86b2e50f002d5a51d83a375ad0433e08982d73fd75c48806ce7a34
+    digest: sha256:def25c4a2d42070d8ed2177066ee7ae4844755be5961934b6b4abc9818dab02f
     source_hash: sha256:8c98b6d27fe005ad0a3f3e3bf0392198a9264b26f6f71a63053b5ed02204ca57
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-chandler:v0.3.13
-        digest: sha256:47aef5aa1b86b2e50f002d5a51d83a375ad0433e08982d73fd75c48806ce7a34
+        digest: sha256:def25c4a2d42070d8ed2177066ee7ae4844755be5961934b6b4abc9818dab02f
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-chandler:v0.3.13
-        digest: sha256:47aef5aa1b86b2e50f002d5a51d83a375ad0433e08982d73fd75c48806ce7a34
+        digest: sha256:def25c4a2d42070d8ed2177066ee7ae4844755be5961934b6b4abc9818dab02f
   - name: commodore
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-commodore:v0.3.13
-    digest: sha256:ce45e181c9d5ef91401add970105e99371ed442103021e2fea2498182bb7c94c
-    source_hash: sha256:0a671b7955dea991e1fcbfc0f12e6a46172f51bd7f854931074f8540db44d980
+    digest: sha256:5a79fa636c8395bb0e6658fc9b50fdd98fcc19ef8cc0f83d62d690cce9bc8c3b
+    source_hash: sha256:a269e0b6dfbc58d8fceb4f8c17b7f54f94596166699eb3923ea985f2f54d7390
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-commodore:v0.3.13
-        digest: sha256:ce45e181c9d5ef91401add970105e99371ed442103021e2fea2498182bb7c94c
+        digest: sha256:5a79fa636c8395bb0e6658fc9b50fdd98fcc19ef8cc0f83d62d690cce9bc8c3b
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-commodore:v0.3.13
-        digest: sha256:ce45e181c9d5ef91401add970105e99371ed442103021e2fea2498182bb7c94c
+        digest: sha256:5a79fa636c8395bb0e6658fc9b50fdd98fcc19ef8cc0f83d62d690cce9bc8c3b
   - name: deckhand
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-deckhand:v0.3.13
-    digest: sha256:a9f7b3548321d8e3b1fe5d12a0f72d050780a91105876283ce75dfa4987a9fd5
+    digest: sha256:e996c557aca99173137f34e4c9d076a70376170686741e23ddc9afecec82df58
     source_hash: sha256:8d4a2fbe37982f896c31ab1aeb2c720a4f27b3411670e84f76dd976cb90e1137
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-deckhand:v0.3.13
-        digest: sha256:a9f7b3548321d8e3b1fe5d12a0f72d050780a91105876283ce75dfa4987a9fd5
+        digest: sha256:e996c557aca99173137f34e4c9d076a70376170686741e23ddc9afecec82df58
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-deckhand:v0.3.13
-        digest: sha256:a9f7b3548321d8e3b1fe5d12a0f72d050780a91105876283ce75dfa4987a9fd5
+        digest: sha256:e996c557aca99173137f34e4c9d076a70376170686741e23ddc9afecec82df58
   - name: decklog
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-decklog:v0.3.13
-    digest: sha256:9404e274ce1a02e50546ad4c67e972919ea6310c106f6dbd6dd3478f0ef14792
+    digest: sha256:bf9cafd01d18a0023c7c0ad6be54de70c78dbda9afa682e81cc5df4d16b474e2
     source_hash: sha256:0bf69ef82b0da6acc00c4fb965e25474a927581c45a41ae9765103eeb9fbbbf5
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-decklog:v0.3.13
-        digest: sha256:9404e274ce1a02e50546ad4c67e972919ea6310c106f6dbd6dd3478f0ef14792
+        digest: sha256:bf9cafd01d18a0023c7c0ad6be54de70c78dbda9afa682e81cc5df4d16b474e2
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-decklog:v0.3.13
-        digest: sha256:9404e274ce1a02e50546ad4c67e972919ea6310c106f6dbd6dd3478f0ef14792
+        digest: sha256:bf9cafd01d18a0023c7c0ad6be54de70c78dbda9afa682e81cc5df4d16b474e2
   - name: edge
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-edge:v0.3.13
-    digest: sha256:bf02e4ca4b7d887a750d0a4fb3c4560a9894172629e575df51d1d4045092f681
-    source_hash: sha256:07d13aa726c3a4cf730b63d2c8d30a8eda37609fc1ef4a257f4c7cb3fa0d321e
+    digest: sha256:974a137c80ae4aeea5c98a18b98f09e8fcded7dac7d1c2ffc022e284cbee168e
+    source_hash: sha256:46209aa4c9d3c48baaa96e81068cfcf2cdbd1e1dd94d8242c138de6281ebcf69
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-edge:v0.3.13
-        digest: sha256:bf02e4ca4b7d887a750d0a4fb3c4560a9894172629e575df51d1d4045092f681
+        digest: sha256:974a137c80ae4aeea5c98a18b98f09e8fcded7dac7d1c2ffc022e284cbee168e
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-edge:v0.3.13
-        digest: sha256:bf02e4ca4b7d887a750d0a4fb3c4560a9894172629e575df51d1d4045092f681
-    variants: {"cpu":{"image":"livepeerframeworks/frameworks-edge:v0.3.13","digest":"sha256:bf02e4ca4b7d887a750d0a4fb3c4560a9894172629e575df51d1d4045092f681","images":{"dockerhub":{"image":"livepeerframeworks/frameworks-edge:v0.3.13","digest":"sha256:bf02e4ca4b7d887a750d0a4fb3c4560a9894172629e575df51d1d4045092f681"},"ghcr":{"image":"ghcr.io/livepeer-frameworks/frameworks-edge:v0.3.13","digest":"sha256:bf02e4ca4b7d887a750d0a4fb3c4560a9894172629e575df51d1d4045092f681"}}},"cuda":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-cuda","digest":"sha256:cf8a5e8e8191de934ba2ed2abea88015cf8cb328dfc21c223d4cee37864c554a","images":{"dockerhub":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-cuda","digest":"sha256:cf8a5e8e8191de934ba2ed2abea88015cf8cb328dfc21c223d4cee37864c554a"},"ghcr":{"image":"ghcr.io/livepeer-frameworks/frameworks-edge:v0.3.13-onnx-cuda","digest":"sha256:cf8a5e8e8191de934ba2ed2abea88015cf8cb328dfc21c223d4cee37864c554a"}}},"tensorrt":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-tensorrt","digest":"sha256:81ca982c1e0a8b5873d7ddb2f1b3a6a4bf462255fdb843391183c0ac37d8d2b2","images":{"dockerhub":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-tensorrt","digest":"sha256:81ca982c1e0a8b5873d7ddb2f1b3a6a4bf462255fdb843391183c0ac37d8d2b2"},"ghcr":{"image":"ghcr.io/livepeer-frameworks/frameworks-edge:v0.3.13-onnx-tensorrt","digest":"sha256:81ca982c1e0a8b5873d7ddb2f1b3a6a4bf462255fdb843391183c0ac37d8d2b2"}}},"openvino":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-openvino","digest":"sha256:b59f6828eaf393db0a1a3e6ed9c1a52e8f8683aaaabf25678f0a40ebe41a5139","images":{"dockerhub":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-openvino","digest":"sha256:b59f6828eaf393db0a1a3e6ed9c1a52e8f8683aaaabf25678f0a40ebe41a5139"},"ghcr":{"image":"ghcr.io/livepeer-frameworks/frameworks-edge:v0.3.13-onnx-openvino","digest":"sha256:b59f6828eaf393db0a1a3e6ed9c1a52e8f8683aaaabf25678f0a40ebe41a5139"}}}}
+        digest: sha256:974a137c80ae4aeea5c98a18b98f09e8fcded7dac7d1c2ffc022e284cbee168e
+    variants: {"cpu":{"image":"livepeerframeworks/frameworks-edge:v0.3.13","digest":"sha256:974a137c80ae4aeea5c98a18b98f09e8fcded7dac7d1c2ffc022e284cbee168e","images":{"dockerhub":{"image":"livepeerframeworks/frameworks-edge:v0.3.13","digest":"sha256:974a137c80ae4aeea5c98a18b98f09e8fcded7dac7d1c2ffc022e284cbee168e"},"ghcr":{"image":"ghcr.io/livepeer-frameworks/frameworks-edge:v0.3.13","digest":"sha256:974a137c80ae4aeea5c98a18b98f09e8fcded7dac7d1c2ffc022e284cbee168e"}}},"cuda":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-cuda","digest":"sha256:272364e72c97d9e9b231762748a6d1214d7137d716306cbf47158ebe50911c13","images":{"dockerhub":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-cuda","digest":"sha256:272364e72c97d9e9b231762748a6d1214d7137d716306cbf47158ebe50911c13"},"ghcr":{"image":"ghcr.io/livepeer-frameworks/frameworks-edge:v0.3.13-onnx-cuda","digest":"sha256:272364e72c97d9e9b231762748a6d1214d7137d716306cbf47158ebe50911c13"}}},"tensorrt":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-tensorrt","digest":"sha256:bff37595af784d0ed8be7a798b233e3b592a20b7531fe00cb0e90375c36b0e4e","images":{"dockerhub":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-tensorrt","digest":"sha256:bff37595af784d0ed8be7a798b233e3b592a20b7531fe00cb0e90375c36b0e4e"},"ghcr":{"image":"ghcr.io/livepeer-frameworks/frameworks-edge:v0.3.13-onnx-tensorrt","digest":"sha256:bff37595af784d0ed8be7a798b233e3b592a20b7531fe00cb0e90375c36b0e4e"}}},"openvino":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-openvino","digest":"sha256:d42ce4186dd03dee5ae4b519f612ac36c91603b8869b9155007607ab0da7480e","images":{"dockerhub":{"image":"livepeerframeworks/frameworks-edge:v0.3.13-onnx-openvino","digest":"sha256:d42ce4186dd03dee5ae4b519f612ac36c91603b8869b9155007607ab0da7480e"},"ghcr":{"image":"ghcr.io/livepeer-frameworks/frameworks-edge:v0.3.13-onnx-openvino","digest":"sha256:d42ce4186dd03dee5ae4b519f612ac36c91603b8869b9155007607ab0da7480e"}}}}
   - name: foghorn
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-foghorn:v0.3.13
-    digest: sha256:cc8887c0b8a7fa5e44ea3b04cd7e301d7e57c15f22152c8e7e4601033328200b
-    source_hash: sha256:d24fb417d823c02a5161010d790667aaf692f857979a6384f1d3ebacfdefa14c
+    digest: sha256:88f3fa105afec0e8776eb5bf163a969bf56b5eb1e97c8038039bd7760939031a
+    source_hash: sha256:aa720f0b7570c385e65962c2cb93c6ff73c5080b4e1665f3ef8b8fe98db49fa7
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-foghorn:v0.3.13
-        digest: sha256:cc8887c0b8a7fa5e44ea3b04cd7e301d7e57c15f22152c8e7e4601033328200b
+        digest: sha256:88f3fa105afec0e8776eb5bf163a969bf56b5eb1e97c8038039bd7760939031a
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-foghorn:v0.3.13
-        digest: sha256:cc8887c0b8a7fa5e44ea3b04cd7e301d7e57c15f22152c8e7e4601033328200b
+        digest: sha256:88f3fa105afec0e8776eb5bf163a969bf56b5eb1e97c8038039bd7760939031a
   - name: lookout
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-lookout:v0.3.13
-    digest: sha256:9a8df6aa24a08e574ba2532b72b815b969847d4ff28990f7530e7ebcbe8e77f0
-    source_hash: sha256:73c2581ab1b57dbdec0e7240011e6bbe497228d6bdf735ef9f25ce6b6a5d1faf
+    digest: sha256:33599bcd3f9be26997053d60e0c7e14248343eea84cdd7072e16e67dd4843cdb
+    source_hash: sha256:da3aa709d3fe93e1a77642ad9aadeb405a878cbe81cda8fb5d794d64c1264f0a
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-lookout:v0.3.13
-        digest: sha256:9a8df6aa24a08e574ba2532b72b815b969847d4ff28990f7530e7ebcbe8e77f0
+        digest: sha256:33599bcd3f9be26997053d60e0c7e14248343eea84cdd7072e16e67dd4843cdb
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-lookout:v0.3.13
-        digest: sha256:9a8df6aa24a08e574ba2532b72b815b969847d4ff28990f7530e7ebcbe8e77f0
+        digest: sha256:33599bcd3f9be26997053d60e0c7e14248343eea84cdd7072e16e67dd4843cdb
   - name: navigator
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-navigator:v0.3.13
-    digest: sha256:a87f0dea75c851de918766afe7e29a10c73cb27b862b1b43ab168bf48024a3d3
-    source_hash: sha256:10f94d83836b6650fae30e872a1ff704df8ad88c87fdf7a332b4e8f3dd896631
+    digest: sha256:137fd2f0d4988c4fd2ffd2c66ef99015ea7f7c9dba089ac96b6204a823c468a6
+    source_hash: sha256:e21340e1552fb79866e0cd489fe20ab61d47125e3ee68115b2a3482fbd34f4a6
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-navigator:v0.3.13
-        digest: sha256:a87f0dea75c851de918766afe7e29a10c73cb27b862b1b43ab168bf48024a3d3
+        digest: sha256:137fd2f0d4988c4fd2ffd2c66ef99015ea7f7c9dba089ac96b6204a823c468a6
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-navigator:v0.3.13
-        digest: sha256:a87f0dea75c851de918766afe7e29a10c73cb27b862b1b43ab168bf48024a3d3
+        digest: sha256:137fd2f0d4988c4fd2ffd2c66ef99015ea7f7c9dba089ac96b6204a823c468a6
   - name: network-observer
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-network-observer:v0.3.13
-    digest: sha256:8dd157ef967d2f499a26e219f3debc9f110020ced5966fc0c5ae12f867bf0a8b
-    source_hash: sha256:5e7e0d6063e262afd1633b434a815f707bd8fa53840b10149278e270c376beb0
+    digest: sha256:249ca14f3683c3ef513ac8bee83f602458f254a068e530c0e37362687dbdc9fa
+    source_hash: sha256:d65f88500aa3cbf6539af094f769dc6eb8ad4d8d873fc12ed9c09fe01e57e4d3
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-network-observer:v0.3.13
-        digest: sha256:8dd157ef967d2f499a26e219f3debc9f110020ced5966fc0c5ae12f867bf0a8b
+        digest: sha256:249ca14f3683c3ef513ac8bee83f602458f254a068e530c0e37362687dbdc9fa
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-network-observer:v0.3.13
-        digest: sha256:8dd157ef967d2f499a26e219f3debc9f110020ced5966fc0c5ae12f867bf0a8b
+        digest: sha256:249ca14f3683c3ef513ac8bee83f602458f254a068e530c0e37362687dbdc9fa
   - name: network-prober
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-network-prober:v0.3.13
-    digest: sha256:f7ce49a511a4e17f31e7cfdeee57d5f62244c718a9b236cce6724c1a8852e4a1
+    digest: sha256:6b71b384b7ac12a2a617ede7d47085e52c9abab513e4bb5a8cbed52fe997d024
     source_hash: sha256:dcab767124727e6e205623a43500143f7070987dc52921f5c952cd145bbade06
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-network-prober:v0.3.13
-        digest: sha256:f7ce49a511a4e17f31e7cfdeee57d5f62244c718a9b236cce6724c1a8852e4a1
+        digest: sha256:6b71b384b7ac12a2a617ede7d47085e52c9abab513e4bb5a8cbed52fe997d024
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-network-prober:v0.3.13
-        digest: sha256:f7ce49a511a4e17f31e7cfdeee57d5f62244c718a9b236cce6724c1a8852e4a1
+        digest: sha256:6b71b384b7ac12a2a617ede7d47085e52c9abab513e4bb5a8cbed52fe997d024
   - name: periscope-ingest
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-periscope-ingest:v0.3.13
-    digest: sha256:2670a8f0f9dd234cbc0fcfa57834cbe56203bf0aeff577e518d91e909c81fe25
-    source_hash: sha256:6b5ecb9ee00632655757b1fee29051793ed4bf56ce5c5f3536f94a77f2e685bc
+    digest: sha256:b441ee12489c629316cdee3f34cd6a342d7d9c430b6a933eaba552eeddead9be
+    source_hash: sha256:7db9bf315ccc8f937e203f173feba8d3b2283c37990bc6dae5ec1fff7ac94461
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-periscope-ingest:v0.3.13
-        digest: sha256:2670a8f0f9dd234cbc0fcfa57834cbe56203bf0aeff577e518d91e909c81fe25
+        digest: sha256:b441ee12489c629316cdee3f34cd6a342d7d9c430b6a933eaba552eeddead9be
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-periscope-ingest:v0.3.13
-        digest: sha256:2670a8f0f9dd234cbc0fcfa57834cbe56203bf0aeff577e518d91e909c81fe25
+        digest: sha256:b441ee12489c629316cdee3f34cd6a342d7d9c430b6a933eaba552eeddead9be
   - name: periscope-metering
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-periscope-metering:v0.3.13
-    digest: sha256:837f1bda0acca504a39a122fa7de08a88efd102879f0e733d2d7e0024a844d20
-    source_hash: sha256:68d442b10978c9691a695530ffe3c362ead45d8a78ee9778b54dca4ba8fc0e37
+    digest: sha256:e12384be9b5bbe44904adb178c05436b5d7a3ff6019d99ddea4e31e3eeabd385
+    source_hash: sha256:74567e6d0c3ef7d7ccf948664dce60b633dfbc2f0ae9540f57c2291c1d0f89ff
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-periscope-metering:v0.3.13
-        digest: sha256:837f1bda0acca504a39a122fa7de08a88efd102879f0e733d2d7e0024a844d20
+        digest: sha256:e12384be9b5bbe44904adb178c05436b5d7a3ff6019d99ddea4e31e3eeabd385
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-periscope-metering:v0.3.13
-        digest: sha256:837f1bda0acca504a39a122fa7de08a88efd102879f0e733d2d7e0024a844d20
+        digest: sha256:e12384be9b5bbe44904adb178c05436b5d7a3ff6019d99ddea4e31e3eeabd385
   - name: periscope-query
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-periscope-query:v0.3.13
-    digest: sha256:1c748ead7629251ebb59516f10cf5cb8862f433f614a0ba4a99f6239d1a3935d
-    source_hash: sha256:7e64b2b100dddf20addc0632e793c69f983ecf5f81f3168a1040ad3bcd520af7
+    digest: sha256:b0e0a675ed3827db6e8815ff46b711aefb72c58f7101044adf6e8998fe339a03
+    source_hash: sha256:dd6a32994e6972022186b2f03fa756d923fef5052fe2e1fa9cb705ed773a0587
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-periscope-query:v0.3.13
-        digest: sha256:1c748ead7629251ebb59516f10cf5cb8862f433f614a0ba4a99f6239d1a3935d
+        digest: sha256:b0e0a675ed3827db6e8815ff46b711aefb72c58f7101044adf6e8998fe339a03
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-periscope-query:v0.3.13
-        digest: sha256:1c748ead7629251ebb59516f10cf5cb8862f433f614a0ba4a99f6239d1a3935d
+        digest: sha256:b0e0a675ed3827db6e8815ff46b711aefb72c58f7101044adf6e8998fe339a03
   - name: purser
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-purser:v0.3.13
-    digest: sha256:29fa8121108cfb2468b2204e8f4dbf6e066cea4ee9693a7abcef6112484cf247
-    source_hash: sha256:aeec33a3410d8bb77a1bd64df37d5f335ebb946797e6e742f9395109dfe071f0
+    digest: sha256:63d167912251474fa2fff19ff9b6d3b1f7d442a08d071ce7cb344039fb153d01
+    source_hash: sha256:354bc23639f019139f06d4aefd4f7183d87dcc3957afba95cec64006949c17fd
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-purser:v0.3.13
-        digest: sha256:29fa8121108cfb2468b2204e8f4dbf6e066cea4ee9693a7abcef6112484cf247
+        digest: sha256:63d167912251474fa2fff19ff9b6d3b1f7d442a08d071ce7cb344039fb153d01
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-purser:v0.3.13
-        digest: sha256:29fa8121108cfb2468b2204e8f4dbf6e066cea4ee9693a7abcef6112484cf247
+        digest: sha256:63d167912251474fa2fff19ff9b6d3b1f7d442a08d071ce7cb344039fb153d01
   - name: quartermaster
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-quartermaster:v0.3.13
-    digest: sha256:e7b23bf7a119134719b1c847efd4c956fcf1608d757bb7e9c04ecc3b644efd5b
-    source_hash: sha256:ad5e5ffce9cc599f655f0dd748f1156f01572c4b61724969ed591cb7c4de599f
+    digest: sha256:77889613fa8690d5515130d84af8b8e6bcf5223112dbb99712137908c9788b4a
+    source_hash: sha256:81102e5b5a44d43092bfb54c527cda8098750fafa167fa442b49d176dfad925a
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-quartermaster:v0.3.13
-        digest: sha256:e7b23bf7a119134719b1c847efd4c956fcf1608d757bb7e9c04ecc3b644efd5b
+        digest: sha256:77889613fa8690d5515130d84af8b8e6bcf5223112dbb99712137908c9788b4a
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-quartermaster:v0.3.13
-        digest: sha256:e7b23bf7a119134719b1c847efd4c956fcf1608d757bb7e9c04ecc3b644efd5b
+        digest: sha256:77889613fa8690d5515130d84af8b8e6bcf5223112dbb99712137908c9788b4a
   - name: signalman
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-signalman:v0.3.13
-    digest: sha256:1439689db3eaf5ed411bdd3efc7b3798122ee7c6b94856c5b8758942fed9798d
+    digest: sha256:6185fe81bcb576ec945c8b96e5be68f3632537ea3c30d4a0419079ee57d23739
     source_hash: sha256:87cff261f82881d4fbf72f17bad64141fe74b4d9a62d43d46b1c105683d25c5c
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-signalman:v0.3.13
-        digest: sha256:1439689db3eaf5ed411bdd3efc7b3798122ee7c6b94856c5b8758942fed9798d
+        digest: sha256:6185fe81bcb576ec945c8b96e5be68f3632537ea3c30d4a0419079ee57d23739
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-signalman:v0.3.13
-        digest: sha256:1439689db3eaf5ed411bdd3efc7b3798122ee7c6b94856c5b8758942fed9798d
+        digest: sha256:6185fe81bcb576ec945c8b96e5be68f3632537ea3c30d4a0419079ee57d23739
   - name: skipper
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-skipper:v0.3.13
-    digest: sha256:7a02a22972afe1f876683aac311f5afc7cbd04f7728179ce867346d0855e7c06
-    source_hash: sha256:ddb56a120339b4c72c349e7c9fb1281808b5df9807f77e0cd939f4fa49c94fa9
+    digest: sha256:7086cf6d4f1780b211152717aa8f444166a912cc61953deee0163c2dfa5c92bd
+    source_hash: sha256:454959272740ec84418472ef176a56cae8937b63b0c79b94fab83bdd1770470a
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-skipper:v0.3.13
-        digest: sha256:7a02a22972afe1f876683aac311f5afc7cbd04f7728179ce867346d0855e7c06
+        digest: sha256:7086cf6d4f1780b211152717aa8f444166a912cc61953deee0163c2dfa5c92bd
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-skipper:v0.3.13
-        digest: sha256:7a02a22972afe1f876683aac311f5afc7cbd04f7728179ce867346d0855e7c06
+        digest: sha256:7086cf6d4f1780b211152717aa8f444166a912cc61953deee0163c2dfa5c92bd
   - name: steward
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-steward:v0.3.13
-    digest: sha256:cafb517a69accedb5bec106c07ccb5ef87c807712d33a8362030989e7e5506de
+    digest: sha256:df951113de22be80f6a677901f9af6a20cfc0aefbf898c2995a36c242e68dda9
     source_hash: sha256:1be54639f08cae08a3a877d20631a915442db2898fbb928402b657207288a1a1
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-steward:v0.3.13
-        digest: sha256:cafb517a69accedb5bec106c07ccb5ef87c807712d33a8362030989e7e5506de
+        digest: sha256:df951113de22be80f6a677901f9af6a20cfc0aefbf898c2995a36c242e68dda9
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-steward:v0.3.13
-        digest: sha256:cafb517a69accedb5bec106c07ccb5ef87c807712d33a8362030989e7e5506de
+        digest: sha256:df951113de22be80f6a677901f9af6a20cfc0aefbf898c2995a36c242e68dda9
 
 native_binaries:
   - name: bosun
-    source_hash: sha256:c713dd03cfa0a8fab9204f142675b297e489efc91acbe196fdbd33327349e14b
+    source_hash: sha256:739c1f398856a4b3075ea4f6adf4cfd08d9f786a79a4804790aecd1017b3e4ce
     artifacts:
       - arch: linux-amd64
         file: frameworks-bosun-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-bosun-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:08aaf8a9063741be42c3fc4044622eba4eed12ca8cc868af2c589c20533d7cab
+        checksum: sha256:88c1850e734fa376684f62e39b28462f4e11198178929838fa1698c03acf38d1
       - arch: linux-arm64
         file: frameworks-bosun-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-bosun-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:d5f065a43cd9b9edfe15211abac5ba05a5d16c354a9f67368b27c933536db7fa
+        checksum: sha256:e0666e978d52bfccd1a488c9bd42e011d7653c64df56a1f997aa83fe822870bf
       - arch: darwin-arm64
         file: frameworks-bosun-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-bosun-v0.3.13-darwin-arm64.zip
-        checksum: sha256:0df970df87136c48e3ae36b6b946cbef0547c2e76f5903c757291dca094670b3
+        checksum: sha256:2cab66723a9ce3f4021c191fd28db959c64f012a60c8172173970e934a7ff82b
   - name: bridge
     source_hash: sha256:ca5372017cd39522d5151d538d564bc4133502acd2d055bd9dab71e204ff0242
     artifacts:
       - arch: linux-amd64
         file: frameworks-bridge-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-bridge-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:18cc739dd369d2e76e77a5502fdfd1d7019285d52e359efa33a180df7cf22c3c
+        checksum: sha256:17434a72be0a6026470c455f04ea908eb59eedb5bd5ce22688e7df987d008402
       - arch: linux-arm64
         file: frameworks-bridge-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-bridge-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:81c985542ee650526b20d5398b6c090740e7ca07a52e45098db7bc63a660c58b
+        checksum: sha256:f00c33c1a66ece820083442003bb00c3ff1d4ece66b2065998b320084e53cb32
       - arch: darwin-arm64
         file: frameworks-bridge-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-bridge-v0.3.13-darwin-arm64.zip
-        checksum: sha256:de129894058f0c0dbc539bdf8f6155b840944b48cacb2ca3228aa32629c78953
+        checksum: sha256:d7ca51c67855469523ef2a89678e992fe10964475f72ecf136c4cfa6579c3597
   - name: chandler
     source_hash: sha256:8c98b6d27fe005ad0a3f3e3bf0392198a9264b26f6f71a63053b5ed02204ca57
     artifacts:
       - arch: linux-amd64
         file: frameworks-chandler-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-chandler-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:0883c50d5fce3e60bfef6c8fb7a7428a95dabb5171b113fdc98626f37ac3d79c
+        checksum: sha256:e3533f2703875812f4a2cf7651a84a3e54748bec26e427a936d823ff9d03c9a1
       - arch: linux-arm64
         file: frameworks-chandler-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-chandler-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:dc89b41dffae6b9d6f30fa86d69dd930a6261a5d3cc68443da29f51a6e590fce
+        checksum: sha256:b1ed802a041c0a795a043e5d1e3ed13dde8a523e61475d9a4433332d1acbbcc0
       - arch: darwin-arm64
         file: frameworks-chandler-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-chandler-v0.3.13-darwin-arm64.zip
-        checksum: sha256:021fa858af064d010ca4fe782c080f97d4a397d8c3ac2f1d03f5934497fb4e85
+        checksum: sha256:2b7d67ae4ce315a73668d44a7c2cb261a881fdfeb6d7079fbf12ef854db71508
   - name: commodore
-    source_hash: sha256:0a671b7955dea991e1fcbfc0f12e6a46172f51bd7f854931074f8540db44d980
+    source_hash: sha256:a269e0b6dfbc58d8fceb4f8c17b7f54f94596166699eb3923ea985f2f54d7390
     artifacts:
       - arch: linux-amd64
         file: frameworks-commodore-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-commodore-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:e1672203275ea61ec19f36ab02d9772d633dd8ae1c404b31d351cd0a17d33c62
+        checksum: sha256:a8868b6175679ce0ac44da0fc08a8d173aa6c5e546df9671c5a47fdb85c27155
       - arch: linux-arm64
         file: frameworks-commodore-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-commodore-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:a78ce93f557ad2a1f752ad694a1b52738a972c94ed4c924cdf00bc11140847f4
+        checksum: sha256:26672aaa39a5f99000bb32f431c3246225ee716c321681fa707f0c530c641b35
       - arch: darwin-arm64
         file: frameworks-commodore-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-commodore-v0.3.13-darwin-arm64.zip
-        checksum: sha256:11382ff0331a0cf28451088a7f34058ad6c557b10e39db0180b64adba81ba6e7
+        checksum: sha256:d70c894756622cd9d33d8a20b48c61e959d760197189e07bf466d943d3f299ac
   - name: deckhand
     source_hash: sha256:8d4a2fbe37982f896c31ab1aeb2c720a4f27b3411670e84f76dd976cb90e1137
     artifacts:
       - arch: linux-amd64
         file: frameworks-deckhand-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-deckhand-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:0c027c3250e69add49efc00ddbb90ebe53e53720188c15a3f2210ff650cca9dd
+        checksum: sha256:2869a72261c30f0ecc806783679d59eb73da3f42236eaa80a06ad20f4687613f
       - arch: linux-arm64
         file: frameworks-deckhand-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-deckhand-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:5c1b0e46f87ccaed16857fd9635cd0c278817a3d4e14176c9ce6f02201293283
+        checksum: sha256:64ab059a3afcd7ca230ebbb40e79a5e2c409522c827b2ad9d4300f4005ea4b52
       - arch: darwin-arm64
         file: frameworks-deckhand-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-deckhand-v0.3.13-darwin-arm64.zip
-        checksum: sha256:7f6d5f1919e39c4e88fb9688c99d6a8c750d1fecc1a457f818e7e05756b10f65
+        checksum: sha256:0d2a6cf1a508fc8f5f344d22f03395e9e24323ebc88d39cd33ac1636e4405cd7
   - name: decklog
     source_hash: sha256:0bf69ef82b0da6acc00c4fb965e25474a927581c45a41ae9765103eeb9fbbbf5
     artifacts:
       - arch: linux-amd64
         file: frameworks-decklog-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-decklog-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:37078670c9c6440c6ff14ee4aa4da04a185d1493671b32011fd6d35240e12d0d
+        checksum: sha256:77e72710c18b3f5fd51101e5c6c49102663655a8294f0f61989ccdad631e53af
       - arch: linux-arm64
         file: frameworks-decklog-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-decklog-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:7d47149d34f23930ba0a92ff88ab7715c4c1d86d71f615c8d65b5b34704781ce
+        checksum: sha256:e556e16974a5b25a05488133a7fcee8749b4bae5f186a3a4e03078141daf2992
       - arch: darwin-arm64
         file: frameworks-decklog-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-decklog-v0.3.13-darwin-arm64.zip
-        checksum: sha256:be5957d083750f80640fb13e8d72fc9dde3c166986bca1766e1cc88b030762a0
+        checksum: sha256:c984a1e722f53269686dfffa6aabe4974aeeabdc57586abe0652b0a40185d39d
   - name: foghorn
-    source_hash: sha256:d24fb417d823c02a5161010d790667aaf692f857979a6384f1d3ebacfdefa14c
+    source_hash: sha256:aa720f0b7570c385e65962c2cb93c6ff73c5080b4e1665f3ef8b8fe98db49fa7
     artifacts:
       - arch: linux-amd64
         file: frameworks-foghorn-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-foghorn-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:b6b1ec6b1dea2fb27c09b2b6b50a63c461c991499c49b71205ede78378b049e8
+        checksum: sha256:4d1dec3806a0523d47dac7f528d7ec51117691e5dbf15aafd3aebe65d44f260a
       - arch: linux-arm64
         file: frameworks-foghorn-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-foghorn-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:a00299a21144553289c4cb1a855f8955cacb547803703db8dffedce7b73dfffd
+        checksum: sha256:9c1a708c529007be150b0ac2a7db924b5c36c2f90986bcc01663fb17cfe7b835
   - name: lookout
-    source_hash: sha256:73c2581ab1b57dbdec0e7240011e6bbe497228d6bdf735ef9f25ce6b6a5d1faf
+    source_hash: sha256:da3aa709d3fe93e1a77642ad9aadeb405a878cbe81cda8fb5d794d64c1264f0a
     artifacts:
       - arch: linux-amd64
         file: frameworks-lookout-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-lookout-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:338b4181a05045b628acb6a6c27be62d181a33ba31a3d429b7d5c9884df440f3
+        checksum: sha256:30c0e94cba178105fce96e3e6191c885b20459d69b483ee2d4c6063b905f206e
       - arch: linux-arm64
         file: frameworks-lookout-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-lookout-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:e9110f97afcb69cb66f24b4088d76e96d3d722ba0379211726059fd5d14dd1de
+        checksum: sha256:d505ae31da0ab0cd8fcea6992df2aae4728eb6a378fe9ec9760cd6858f8fdf83
       - arch: darwin-arm64
         file: frameworks-lookout-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-lookout-v0.3.13-darwin-arm64.zip
-        checksum: sha256:4f10776cba093be4897ea843abec284e29cbbd7b2fd45cce4200d1dcd731bd2a
+        checksum: sha256:d27fdd8d15ed2cb83ff9a35bbae2d462e201bc8e08b8471acb0d196d507cf65c
   - name: navigator
-    source_hash: sha256:10f94d83836b6650fae30e872a1ff704df8ad88c87fdf7a332b4e8f3dd896631
+    source_hash: sha256:e21340e1552fb79866e0cd489fe20ab61d47125e3ee68115b2a3482fbd34f4a6
     artifacts:
       - arch: linux-amd64
         file: frameworks-navigator-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-navigator-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:224a4c9f8b954eb41dbd4d150d7d2262b141a54ecc044b619bf406fd02cf295a
+        checksum: sha256:f28c39c78a63b95f887a8bf8ff2f8a1dcf52f2b1af3efed04000f060353e7433
       - arch: linux-arm64
         file: frameworks-navigator-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-navigator-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:5333f2d622daa1b347ea1ad61f43b9a6e3314a3904ea2925c1a0f7f7e02e1288
+        checksum: sha256:7f8a010ce206bebe702fd80bd47da270061411a26e189535c90862d00383dd4c
       - arch: darwin-arm64
         file: frameworks-navigator-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-navigator-v0.3.13-darwin-arm64.zip
-        checksum: sha256:4e4137da860ac881543534035df68f7569b21b3ce41f4649d5e7e6ac580b977e
+        checksum: sha256:8d0f8c094fefe20d4096a4aab775bd212180c4a9af41a3eb2e5306ccd07584b9
   - name: network-observer
-    source_hash: sha256:5e7e0d6063e262afd1633b434a815f707bd8fa53840b10149278e270c376beb0
+    source_hash: sha256:d65f88500aa3cbf6539af094f769dc6eb8ad4d8d873fc12ed9c09fe01e57e4d3
     artifacts:
       - arch: linux-amd64
         file: frameworks-network-observer-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-network-observer-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:7d75fed4e7a66b72a9c6eddccf58a98bf34410f12673fbc260255959dbdd6c01
+        checksum: sha256:5e935f037d6a83f26c38ada0442d542af5d0419bdb84e59ede18c6a2d7b8e2fd
       - arch: linux-arm64
         file: frameworks-network-observer-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-network-observer-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:8974c9f2e2b2c3f314bbdf5e20ea45023ddedfa771898d8487f9213daa90d58c
+        checksum: sha256:7f2f6375a2b9fb77590891fd5e7559c7a3cf6fb409bb697d8555a497a1e0dbae
       - arch: darwin-arm64
         file: frameworks-network-observer-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-network-observer-v0.3.13-darwin-arm64.zip
-        checksum: sha256:61f7596210ee03688cd948cd88c46f533797e493e5a0474bc427d65521ad8242
+        checksum: sha256:c91fddf821b176e2a672442d0b0c1446ddb043238d2d5d6cce7b259314a0f314
   - name: network-prober
     source_hash: sha256:dcab767124727e6e205623a43500143f7070987dc52921f5c952cd145bbade06
     artifacts:
       - arch: linux-amd64
         file: frameworks-network-prober-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-network-prober-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:8203d42b0662b926329a989bb4c73e1b2f2302b17d06dc28b3dead77c41eed8b
+        checksum: sha256:ac3184541f4a24d1eef7b5ad36ec9cc6a092714c0d6eaa5a38ea86444a32ed0f
       - arch: linux-arm64
         file: frameworks-network-prober-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-network-prober-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:911731a80c1ef2169b40e2a83ed54ebe63058a54043c9f8f5eb4ac93f1d1a884
+        checksum: sha256:583543d071ee1a22fefe5b42d52feed6933692771e7d20734e2a76f0a5009f4e
       - arch: darwin-arm64
         file: frameworks-network-prober-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-network-prober-v0.3.13-darwin-arm64.zip
-        checksum: sha256:2549201c79a22687512c14401dc787cc62eeb6ccd7363eb7e646b4a1537f7d1d
+        checksum: sha256:83ccb8a1e23aac0ccaffd1c576c037e0da97f22d926c7583a48516b3857a0cd7
   - name: periscope-ingest
-    source_hash: sha256:6b5ecb9ee00632655757b1fee29051793ed4bf56ce5c5f3536f94a77f2e685bc
+    source_hash: sha256:7db9bf315ccc8f937e203f173feba8d3b2283c37990bc6dae5ec1fff7ac94461
     artifacts:
       - arch: linux-amd64
         file: frameworks-periscope-ingest-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-periscope-ingest-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:540abc158541f6ec1b348cc6e1db7a22552b3420e4dfc06bf342b772425c31ab
+        checksum: sha256:e53292de60326b2ccf8e19f12e0b6f36580533b8704e545e2cc1075c81ecc98a
       - arch: linux-arm64
         file: frameworks-periscope-ingest-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-periscope-ingest-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:a2597aa5ca7d7cc725eb19d9e1e29c2f89e4bb85b4ee139856a3125989b3e36a
+        checksum: sha256:38e15dafeb1b70fe613303ef621d60b5605a2607ef6b31633ba0b231a074dd59
       - arch: darwin-arm64
         file: frameworks-periscope-ingest-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-periscope-ingest-v0.3.13-darwin-arm64.zip
-        checksum: sha256:cd44b8217c25c1f848b8344fc8447adc4be518f7588a8519d8952a02f5dac35b
+        checksum: sha256:7f915b8da21ed4ecdedade29ad94e9bdb863642e4cd0093b224cfc887aa480fa
   - name: periscope-metering
-    source_hash: sha256:68d442b10978c9691a695530ffe3c362ead45d8a78ee9778b54dca4ba8fc0e37
+    source_hash: sha256:74567e6d0c3ef7d7ccf948664dce60b633dfbc2f0ae9540f57c2291c1d0f89ff
     artifacts:
       - arch: linux-amd64
         file: frameworks-periscope-metering-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-periscope-metering-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:3f2be97fc6abe88a8343c4407eeae9c337090c29581dfdcf07c60f0f4471a9fe
+        checksum: sha256:fe03929c86798f35beaacb9b787b558b57ae46c5dc9c1cd675228bae934fd5c3
       - arch: linux-arm64
         file: frameworks-periscope-metering-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-periscope-metering-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:e6394e47234bc333bc1a93d6ec2b1dbf1dea53c35ee5dba18d32aff10b3492bf
+        checksum: sha256:78efbcb2e17882529c04a703723e54fbd2896e0e0d5367b45a84c09081748337
       - arch: darwin-arm64
         file: frameworks-periscope-metering-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-periscope-metering-v0.3.13-darwin-arm64.zip
-        checksum: sha256:fc3e0ae5f7353eb3d7cb0a72e6a9a4a88d842c31a1534c1a9d7daeaadc4c0262
+        checksum: sha256:d6a706165c309220b67073e4619f16821fec2366a532a878a6ca124d4f43cd02
   - name: periscope-query
-    source_hash: sha256:7e64b2b100dddf20addc0632e793c69f983ecf5f81f3168a1040ad3bcd520af7
+    source_hash: sha256:dd6a32994e6972022186b2f03fa756d923fef5052fe2e1fa9cb705ed773a0587
     artifacts:
       - arch: linux-amd64
         file: frameworks-periscope-query-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-periscope-query-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:04390db50a3c1a9339fdb93bbbe2e810d96e8b212446e71c374ad36bbf8f04e1
+        checksum: sha256:d0921f74e8d6be60305232930ee93be8d66464bbe092e61f5d01f0442eb40f2c
       - arch: linux-arm64
         file: frameworks-periscope-query-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-periscope-query-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:4ec860874ae88fb78d0d217d20b427fa9c4c993b6956e20317d82fbd1849dfd8
+        checksum: sha256:b461abeb7360b86e6c1ffa797d3050d88218388fa57ae2c7b6c6b3ce6217a269
       - arch: darwin-arm64
         file: frameworks-periscope-query-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-periscope-query-v0.3.13-darwin-arm64.zip
-        checksum: sha256:a39898f3870c4cb58e52eb15f04139b9254a72057b7b8f87b27579ab1ca9d99e
+        checksum: sha256:609e71043f94575199d403bb25fa74f6e01c05f8c99be69d57c4a84a8f046a44
   - name: purser
-    source_hash: sha256:aeec33a3410d8bb77a1bd64df37d5f335ebb946797e6e742f9395109dfe071f0
+    source_hash: sha256:354bc23639f019139f06d4aefd4f7183d87dcc3957afba95cec64006949c17fd
     artifacts:
       - arch: linux-amd64
         file: frameworks-purser-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-purser-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:7e972df98df4a6a1ec2f2c466cf0824d12fb5cf42b1edab57228cf0f51fd8b6a
+        checksum: sha256:04cf33f223b476968ab35bee874aa267914f54c74654115584ea702ed39443bd
       - arch: linux-arm64
         file: frameworks-purser-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-purser-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:bbd96db3f1a307ad23955b192fa62148987e912452816616491f5a65b3148f3e
+        checksum: sha256:4a76a58a9d8044f00fdc1c7263f2805d931ac255392046845fd2e971f2c8c64b
       - arch: darwin-arm64
         file: frameworks-purser-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-purser-v0.3.13-darwin-arm64.zip
-        checksum: sha256:cd3904615426e194e61410cca101ec2ef2eb66ed427caf761b340cd456dd4786
+        checksum: sha256:da50fcc6013cc616ca0f30eb633fdee3017a17ab4d97aef72eb407acef71ead4
   - name: quartermaster
-    source_hash: sha256:ad5e5ffce9cc599f655f0dd748f1156f01572c4b61724969ed591cb7c4de599f
+    source_hash: sha256:81102e5b5a44d43092bfb54c527cda8098750fafa167fa442b49d176dfad925a
     artifacts:
       - arch: linux-amd64
         file: frameworks-quartermaster-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-quartermaster-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:5e4cc382298195ab010fcad144ac505ef895c9ef120df1a384c176837797d562
+        checksum: sha256:4ab60a14e040e072101c9ff38c05116824a1c45eb375b7fafaab4256334267c0
       - arch: linux-arm64
         file: frameworks-quartermaster-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-quartermaster-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:81948fa89a92529e4fbe369fd89913c9a271c72f894e7c4e3a1ff41c991ae6f4
+        checksum: sha256:62d82808fd637fac6298085ca303cadbbfc77e7e9c4d4f3eedfa55d5646c9bbd
   - name: signalman
     source_hash: sha256:87cff261f82881d4fbf72f17bad64141fe74b4d9a62d43d46b1c105683d25c5c
     artifacts:
       - arch: linux-amd64
         file: frameworks-signalman-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-signalman-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:10d0fa822796ef83bbdf13e54cf736aaefa00fc4acafbe4e6fa73739836633a0
+        checksum: sha256:c066ba5f9de5b0595b31e903c80a4dfadcff80a576fe9a2a4736f8ec0b94310d
       - arch: linux-arm64
         file: frameworks-signalman-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-signalman-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:335eb4a73824dfff2281606bc6ac38949ce2f2b977e14d3bf5acd0684dcb9053
+        checksum: sha256:eb3fbc493f3fd8b59f6e887b0c4baeff66337aca4e88eccd58b803cb5f12ee02
       - arch: darwin-arm64
         file: frameworks-signalman-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-signalman-v0.3.13-darwin-arm64.zip
-        checksum: sha256:e4775bd04af05bd185acaef0bd12b52b07a13959edd9392f84846ad72cc0271a
+        checksum: sha256:db96fbd6d415810200b58382d82fb81077035af7c9eedfc43eb581ff51e053a4
   - name: skipper
-    source_hash: sha256:ddb56a120339b4c72c349e7c9fb1281808b5df9807f77e0cd939f4fa49c94fa9
+    source_hash: sha256:454959272740ec84418472ef176a56cae8937b63b0c79b94fab83bdd1770470a
     artifacts:
       - arch: linux-amd64
         file: frameworks-skipper-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-skipper-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:27f93cf15a41dbe7ea9e903a441098f6a418fbf28ea7b3485d6e075be2fb9bf6
+        checksum: sha256:e4846025e379d4adacf14c0ec2caf84f062048cad6629b1398a4c27297fbc010
       - arch: linux-arm64
         file: frameworks-skipper-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-skipper-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:18a745df0b5254fd5eda4058f0101862ed586bbf2c9cc2265ff238340942c572
+        checksum: sha256:ce70a044c69ee7e6ff4ce120efec3c6b7ca031ad20a0bbf5641bc779cfb5debf
       - arch: darwin-arm64
         file: frameworks-skipper-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-skipper-v0.3.13-darwin-arm64.zip
-        checksum: sha256:64f1ce1a2144c8d5b8bf16853f4fdfca5b11a3a94bf2b4b1a4243eaabe46e3b0
+        checksum: sha256:93cab4a695f43f9b4c98e62d555c62d358e85cb1e7d0aef8f127c467f56f3124
   - name: steward
     source_hash: sha256:1be54639f08cae08a3a877d20631a915442db2898fbb928402b657207288a1a1
     artifacts:
       - arch: linux-amd64
         file: frameworks-steward-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-steward-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:3b44ec9001f89f346b62a7d0d742efbeed364e30c4a439f9fa4d3c7d779ad927
+        checksum: sha256:b603f540d6d9f387eaecda1b5423ba92ced053b1d3f5f106621e6d14cbad390a
       - arch: linux-arm64
         file: frameworks-steward-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-steward-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:316ddf3ecfc19a0f122435ef8f9d8fca76e1b9ae6375e2ca02e8119278efcaf4
+        checksum: sha256:77a7f092c4e77329f5d1759d8647d5e880eb92466ea63521080d40dff5fdfa95
       - arch: darwin-arm64
         file: frameworks-steward-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-steward-v0.3.13-darwin-arm64.zip
-        checksum: sha256:00929067426a1486046723b008b13a967b056ebfdae13d05e68079a3cf4dc685
+        checksum: sha256:aa729f9bcbd9977d2ad0d718234248881d3890e64064af42629a65089343d00c
   - name: helmsman
-    source_hash: sha256:06b1b0450517b877f81faeb1d585f23928470516319b64d609c5e8c010233d5a
+    source_hash: sha256:cb7c5d0b0f4c87cd6deef2ca4d837eb7e7e88ccd1a93b6cccdd4ed8b94daef16
     artifacts:
       - arch: linux-amd64
         file: frameworks-helmsman-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-helmsman-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:0037473fb3f799a4333908853c824998525385b30a5a8469a79e12ffe73a4915
+        checksum: sha256:1c1833ae280fd3f848adb35edacb2266d0e9ca07f05ce5291fea3f9c33fe618c
       - arch: linux-arm64
         file: frameworks-helmsman-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-helmsman-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:5484c48385cae80dcc7e39024210d492f7bcb08521f817b10a05bb4e2855af28
+        checksum: sha256:54fa91941e5328508b3b8ca871def7eead2a30534935256439597e8a2cd3565a
       - arch: darwin-arm64
         file: frameworks-helmsman-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-helmsman-v0.3.13-darwin-arm64.zip
-        checksum: sha256:0f9cdc2e31a394e08a8006d4267885109fcedcbd7f3c3cbc90620de8c98a88c2
+        checksum: sha256:b0264dac270ea115a27617bf3160720c38bf9350d489b2dac57c2914732f7246
   - name: privateer
     source_hash: sha256:b27f30bca62c3c66c959fa1eb5601d9aadb75b58d15a131753e4c6120dda0c20
     artifacts:
       - arch: linux-amd64
         file: frameworks-privateer-v0.3.13-linux-amd64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-privateer-v0.3.13-linux-amd64.tar.gz
-        checksum: sha256:b965743a5271a2b29ad207d45dd5f6748d92cdc8ea1bf87df713db14f409d0d8
+        checksum: sha256:aee646aff849ea0bbd8738a58f9cb078f373428ed215b3e24ecd00173de12c28
       - arch: linux-arm64
         file: frameworks-privateer-v0.3.13-linux-arm64.tar.gz
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-privateer-v0.3.13-linux-arm64.tar.gz
-        checksum: sha256:5e50aa35ebbe80dbce1dc715a0ad4e64f731125c89eb97e2aa700df69740882b
+        checksum: sha256:0df9dc332049f882ca57be2b2270e148f008bbc186d6abceced67ef50a439a91
       - arch: darwin-arm64
         file: frameworks-privateer-v0.3.13-darwin-arm64.zip
         url: https://github.com/Livepeer-FrameWorks/monorepo/releases/download/v0.3.13/frameworks-privateer-v0.3.13-darwin-arm64.zip
-        checksum: sha256:ae8267f9c2abbdf8f004b807fadfb462cc0d4adbf967619a966107b3637eb8ec
+        checksum: sha256:0b7c45a64f818be39dc927994734a0cfd57239d2408f1095725cbf7eb82e4a93
 
 interfaces:
   - name: logbook
     service_version: v0.3.13
     image: livepeerframeworks/frameworks-logbook:v0.3.13
-    digest: sha256:8c4d5c9a65f4634cbf645968d2e67c1d2e4737adfefd18b1ddc85b5cadac2df2
+    digest: sha256:1502db2a4d31b1cf697c78c7b288e11bceec1b271b192cb0a8f5cebd659e1015
     static_bundle: logbook-build.tar.gz
     source_hash: sha256:34c375a1d247a4e96c7ae78f83ccba27bc1f0070aa9e13c004b1f35a07408b8f
     images:
       dockerhub:
         image: livepeerframeworks/frameworks-logbook:v0.3.13
-        digest: sha256:8c4d5c9a65f4634cbf645968d2e67c1d2e4737adfefd18b1ddc85b5cadac2df2
+        digest: sha256:1502db2a4d31b1cf697c78c7b288e11bceec1b271b192cb0a8f5cebd659e1015
       ghcr:
         image: ghcr.io/livepeer-frameworks/frameworks-logbook:v0.3.13
-        digest: sha256:8c4d5c9a65f4634cbf645968d2e67c1d2e4737adfefd18b1ddc85b5cadac2df2
+        digest: sha256:1502db2a4d31b1cf697c78c7b288e11bceec1b271b192cb0a8f5cebd659e1015
   - name: chartroom
     service_version: v0.3.13-rc10
     image: livepeerframeworks/frameworks-chartroom:v0.3.13-rc10
