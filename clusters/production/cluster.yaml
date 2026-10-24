@@ -211,6 +211,9 @@ infrastructure:
       - name: lookout
       - name: bosun
       - name: periscope
+      - name: network_observer
+        owner: network_observer
+        runtime_role: network_observer_runtime
   clickhouse:
     enabled: true
     mode: native
@@ -458,6 +461,10 @@ services:
     mode: native
     host: central-eu-1
   deckhand:
+    enabled: true
+    mode: native
+    host: central-eu-1
+  network-observer:
     enabled: true
     mode: native
     host: central-eu-1
