@@ -4,6 +4,10 @@ quartermaster:
   tenants:
     - alias: frameworks-qa
       name: FrameWorks QA
+    # Stack test tenant: the wallet-signed tenant that verify-target.sh uses
+    # for "# tenant: test" scenarios (scripts/stack/test-tenant.sh).
+    - alias: frameworks-stack-test
+      name: FrameWorks Stack Test
 
 accounts:
   - kind: system_operator
@@ -29,6 +33,19 @@ accounts:
         password_ref:
           sops: ../../secrets/staging.env
           key: QA_ACCOUNT_PASSWORD
+  - kind: customer
+    tenant:
+      ref: quartermaster.tenants[frameworks-stack-test]
+    users:
+      - email: stack-test@frameworks.network
+        role: owner
+        first_name: FrameWorks
+        last_name: Stack Test
+        # Address of STACK_TEST_TENANT_WALLET_KEY in ../../secrets/staging.env.
+        wallet: "0x10C4512C2075bf51A7CF723d009095309CBF3Ca1"
+        password_ref:
+          sops: ../../secrets/staging.env
+          key: STACK_TEST_TENANT_PASSWORD
 
 purser:
   customer_billing:
@@ -49,3 +66,12 @@ purser:
         base_fee: "0"
         waive_usage: true
         reason: Internal QA account
+    - tenant:
+        ref: quartermaster.tenants[frameworks-stack-test]
+      model: postpaid
+      tier: developer
+      cluster_access: derived
+      operator_grant:
+        base_fee: "0"
+        waive_usage: true
+        reason: Stack test tenant
