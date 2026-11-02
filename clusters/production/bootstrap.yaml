@@ -1,3 +1,10 @@
+quartermaster:
+  # Internal QA customer: a normal tenant that exercises customer flows on a
+  # paid tier without being billed.
+  tenants:
+    - alias: frameworks-qa
+      name: FrameWorks QA
+
 purser:
   customer_billing:
     - tenant:
@@ -8,6 +15,15 @@ purser:
         max_concurrent_streams: 0
         max_concurrent_viewers: 0
       cluster_access: derived
+    - tenant:
+        ref: quartermaster.tenants[frameworks-qa]
+      model: postpaid
+      tier: enterprise
+      cluster_access: derived
+      operator_grant:
+        base_fee: "0"
+        waive_usage: true
+        reason: Internal QA account
 
 accounts:
   - kind: system_operator
@@ -22,6 +38,17 @@ accounts:
         password_ref:
           sops: ../../secrets/production.env
           key: PLATFORM_ADMIN_PASSWORD
+  - kind: customer
+    tenant:
+      ref: quartermaster.tenants[frameworks-qa]
+    users:
+      - email: qa@frameworks.network
+        role: owner
+        first_name: FrameWorks
+        last_name: QA
+        password_ref:
+          sops: ../../secrets/production.env
+          key: QA_ACCOUNT_PASSWORD
 
 commodore:
   # frameworks-demo is a Mist-native always-on loop. The source clip lives

@@ -1,3 +1,10 @@
+quartermaster:
+  # Internal QA customer: a normal tenant that exercises customer flows on a
+  # paid tier without being billed.
+  tenants:
+    - alias: frameworks-qa
+      name: FrameWorks QA
+
 accounts:
   - kind: system_operator
     tenant:
@@ -11,6 +18,17 @@ accounts:
         password_ref:
           sops: ../../secrets/staging.env
           key: PLATFORM_ADMIN_PASSWORD
+  - kind: customer
+    tenant:
+      ref: quartermaster.tenants[frameworks-qa]
+    users:
+      - email: qa@frameworks.network
+        role: owner
+        first_name: FrameWorks
+        last_name: QA
+        password_ref:
+          sops: ../../secrets/staging.env
+          key: QA_ACCOUNT_PASSWORD
 
 purser:
   customer_billing:
@@ -22,3 +40,12 @@ purser:
         max_concurrent_streams: 0
         max_concurrent_viewers: 0
       cluster_access: derived
+    - tenant:
+        ref: quartermaster.tenants[frameworks-qa]
+      model: postpaid
+      tier: enterprise
+      cluster_access: derived
+      operator_grant:
+        base_fee: "0"
+        waive_usage: true
+        reason: Internal QA account
