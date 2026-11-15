@@ -1,5 +1,6 @@
 ---
 version: v1
+registry_owner: frameworks-gitops-staging
 type: cluster
 profile: staging
 channel: candidate

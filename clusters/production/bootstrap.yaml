@@ -1,4 +1,33 @@
 quartermaster:
+  registry_scope:
+    owner: frameworks-gitops-production
+    clusters: [core-central-primary, media-eu-1, media-us-1, regional-eu-primary, regional-us-primary]
+    complete: true
+    adopt:
+      - instance_id: inst-clickhouse-yuga-eu-1-tcp-9000
+        service_name: clickhouse
+        cluster_id: core-central-primary
+        node_id: yuga-eu-1
+        protocol: tcp
+        port: 9000
+      - instance_id: inst-periscope-ingest-cfb2d25c
+        service_name: periscope-ingest
+        cluster_id: regional-us-primary
+        node_id: regional-us-1
+        protocol: http
+        port: 18005
+      - instance_id: inst-periscope-ingest-4cce793e
+        service_name: periscope-ingest
+        cluster_id: regional-us-primary
+        node_id: regional-us-2
+        protocol: http
+        port: 18005
+      - instance_id: inst-periscope-ingest-fa1d6db7
+        service_name: periscope-ingest
+        cluster_id: regional-us-primary
+        node_id: regional-us-3
+        protocol: http
+        port: 18005
   # Internal QA customer: a normal tenant that exercises customer flows on a
   # paid tier without being billed.
   tenants:
